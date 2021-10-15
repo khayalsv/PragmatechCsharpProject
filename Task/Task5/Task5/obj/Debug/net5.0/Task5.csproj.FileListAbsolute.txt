@@ -1,0 +1,16 @@
+C:\Users\selim\Desktop\C#\Task5\Task5\bin\Debug\net5.0\Task5.exe
+C:\Users\selim\Desktop\C#\Task5\Task5\bin\Debug\net5.0\Task5.deps.json
+C:\Users\selim\Desktop\C#\Task5\Task5\bin\Debug\net5.0\Task5.runtimeconfig.json
+C:\Users\selim\Desktop\C#\Task5\Task5\bin\Debug\net5.0\Task5.runtimeconfig.dev.json
+C:\Users\selim\Desktop\C#\Task5\Task5\bin\Debug\net5.0\Task5.dll
+C:\Users\selim\Desktop\C#\Task5\Task5\bin\Debug\net5.0\ref\Task5.dll
+C:\Users\selim\Desktop\C#\Task5\Task5\bin\Debug\net5.0\Task5.pdb
+C:\Users\selim\Desktop\C#\Task5\Task5\obj\Debug\net5.0\Task5.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\C#\Task5\Task5\obj\Debug\net5.0\Task5.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\selim\Desktop\C#\Task5\Task5\obj\Debug\net5.0\Task5.AssemblyInfoInputs.cache
+C:\Users\selim\Desktop\C#\Task5\Task5\obj\Debug\net5.0\Task5.AssemblyInfo.cs
+C:\Users\selim\Desktop\C#\Task5\Task5\obj\Debug\net5.0\Task5.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\C#\Task5\Task5\obj\Debug\net5.0\Task5.dll
+C:\Users\selim\Desktop\C#\Task5\Task5\obj\Debug\net5.0\ref\Task5.dll
+C:\Users\selim\Desktop\C#\Task5\Task5\obj\Debug\net5.0\Task5.pdb
+C:\Users\selim\Desktop\C#\Task5\Task5\obj\Debug\net5.0\Task5.genruntimeconfig.cache
