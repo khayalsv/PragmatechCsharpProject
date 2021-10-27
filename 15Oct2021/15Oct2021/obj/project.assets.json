@@ -13,11 +13,25 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:22Oct2021/Task/Task/obj/project.assets.json
+      "projectUniqueName": "C:\\Users\\selim\\Desktop\\Csharp\\22Oct2021\\Task\\Task\\Task.csproj",
+      "projectName": "Task",
+      "projectPath": "C:\\Users\\selim\\Desktop\\Csharp\\22Oct2021\\Task\\Task\\Task.csproj",
+      "packagesPath": "C:\\Users\\selim\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\selim\\Desktop\\Csharp\\22Oct2021\\Task\\Task\\obj\\",
+=======
+>>>>>>> 47491c515f724b379f54e95a7a4f7d96284a5c9c
       "projectUniqueName": "C:\\Users\\selim\\Desktop\\Csharp\\15Oct2021\\15Oct2021\\15Oct2021.csproj",
       "projectName": "15Oct2021",
       "projectPath": "C:\\Users\\selim\\Desktop\\Csharp\\15Oct2021\\15Oct2021\\15Oct2021.csproj",
       "packagesPath": "C:\\Users\\selim\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\selim\\Desktop\\Csharp\\15Oct2021\\15Oct2021\\obj\\",
+<<<<<<< HEAD
+=======
+>>>>>>> 47491c515f724b379f54e95a7a4f7d96284a5c9c:15Oct2021/15Oct2021/obj/project.assets.json
+>>>>>>> 47491c515f724b379f54e95a7a4f7d96284a5c9c
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\selim\\AppData\\Roaming\\NuGet\\NuGet.Config",

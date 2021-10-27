@@ -21,6 +21,7 @@ namespace _18Oct2021
         }
 
 
+<<<<<<< HEAD
         public void addStd()
         {
             Console.WriteLine("Name: ");
@@ -35,6 +36,22 @@ namespace _18Oct2021
             Console.WriteLine($"Name:{name}, Age:{age}, Group:{group}");
 
         }
+=======
+        //public void addStd()
+        //{
+        //    Console.WriteLine("Name: ");
+        //    string name = Console.ReadLine();
+
+        //    Console.WriteLine("Age: ");
+        //    int age = Convert.ToInt32(Console.ReadLine());
+
+        //    Console.WriteLine("Group: ");
+        //    int group = Convert.ToInt32(Console.ReadLine());
+
+        //    Console.WriteLine($"Name:{name}, Age:{age}, Group:{group}");
+
+        //}
+>>>>>>> 47491c515f724b379f54e95a7a4f7d96284a5c9c
 
         public int GetBirthYear()
         {
@@ -61,6 +78,7 @@ namespace _18Oct2021
                 Console.WriteLine("Group: ");
                 int group = Convert.ToInt32(Console.ReadLine());
 
+<<<<<<< HEAD
                 
 
             }
@@ -68,6 +86,13 @@ namespace _18Oct2021
             //Student std = new Student("",0,0);          
             //std.addStd();
             //Console.WriteLine(std.GetBirthYear());
+=======
+                Console.WriteLine($"Name:{name}, Age:{age}, Group:{group}");
+
+            }
+         
+
+>>>>>>> 47491c515f724b379f54e95a7a4f7d96284a5c9c
 
 
         }
