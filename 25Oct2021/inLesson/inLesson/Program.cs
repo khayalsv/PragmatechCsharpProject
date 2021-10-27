@@ -8,10 +8,10 @@ namespace inLesson
         static void Main(string[] args)
         {
             BOOK book = new BOOK("Sefiller", "Viktor", 253);
-            BOOK book2 = new BOOK("Metamarfoz", "Franz", 125);            
+            BOOK book2 = new BOOK("Metamarfoz", "Franz", 125);
 
             Library library = new Library();
-            library.books = new List<BOOK> { book, book2};
+            library.books = new List<BOOK> { book, book2 };
 
 
             library.FindBook("Sefiller");
@@ -54,11 +54,11 @@ namespace inLesson
         {
             foreach (var item in books)
             {
-               if (item.name == name)
-               {
-                    
+                if (item.name == name)
+                {
+
                     Console.WriteLine(item.author);
-               }
+                }
             }
         }
         public List<BOOK> FindBook2(string name)
@@ -68,7 +68,7 @@ namespace inLesson
             {
                 if (item.name == name)
                 {
-                   allbook.Add(item);
+                    allbook.Add(item);
                 }
             }
             return allbook;
@@ -89,7 +89,7 @@ namespace inLesson
         //    }
         //}
 
-      
+
 
         //public List<BOOK> RemoveNo(string code)
         //{
@@ -106,9 +106,3 @@ namespace inLesson
     }
 
 }
-    
-
-
-
-   
-
