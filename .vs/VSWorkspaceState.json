@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\22Oct2021"
+    "\\25Oct2021",
+    "\\25Oct2021\\inLesson",
+    "\\25Oct2021\\inLesson\\inLesson"
   ],
-  "SelectedNode": "\\22Oct2021",
+  "SelectedNode": "\\25Oct2021\\inLesson\\inLesson\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
