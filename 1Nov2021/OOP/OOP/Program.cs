@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,8 +11,7 @@ namespace OOP
     {
         static void Main(string[] args)
         {
-
-            User.ShowInfo();
+            User.ShowInfo();        
             User.PasswordChecker();
         }
     }
@@ -33,7 +33,29 @@ namespace OOP
     class User : Account
     {
         public string fullname { get; set; }
-        public string email { get; set; }
+
+        private string _email;
+        public string email
+        {
+            get { return _email; }
+            set
+            {
+                try
+                {
+                    MailAddress mailAddress = new MailAddress(value);
+                    _email = value;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("\nEMAIL IS NOT VALID");
+                    //throw new ArgumentException("EMAIL IS NOT VALID");
+                }
+            }
+
+        }
+        
+
+
         public string password { get; set; }
 
 
@@ -53,17 +75,17 @@ namespace OOP
             Console.WriteLine("Fullname daxil edin: ");
             string fullname = Console.ReadLine();
 
-            Console.WriteLine("Email daxil edin: ");
+            Console.WriteLine("\nEmail daxil edin: ");
             string email = Console.ReadLine();
 
-            Console.WriteLine("password daxil edin: ");
+            Console.WriteLine("\npassword daxil edin: ");
             string password = Console.ReadLine();
 
             user.Add(new User(fullname, email, password));
 
             foreach (var item in user)
             {
-                Console.WriteLine($"FullName:{item.fullname} email:{item.email} password:{item.password}");
+                Console.WriteLine($"\nFullName:{item.fullname} email:{item.email} password:{item.password}");
             }
 
         }
@@ -84,11 +106,11 @@ namespace OOP
                 if (item.password.Length >= minLength)
                 {
                     score++;
-                    Console.WriteLine("Minimum Length test passed.");
+                    Console.WriteLine("\nMinimum Length test passed.");
                 }
                 else
                 {
-                    Console.WriteLine("Minimum Length test failed.");
+                    Console.WriteLine("\nMinimum Length test failed.");
                 }
 
                 if (Uppercase)
@@ -113,11 +135,11 @@ namespace OOP
 
                 if (score == 3)
                 {
-                    Console.WriteLine("True");
+                    Console.WriteLine("\nTrue");
                 }
                 else
                 {
-                    Console.WriteLine("False");
+                    Console.WriteLine("\nFalse");
                 }
             }
             
