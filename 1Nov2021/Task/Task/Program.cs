@@ -11,9 +11,8 @@ namespace Task
     {
         static void Main(string[] args)
         {
-            
-            
-
+            User user = new User();
+            user.ShowInfo();          
         }
     }
 
@@ -36,22 +35,23 @@ namespace Task
 
     class User : Account
     {
-        List<User> user = new List<User>();
+        
 
         public string fullname;
         public string email;
         public string password;
 
-        public User(string fullname,string email,string password)
-        {
-            this.fullname = fullname;
-            this.email = email;
-            this.password = password;
-        }
+        //public User(string fullname, string email, string password)
+        //{
+        //    this.fullname = fullname;
+        //    this.email = email;
+        //    this.password = password;
+        //}
 
-        
+
         public override void ShowInfo()
         {
+            //List<User> user = new List<User>();
 
             Console.WriteLine("Fullname daxil edin: ");
             string fullname = Console.ReadLine();
@@ -62,8 +62,9 @@ namespace Task
             Console.WriteLine("password daxil edin: ");
             string password = Console.ReadLine();
 
+           
             Console.WriteLine($"ad:{fullname} email:{email} password:{password}");
-            user.Add(new User(fullname,email,password));
+
         }
     }
 }
