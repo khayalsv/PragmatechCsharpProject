@@ -1,0 +1,16 @@
+C:\Users\selim\Desktop\Csharp\1Nov2021\OOP\OOP\bin\Debug\net5.0\OOP.exe
+C:\Users\selim\Desktop\Csharp\1Nov2021\OOP\OOP\bin\Debug\net5.0\OOP.deps.json
+C:\Users\selim\Desktop\Csharp\1Nov2021\OOP\OOP\bin\Debug\net5.0\OOP.runtimeconfig.json
+C:\Users\selim\Desktop\Csharp\1Nov2021\OOP\OOP\bin\Debug\net5.0\OOP.runtimeconfig.dev.json
+C:\Users\selim\Desktop\Csharp\1Nov2021\OOP\OOP\bin\Debug\net5.0\OOP.dll
+C:\Users\selim\Desktop\Csharp\1Nov2021\OOP\OOP\bin\Debug\net5.0\ref\OOP.dll
+C:\Users\selim\Desktop\Csharp\1Nov2021\OOP\OOP\bin\Debug\net5.0\OOP.pdb
+C:\Users\selim\Desktop\Csharp\1Nov2021\OOP\OOP\obj\Debug\net5.0\OOP.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\Csharp\1Nov2021\OOP\OOP\obj\Debug\net5.0\OOP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\selim\Desktop\Csharp\1Nov2021\OOP\OOP\obj\Debug\net5.0\OOP.AssemblyInfoInputs.cache
+C:\Users\selim\Desktop\Csharp\1Nov2021\OOP\OOP\obj\Debug\net5.0\OOP.AssemblyInfo.cs
+C:\Users\selim\Desktop\Csharp\1Nov2021\OOP\OOP\obj\Debug\net5.0\OOP.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\Csharp\1Nov2021\OOP\OOP\obj\Debug\net5.0\OOP.dll
+C:\Users\selim\Desktop\Csharp\1Nov2021\OOP\OOP\obj\Debug\net5.0\ref\OOP.dll
+C:\Users\selim\Desktop\Csharp\1Nov2021\OOP\OOP\obj\Debug\net5.0\OOP.pdb
+C:\Users\selim\Desktop\Csharp\1Nov2021\OOP\OOP\obj\Debug\net5.0\OOP.genruntimeconfig.cache
