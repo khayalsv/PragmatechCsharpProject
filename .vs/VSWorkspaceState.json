@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Pharmacy",
+    "\\Pharmacy\\Pharmacy"
   ],
+  "SelectedNode": "\\Pharmacy\\Pharmacy\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
