@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ExtentionMethod",
+    "\\ExtentionMethod\\ExtentionMethod"
   ],
+  "SelectedNode": "\\ExtentionMethod\\ExtentionMethod\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
