@@ -15,5 +15,9 @@ namespace BookForm
         {
             Id = ++id;
         }
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

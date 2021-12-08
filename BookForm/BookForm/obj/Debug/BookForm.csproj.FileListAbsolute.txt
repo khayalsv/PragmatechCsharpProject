@@ -1,0 +1,10 @@
+C:\Users\selim\Desktop\Csharp\BookForm\BookForm\bin\Debug\BookForm.exe.config
+C:\Users\selim\Desktop\Csharp\BookForm\BookForm\bin\Debug\BookForm.exe
+C:\Users\selim\Desktop\Csharp\BookForm\BookForm\bin\Debug\BookForm.pdb
+C:\Users\selim\Desktop\Csharp\BookForm\BookForm\obj\Debug\BookForm.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\Csharp\BookForm\BookForm\obj\Debug\BookForm.Form1.resources
+C:\Users\selim\Desktop\Csharp\BookForm\BookForm\obj\Debug\BookForm.Properties.Resources.resources
+C:\Users\selim\Desktop\Csharp\BookForm\BookForm\obj\Debug\BookForm.csproj.GenerateResource.cache
+C:\Users\selim\Desktop\Csharp\BookForm\BookForm\obj\Debug\BookForm.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\Csharp\BookForm\BookForm\obj\Debug\BookForm.exe
+C:\Users\selim\Desktop\Csharp\BookForm\BookForm\obj\Debug\BookForm.pdb

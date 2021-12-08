@@ -29,5 +29,10 @@ namespace BookForm
         public byte BookPrice { get; set; }
         public int GenreId { get; set; }
         public string Genre { get; set; }
+
+        public override string ToString()
+        {
+            return $"{BookName} {ISBNumber} {BookPrice} {Genre}";
+        }
     }
 }

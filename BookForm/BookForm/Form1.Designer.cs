@@ -30,17 +30,18 @@ namespace BookForm
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textName = new System.Windows.Forms.TextBox();
+            this.txt_name = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_number = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_price = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_Filter = new System.Windows.Forms.ComboBox();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.lb_Book = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmb_Genre = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,12 +54,12 @@ namespace BookForm
             this.label1.TabIndex = 0;
             this.label1.Text = "Book name";
             // 
-            // textName
+            // txt_name
             // 
-            this.textName.Location = new System.Drawing.Point(35, 71);
-            this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(117, 20);
-            this.textName.TabIndex = 1;
+            this.txt_name.Location = new System.Drawing.Point(35, 71);
+            this.txt_name.Name = "txt_name";
+            this.txt_name.Size = new System.Drawing.Size(117, 20);
+            this.txt_name.TabIndex = 1;
             // 
             // button1
             // 
@@ -68,13 +69,14 @@ namespace BookForm
             this.button1.TabIndex = 2;
             this.button1.Text = "Add Book";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox2
+            // txt_number
             // 
-            this.textBox2.Location = new System.Drawing.Point(211, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(130, 20);
-            this.textBox2.TabIndex = 4;
+            this.txt_number.Location = new System.Drawing.Point(211, 71);
+            this.txt_number.Name = "txt_number";
+            this.txt_number.Size = new System.Drawing.Size(130, 20);
+            this.txt_number.TabIndex = 4;
             // 
             // label2
             // 
@@ -85,12 +87,12 @@ namespace BookForm
             this.label2.TabIndex = 3;
             this.label2.Text = "ISBN number";
             // 
-            // textBox3
+            // txt_price
             // 
-            this.textBox3.Location = new System.Drawing.Point(398, 71);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(133, 20);
-            this.textBox3.TabIndex = 8;
+            this.txt_price.Location = new System.Drawing.Point(398, 71);
+            this.txt_price.Name = "txt_price";
+            this.txt_price.Size = new System.Drawing.Size(133, 20);
+            this.txt_price.TabIndex = 8;
             // 
             // label3
             // 
@@ -101,22 +103,6 @@ namespace BookForm
             this.label3.TabIndex = 7;
             this.label3.Text = "Price";
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(566, 71);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(129, 20);
-            this.textBox4.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(563, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Genre";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -126,34 +112,61 @@ namespace BookForm
             this.label5.TabIndex = 9;
             this.label5.Text = "Filter by genre";
             // 
-            // comboBox1
+            // cmb_Filter
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(66, 262);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 10;
+            this.cmb_Filter.FormattingEnabled = true;
+            this.cmb_Filter.Location = new System.Drawing.Point(66, 262);
+            this.cmb_Filter.Name = "cmb_Filter";
+            this.cmb_Filter.Size = new System.Drawing.Size(416, 21);
+            this.cmb_Filter.TabIndex = 10;
+            this.cmb_Filter.SelectedIndexChanged += new System.EventHandler(this.cmb_Filter_SelectedIndexChanged);
             // 
             // fileSystemWatcher1
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
+            // lb_Book
+            // 
+            this.lb_Book.FormattingEnabled = true;
+            this.lb_Book.Location = new System.Drawing.Point(66, 297);
+            this.lb_Book.Name = "lb_Book";
+            this.lb_Book.Size = new System.Drawing.Size(521, 121);
+            this.lb_Book.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(573, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Genre";
+            // 
+            // cmb_Genre
+            // 
+            this.cmb_Genre.FormattingEnabled = true;
+            this.cmb_Genre.Location = new System.Drawing.Point(576, 70);
+            this.cmb_Genre.Name = "cmb_Genre";
+            this.cmb_Genre.Size = new System.Drawing.Size(133, 21);
+            this.cmb_Genre.TabIndex = 24;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.cmb_Genre);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.lb_Book);
+            this.Controls.Add(this.cmb_Filter);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txt_price);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txt_number);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textName);
+            this.Controls.Add(this.txt_name);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -167,17 +180,18 @@ namespace BookForm
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textName;
+        private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_number;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_price;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_Filter;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.ListBox lb_Book;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmb_Genre;
     }
 }
 
