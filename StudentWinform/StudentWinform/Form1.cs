@@ -59,7 +59,7 @@ namespace StudentWinform
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Delete delete = new Delete();
+            Delete delete = new Delete(groups,cmbGroup,dgv);
             delete.ShowDialog();
         }
     }
