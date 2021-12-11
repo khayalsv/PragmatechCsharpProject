@@ -6,25 +6,26 @@ using System.Threading.Tasks;
 
 namespace StudentWinform
 {
-    class Group
-    {
-        public string Name { get; set; }
-        public int Id { get; set; }
-        private static int id = 0;
-        public Group()
-        {
-            Id = ++id;
-        }
-        public override string ToString()
-        {
-            return Name;
-        }
-    }
-
-    class Student
+   
+    public class Student
     {
         public string name { get; set; }
         public string surname { get; set; }
-        public int id { get; set; }
+        public int Id { get; set; }
+        private static int id = 1;
+
+        public Student(string name,string surname)
+        {
+            this.name = name;
+            this.surname = surname;
+            Id = ++id;
+        }
+
+
+
+        public override string ToString()
+        {
+            return $"{name} {surname} ";
+        }
     }
 }

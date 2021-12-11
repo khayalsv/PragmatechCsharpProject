@@ -1,0 +1,11 @@
+C:\Users\selim\Desktop\Csharp\StudentWinform\StudentWinform\bin\Debug\StudentWinform.exe.config
+C:\Users\selim\Desktop\Csharp\StudentWinform\StudentWinform\bin\Debug\StudentWinform.exe
+C:\Users\selim\Desktop\Csharp\StudentWinform\StudentWinform\bin\Debug\StudentWinform.pdb
+C:\Users\selim\Desktop\Csharp\StudentWinform\StudentWinform\obj\Debug\StudentWinform.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\Csharp\StudentWinform\StudentWinform\obj\Debug\StudentWinform.Form1.resources
+C:\Users\selim\Desktop\Csharp\StudentWinform\StudentWinform\obj\Debug\StudentWinform.Properties.Resources.resources
+C:\Users\selim\Desktop\Csharp\StudentWinform\StudentWinform\obj\Debug\StudentWinform.csproj.GenerateResource.cache
+C:\Users\selim\Desktop\Csharp\StudentWinform\StudentWinform\obj\Debug\StudentWinform.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\Csharp\StudentWinform\StudentWinform\obj\Debug\StudentWinform.exe
+C:\Users\selim\Desktop\Csharp\StudentWinform\StudentWinform\obj\Debug\StudentWinform.pdb
+C:\Users\selim\Desktop\Csharp\StudentWinform\StudentWinform\obj\Debug\StudentWinform.Delete.resources
