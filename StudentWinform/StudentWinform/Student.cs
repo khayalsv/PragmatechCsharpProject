@@ -16,11 +16,17 @@ namespace StudentWinform
 
         public Student(string name,string surname)
         {
+            UpdateStudent(name, surname);
             this.name = name;
             this.surname = surname;
             Id = ++id;
         }
 
+        public void UpdateStudent(string name, string surname)
+        {
+            this.name = name;
+            this.surname = surname;
+        }
 
 
         public override string ToString()

@@ -49,5 +49,7 @@ namespace StudentWinform
             cmbStudentDelete.Text = "";
             cmbStudentDelete.Items.AddRange(selected_group.GetAllStudent().ToArray());
         }
+
+
     }
 }

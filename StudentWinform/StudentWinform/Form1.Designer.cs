@@ -154,6 +154,7 @@ namespace StudentWinform
             this.uptadeToolStripMenuItem.Name = "uptadeToolStripMenuItem";
             this.uptadeToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.uptadeToolStripMenuItem.Text = "Uptade";
+            this.uptadeToolStripMenuItem.Click += new System.EventHandler(this.uptadeToolStripMenuItem_Click);
             // 
             // Form1
             // 

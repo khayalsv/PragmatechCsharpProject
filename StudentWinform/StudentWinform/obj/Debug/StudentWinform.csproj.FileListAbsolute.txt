@@ -9,3 +9,4 @@ C:\Users\selim\Desktop\Csharp\StudentWinform\StudentWinform\obj\Debug\StudentWin
 C:\Users\selim\Desktop\Csharp\StudentWinform\StudentWinform\obj\Debug\StudentWinform.exe
 C:\Users\selim\Desktop\Csharp\StudentWinform\StudentWinform\obj\Debug\StudentWinform.pdb
 C:\Users\selim\Desktop\Csharp\StudentWinform\StudentWinform\obj\Debug\StudentWinform.Delete.resources
+C:\Users\selim\Desktop\Csharp\StudentWinform\StudentWinform\obj\Debug\StudentWinform.Update.resources

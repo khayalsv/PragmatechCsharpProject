@@ -62,5 +62,11 @@ namespace StudentWinform
             Delete delete = new Delete(groups,cmbGroup,dgv);
             delete.ShowDialog();
         }
+
+        private void uptadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Update update = new Update(groups, cmbGroup, dgv);
+            update.ShowDialog();
+        }
     }
 }
