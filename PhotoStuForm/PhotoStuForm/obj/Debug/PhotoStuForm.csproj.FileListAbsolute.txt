@@ -1,0 +1,11 @@
+C:\Users\selim\Desktop\Csharp\PhotoStuForm\PhotoStuForm\bin\Debug\PhotoStuForm.exe.config
+C:\Users\selim\Desktop\Csharp\PhotoStuForm\PhotoStuForm\bin\Debug\PhotoStuForm.exe
+C:\Users\selim\Desktop\Csharp\PhotoStuForm\PhotoStuForm\bin\Debug\PhotoStuForm.pdb
+C:\Users\selim\Desktop\Csharp\PhotoStuForm\PhotoStuForm\obj\Debug\PhotoStuForm.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\Csharp\PhotoStuForm\PhotoStuForm\obj\Debug\PhotoStuForm.Form1.resources
+C:\Users\selim\Desktop\Csharp\PhotoStuForm\PhotoStuForm\obj\Debug\PhotoStuForm.Properties.Resources.resources
+C:\Users\selim\Desktop\Csharp\PhotoStuForm\PhotoStuForm\obj\Debug\PhotoStuForm.csproj.GenerateResource.cache
+C:\Users\selim\Desktop\Csharp\PhotoStuForm\PhotoStuForm\obj\Debug\PhotoStuForm.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\Csharp\PhotoStuForm\PhotoStuForm\obj\Debug\PhotoStuForm.exe
+C:\Users\selim\Desktop\Csharp\PhotoStuForm\PhotoStuForm\obj\Debug\PhotoStuForm.pdb
+C:\Users\selim\Desktop\Csharp\PhotoStuForm\PhotoStuForm\obj\Debug\PhotoStuForm.StudentList.resources
