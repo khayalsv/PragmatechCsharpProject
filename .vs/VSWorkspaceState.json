@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WindowsForms"
+    "\\TestForm",
+    "\\TestForm\\TestForm",
+    "\\WindowsForms",
+    "\\WindowsForms\\BookForm",
+    "\\WindowsForms\\StudentWinform"
   ],
-  "SelectedNode": "\\WindowsForms\\StudentWinform",
+  "SelectedNode": "\\TestForm\\TestForm\\Delete.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -8,3 +8,4 @@ C:\Users\selim\Desktop\Csharp\TestForm\TestForm\obj\Debug\TestForm.csproj.Genera
 C:\Users\selim\Desktop\Csharp\TestForm\TestForm\obj\Debug\TestForm.csproj.CoreCompileInputs.cache
 C:\Users\selim\Desktop\Csharp\TestForm\TestForm\obj\Debug\TestForm.exe
 C:\Users\selim\Desktop\Csharp\TestForm\TestForm\obj\Debug\TestForm.pdb
+C:\Users\selim\Desktop\Csharp\TestForm\TestForm\obj\Debug\TestForm.Delete.resources

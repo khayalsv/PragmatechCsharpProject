@@ -60,6 +60,13 @@ namespace TestForm
             txtSurname.Text = "";
         }
 
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Delete delete = new Delete(school,cmbGroup,dgv);
+            delete.ShowDialog();
+
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
