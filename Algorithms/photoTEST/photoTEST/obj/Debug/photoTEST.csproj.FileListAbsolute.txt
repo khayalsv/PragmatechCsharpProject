@@ -1,0 +1,11 @@
+C:\Users\selim\Desktop\Csharp\Algorithms\photoTEST\photoTEST\bin\Debug\photoTEST.exe.config
+C:\Users\selim\Desktop\Csharp\Algorithms\photoTEST\photoTEST\bin\Debug\photoTEST.exe
+C:\Users\selim\Desktop\Csharp\Algorithms\photoTEST\photoTEST\bin\Debug\photoTEST.pdb
+C:\Users\selim\Desktop\Csharp\Algorithms\photoTEST\photoTEST\obj\Debug\photoTEST.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\Csharp\Algorithms\photoTEST\photoTEST\obj\Debug\photoTEST.Form1.resources
+C:\Users\selim\Desktop\Csharp\Algorithms\photoTEST\photoTEST\obj\Debug\photoTEST.Properties.Resources.resources
+C:\Users\selim\Desktop\Csharp\Algorithms\photoTEST\photoTEST\obj\Debug\photoTEST.csproj.GenerateResource.cache
+C:\Users\selim\Desktop\Csharp\Algorithms\photoTEST\photoTEST\obj\Debug\photoTEST.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\Csharp\Algorithms\photoTEST\photoTEST\obj\Debug\photoTEST.exe
+C:\Users\selim\Desktop\Csharp\Algorithms\photoTEST\photoTEST\obj\Debug\photoTEST.pdb
+C:\Users\selim\Desktop\Csharp\Algorithms\photoTEST\photoTEST\obj\Debug\photoTEST.SelectList.resources

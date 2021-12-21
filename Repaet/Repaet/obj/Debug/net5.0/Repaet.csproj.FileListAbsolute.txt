@@ -1,0 +1,16 @@
+C:\Users\selim\Desktop\Csharp\Repaet\Repaet\bin\Debug\net5.0\Repaet.exe
+C:\Users\selim\Desktop\Csharp\Repaet\Repaet\bin\Debug\net5.0\Repaet.deps.json
+C:\Users\selim\Desktop\Csharp\Repaet\Repaet\bin\Debug\net5.0\Repaet.runtimeconfig.json
+C:\Users\selim\Desktop\Csharp\Repaet\Repaet\bin\Debug\net5.0\Repaet.runtimeconfig.dev.json
+C:\Users\selim\Desktop\Csharp\Repaet\Repaet\bin\Debug\net5.0\Repaet.dll
+C:\Users\selim\Desktop\Csharp\Repaet\Repaet\bin\Debug\net5.0\ref\Repaet.dll
+C:\Users\selim\Desktop\Csharp\Repaet\Repaet\bin\Debug\net5.0\Repaet.pdb
+C:\Users\selim\Desktop\Csharp\Repaet\Repaet\obj\Debug\net5.0\Repaet.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\Csharp\Repaet\Repaet\obj\Debug\net5.0\Repaet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\selim\Desktop\Csharp\Repaet\Repaet\obj\Debug\net5.0\Repaet.AssemblyInfoInputs.cache
+C:\Users\selim\Desktop\Csharp\Repaet\Repaet\obj\Debug\net5.0\Repaet.AssemblyInfo.cs
+C:\Users\selim\Desktop\Csharp\Repaet\Repaet\obj\Debug\net5.0\Repaet.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\Csharp\Repaet\Repaet\obj\Debug\net5.0\Repaet.dll
+C:\Users\selim\Desktop\Csharp\Repaet\Repaet\obj\Debug\net5.0\ref\Repaet.dll
+C:\Users\selim\Desktop\Csharp\Repaet\Repaet\obj\Debug\net5.0\Repaet.pdb
+C:\Users\selim\Desktop\Csharp\Repaet\Repaet\obj\Debug\net5.0\Repaet.genruntimeconfig.cache
