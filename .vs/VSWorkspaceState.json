@@ -1,12 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\PhotoStuForm",
-    "\\PhotoStuForm\\PhotoStuForm",
     "\\WindowsForms",
     "\\WindowsForms\\BookForm",
     "\\WindowsForms\\StudentWinform"
   ],
-  "SelectedNode": "\\PhotoStuForm\\PhotoStuForm\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
