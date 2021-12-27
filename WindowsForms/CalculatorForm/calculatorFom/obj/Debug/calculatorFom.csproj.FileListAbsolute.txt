@@ -1,0 +1,10 @@
+C:\Users\selim\Desktop\Csharp\CalculatorFom\calculatorFom\bin\Debug\calculatorFom.exe.config
+C:\Users\selim\Desktop\Csharp\CalculatorFom\calculatorFom\bin\Debug\calculatorFom.exe
+C:\Users\selim\Desktop\Csharp\CalculatorFom\calculatorFom\bin\Debug\calculatorFom.pdb
+C:\Users\selim\Desktop\Csharp\CalculatorFom\calculatorFom\obj\Debug\calculatorFom.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\Csharp\CalculatorFom\calculatorFom\obj\Debug\calculatorFom.Form1.resources
+C:\Users\selim\Desktop\Csharp\CalculatorFom\calculatorFom\obj\Debug\calculatorFom.Properties.Resources.resources
+C:\Users\selim\Desktop\Csharp\CalculatorFom\calculatorFom\obj\Debug\calculatorFom.csproj.GenerateResource.cache
+C:\Users\selim\Desktop\Csharp\CalculatorFom\calculatorFom\obj\Debug\calculatorFom.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\Csharp\CalculatorFom\calculatorFom\obj\Debug\calculatorFom.exe
+C:\Users\selim\Desktop\Csharp\CalculatorFom\calculatorFom\obj\Debug\calculatorFom.pdb
