@@ -1,49 +1,40 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 
 namespace REPEAT
 {
     class Program
     {
-        class Student
-        {
-            public string name { get; set; }
-            public string group { get; set; }
-            public int age { get; set; }
-            public int no { get; set; }
-            public static int id { get; set; }
-
-            public Student(string name, string group,int age)
-            {
-                this.name = name;
-                this.group = group;
-                this.age = age;
-                no = ++id;
-            }
-        }
-
         static void Main(string[] args)
         {
-            Student s1 = new Student("Sadiq", "a500",21);
-            Student s2 = new Student("Xeyal", "a500",22);
+            Dictionary<string, string> world = new Dictionary<string, string>();
 
+            for (int i = 0; i < 2; i++)
+            {
+                Console.WriteLine("Please enter the country:");
+                string country = Console.ReadLine();
 
-            Console.WriteLine($"{s1.no} {s1.name}");
-            Console.WriteLine(GetBirthYear(s1));
+                Console.WriteLine("Please enter the capital:");
+                string capital= Console.ReadLine();
 
-            ArrayList groups = new ArrayList();
-            groups.Add(s1);
-            groups.Add(s2);
+                world.Add(country, capital);
+            }
+            Console.WriteLine("Country added");
 
-            Console.WriteLine(groups.Count);
-            
-        }
+            Console.WriteLine("By typing the ALL, the countries emerge.");
+            string search = Console.ReadLine();
+            if (search.Trim().ToLower()=="all")
+            {
+                foreach (var item in world)
+                {
+                    Console.WriteLine($"{item.Key} {item.Value}");
+                }
+            }
+            else if (search != "all")
+            {
+                Console.WriteLine(world.ContainsKey(search));
+            }
 
-        static int GetBirthYear(Student student)
-        {
-            return DateTime.Now.Year - student.age;
         }
     }
 }
