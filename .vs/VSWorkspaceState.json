@@ -1,11 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\REPEAT",
-    "\\REPEAT\\REPEAT",
-    "\\WindowsForms\\BookForm",
-    "\\WindowsForms\\StudentWinform"
+    "\\Repaett",
+    "\\Repaett\\Repaett"
   ],
-  "SelectedNode": "\\REPEAT\\REPEAT\\Program.cs",
+  "SelectedNode": "\\Repaett\\Repaett\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
