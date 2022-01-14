@@ -1,0 +1,16 @@
+C:\Users\selim\Desktop\Csharp\Pharmacy\Pharmacy\bin\Debug\net5.0\Pharmacy.exe
+C:\Users\selim\Desktop\Csharp\Pharmacy\Pharmacy\bin\Debug\net5.0\Pharmacy.deps.json
+C:\Users\selim\Desktop\Csharp\Pharmacy\Pharmacy\bin\Debug\net5.0\Pharmacy.runtimeconfig.json
+C:\Users\selim\Desktop\Csharp\Pharmacy\Pharmacy\bin\Debug\net5.0\Pharmacy.runtimeconfig.dev.json
+C:\Users\selim\Desktop\Csharp\Pharmacy\Pharmacy\bin\Debug\net5.0\Pharmacy.dll
+C:\Users\selim\Desktop\Csharp\Pharmacy\Pharmacy\bin\Debug\net5.0\ref\Pharmacy.dll
+C:\Users\selim\Desktop\Csharp\Pharmacy\Pharmacy\bin\Debug\net5.0\Pharmacy.pdb
+C:\Users\selim\Desktop\Csharp\Pharmacy\Pharmacy\obj\Debug\net5.0\Pharmacy.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\Csharp\Pharmacy\Pharmacy\obj\Debug\net5.0\Pharmacy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\selim\Desktop\Csharp\Pharmacy\Pharmacy\obj\Debug\net5.0\Pharmacy.AssemblyInfoInputs.cache
+C:\Users\selim\Desktop\Csharp\Pharmacy\Pharmacy\obj\Debug\net5.0\Pharmacy.AssemblyInfo.cs
+C:\Users\selim\Desktop\Csharp\Pharmacy\Pharmacy\obj\Debug\net5.0\Pharmacy.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\Csharp\Pharmacy\Pharmacy\obj\Debug\net5.0\Pharmacy.dll
+C:\Users\selim\Desktop\Csharp\Pharmacy\Pharmacy\obj\Debug\net5.0\ref\Pharmacy.dll
+C:\Users\selim\Desktop\Csharp\Pharmacy\Pharmacy\obj\Debug\net5.0\Pharmacy.pdb
+C:\Users\selim\Desktop\Csharp\Pharmacy\Pharmacy\obj\Debug\net5.0\Pharmacy.genruntimeconfig.cache

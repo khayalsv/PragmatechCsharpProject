@@ -1,0 +1,10 @@
+C:\Users\selim\Desktop\Csharp\AdoNetBegin\AdoNetBegin\bin\Debug\AdoNetBegin.exe.config
+C:\Users\selim\Desktop\Csharp\AdoNetBegin\AdoNetBegin\bin\Debug\AdoNetBegin.exe
+C:\Users\selim\Desktop\Csharp\AdoNetBegin\AdoNetBegin\bin\Debug\AdoNetBegin.pdb
+C:\Users\selim\Desktop\Csharp\AdoNetBegin\AdoNetBegin\obj\Debug\AdoNetBegin.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\Csharp\AdoNetBegin\AdoNetBegin\obj\Debug\AdoNetBegin.Properties.Resources.resources
+C:\Users\selim\Desktop\Csharp\AdoNetBegin\AdoNetBegin\obj\Debug\AdoNetBegin.csproj.GenerateResource.cache
+C:\Users\selim\Desktop\Csharp\AdoNetBegin\AdoNetBegin\obj\Debug\AdoNetBegin.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\Csharp\AdoNetBegin\AdoNetBegin\obj\Debug\AdoNetBegin.exe
+C:\Users\selim\Desktop\Csharp\AdoNetBegin\AdoNetBegin\obj\Debug\AdoNetBegin.pdb
+C:\Users\selim\Desktop\Csharp\AdoNetBegin\AdoNetBegin\obj\Debug\AdoNetBegin.Form1.resources
