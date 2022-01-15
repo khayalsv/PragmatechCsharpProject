@@ -1,0 +1,11 @@
+C:\Users\selim\Desktop\Csharp\AdoNet\RegisterForm\RegisterForm\bin\Debug\RegisterForm.exe.config
+C:\Users\selim\Desktop\Csharp\AdoNet\RegisterForm\RegisterForm\bin\Debug\RegisterForm.exe
+C:\Users\selim\Desktop\Csharp\AdoNet\RegisterForm\RegisterForm\bin\Debug\RegisterForm.pdb
+C:\Users\selim\Desktop\Csharp\AdoNet\RegisterForm\RegisterForm\obj\Debug\RegisterForm.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\Csharp\AdoNet\RegisterForm\RegisterForm\obj\Debug\RegisterForm.Form1.resources
+C:\Users\selim\Desktop\Csharp\AdoNet\RegisterForm\RegisterForm\obj\Debug\RegisterForm.Properties.Resources.resources
+C:\Users\selim\Desktop\Csharp\AdoNet\RegisterForm\RegisterForm\obj\Debug\RegisterForm.csproj.GenerateResource.cache
+C:\Users\selim\Desktop\Csharp\AdoNet\RegisterForm\RegisterForm\obj\Debug\RegisterForm.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\Csharp\AdoNet\RegisterForm\RegisterForm\obj\Debug\RegisterForm.exe
+C:\Users\selim\Desktop\Csharp\AdoNet\RegisterForm\RegisterForm\obj\Debug\RegisterForm.pdb
+C:\Users\selim\Desktop\Csharp\AdoNet\RegisterForm\RegisterForm\obj\Debug\RegisterForm.SearchUser.resources
