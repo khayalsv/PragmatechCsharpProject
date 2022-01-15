@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\RegisterForm",
+    "\\RegisterForm\\RegisterForm"
   ],
-  "SelectedNode": "\\AdoNetBegin.sln",
+  "SelectedNode": "\\RegisterForm\\RegisterForm\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
