@@ -1,0 +1,14 @@
+C:\Users\selim\Desktop\Csharp\Entity Framework\EntityCRUD\EntityCRUD\bin\Debug\EntityCRUD.exe.config
+C:\Users\selim\Desktop\Csharp\Entity Framework\EntityCRUD\EntityCRUD\bin\Debug\EntityCRUD.exe
+C:\Users\selim\Desktop\Csharp\Entity Framework\EntityCRUD\EntityCRUD\bin\Debug\EntityCRUD.pdb
+C:\Users\selim\Desktop\Csharp\Entity Framework\EntityCRUD\EntityCRUD\bin\Debug\EntityFramework.dll
+C:\Users\selim\Desktop\Csharp\Entity Framework\EntityCRUD\EntityCRUD\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\selim\Desktop\Csharp\Entity Framework\EntityCRUD\EntityCRUD\bin\Debug\EntityFramework.xml
+C:\Users\selim\Desktop\Csharp\Entity Framework\EntityCRUD\EntityCRUD\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\selim\Desktop\Csharp\Entity Framework\EntityCRUD\EntityCRUD\obj\Debug\EntityCRUD.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\Csharp\Entity Framework\EntityCRUD\EntityCRUD\obj\Debug\EntityCRUD.Form1.resources
+C:\Users\selim\Desktop\Csharp\Entity Framework\EntityCRUD\EntityCRUD\obj\Debug\EntityCRUD.Properties.Resources.resources
+C:\Users\selim\Desktop\Csharp\Entity Framework\EntityCRUD\EntityCRUD\obj\Debug\EntityCRUD.csproj.GenerateResource.cache
+C:\Users\selim\Desktop\Csharp\Entity Framework\EntityCRUD\EntityCRUD\obj\Debug\EntityCRUD.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\Csharp\Entity Framework\EntityCRUD\EntityCRUD\obj\Debug\EntityCRUD.exe
+C:\Users\selim\Desktop\Csharp\Entity Framework\EntityCRUD\EntityCRUD\obj\Debug\EntityCRUD.pdb

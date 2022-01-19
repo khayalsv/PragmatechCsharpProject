@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\EntityCRUD",
+    "\\EntityCRUD\\EntityCRUD",
     "\\RegisterForm",
     "\\RegisterForm\\RegisterForm"
   ],
-  "SelectedNode": "\\RegisterForm\\RegisterForm\\Form1.cs",
+  "SelectedNode": "\\EntityCRUD\\EntityCRUD\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
