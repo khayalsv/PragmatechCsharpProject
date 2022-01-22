@@ -47,71 +47,75 @@ namespace Library
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(38, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 22);
+            this.label1.Size = new System.Drawing.Size(59, 23);
             this.label1.TabIndex = 3;
             this.label1.Text = "Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(38, 137);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 22);
+            this.label2.Size = new System.Drawing.Size(54, 23);
             this.label2.TabIndex = 4;
             this.label2.Text = "Price";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(38, 209);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 22);
+            this.label3.Size = new System.Drawing.Size(76, 23);
             this.label3.TabIndex = 5;
             this.label3.Text = "Amount";
             // 
             // dtGrid
             // 
             this.dtGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtGrid.BackgroundColor = System.Drawing.Color.Azure;
             this.dtGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGrid.Location = new System.Drawing.Point(341, 32);
             this.dtGrid.Name = "dtGrid";
             this.dtGrid.Size = new System.Drawing.Size(384, 306);
             this.dtGrid.TabIndex = 6;
-            this.dtGrid.DoubleClick += new System.EventHandler(this.dtGrid_DoubleClick);
+            this.dtGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGrid_CellDoubleClick);
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.Lime;
             this.btnSave.Location = new System.Drawing.Point(34, 296);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(61, 42);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
             this.btnDelete.Location = new System.Drawing.Point(121, 296);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(67, 42);
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnCancel.Location = new System.Drawing.Point(215, 296);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(70, 42);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtName
@@ -131,6 +135,11 @@ namespace Library
             // txtAmount
             // 
             this.txtAmount.Location = new System.Drawing.Point(152, 212);
+            this.txtAmount.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(120, 20);
             this.txtAmount.TabIndex = 12;
@@ -139,6 +148,7 @@ namespace Library
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(746, 417);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.txtPrice);

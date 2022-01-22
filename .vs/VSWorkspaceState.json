@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Entity Framework",
+    "\\Entity Framework\\Library",
+    "\\Entity Framework\\Library\\Library"
   ],
+  "SelectedNode": "\\Entity Framework\\Library\\Library\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }

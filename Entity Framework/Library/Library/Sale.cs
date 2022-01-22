@@ -22,8 +22,10 @@ namespace Library
 
         private void Sale_Load(object sender, EventArgs e)
         {
-            Clear();
             DataViewList();
+            DataViewBucket();
+            Clear();
+
         }
 
         private void btnBuy_Click(object sender, EventArgs e)
@@ -31,48 +33,57 @@ namespace Library
             string name = txtName.Text.Trim().ToLower();
             int amount = Convert.ToInt32(txtAmount.Text.Trim());
 
-           
+
+            if (name == "")
+            {
+                MessageBox.Show("Please filled");
+                return;
+            }
 
             Book book = db.Books.FirstOrDefault(x => x.Name.ToLower() == name);
-            if (book == null)
+
+            if (book == null)  //Insert
             {
-                Book bookDB = new Book
+                Book bookDB = new Book()
                 {
                     Name = name,
                     Amount = amount
-
                 };
                 db.Books.Add(bookDB);
             }
-            else
+            else //Update
             {
                 book.Amount = amount;
-
             }
 
-            DataViewBucket();
-
             db.SaveChanges();
-            Refresh();
-            Clear();
             MessageBox.Show("Success");
-            
+            DataViewBucket();
+            Clear();
         }
 
-
-
-
-
-        public void Clear()
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            txtName.Text = "";
-            txtAmount.Value = 0;
-            btnDelete.Enabled = false;
+
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
         public void DataViewList()
         {
+            string name = txtName.Text.Trim().ToLower();
+            dtGridList.DataSource = db.Books.Where(m => m.Name == name).Select(m => new
+            {
+                m.Name,
+                m.Price,
+                m.Amount
+
+            }).ToList();
+
             dtGridList.DataSource = db.Books.ToList<Book>();
+
         }
 
         public void DataViewBucket()
@@ -82,24 +93,18 @@ namespace Library
             {
                 m.Name,
                 m.Price,
-                m.Amount,
+                m.Amount
 
             }).ToList();
-        }
 
-        private void dtGridList_DoubleClick(object sender, EventArgs e)
-        {
+            //dtGridBucket.DataSource = db.Sales.ToList<Model.Sale>();
 
         }
 
-        public void Refresh()
+        public void Clear()
         {
-            dtGridBucket.DataSource = db.Books.Select(x => new
-            {
-                x.Name,
-                x.Price,
-                x.Amount
-            }).ToList();
+            txtName.Text = "";
+            txtAmount.Value = 0;
         }
     }
 }

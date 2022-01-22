@@ -52,6 +52,7 @@ namespace Library
             this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDelete
             // 
@@ -62,6 +63,7 @@ namespace Library
             this.btnDelete.TabIndex = 18;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnBuy
             // 
@@ -82,7 +84,6 @@ namespace Library
             this.dtGridList.Name = "dtGridList";
             this.dtGridList.Size = new System.Drawing.Size(350, 237);
             this.dtGridList.TabIndex = 16;
-            this.dtGridList.DoubleClick += new System.EventHandler(this.dtGridList_DoubleClick);
             // 
             // txtAmount
             // 

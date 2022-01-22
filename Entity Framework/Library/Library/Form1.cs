@@ -24,58 +24,75 @@ namespace Library
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Clear();
             DataView();
+            Clear();
         }
+        
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             string name = txtName.Text.Trim().ToLower();
-            double price =Convert.ToDouble(txtPrice.Text.Trim());
+            double price = Convert.ToDouble(txtPrice.Text.Trim());
             int amount = Convert.ToInt32(txtAmount.Text.Trim());
 
-            Book book = db.Books.FirstOrDefault(x => x.Name.ToLower() == name);
-            if (book == null)
+
+            if (name=="")
             {
-                Book bookDB = new Book
+                MessageBox.Show("Please filled");
+                return;
+            }
+
+            Book book = db.Books.FirstOrDefault(x => x.Name.ToLower() == name);
+
+            if (book==null)  //Insert
+            {
+                Book bookDB = new Book()
                 {
                     Name = name,
                     Price = price,
                     Amount = amount
-
                 };
                 db.Books.Add(bookDB);
             }
-            else
-            {               
-                book.Price = price;
+            else //Update
+            {
                 book.Amount += amount;
+                book.Price = price;
             }
- 
+
             db.SaveChanges();
-            Clear();
-            DataView();
             MessageBox.Show("Success");
+            DataView();
+            Clear();
+
         }
+
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure to delete?","EF Crud Operation",MessageBoxButtons.YesNo)==DialogResult.Yes)
-            {
-                if (book !=null)
-                {
-                    var entry = db.Entry(book);
-                    if (entry.State == EntityState.Deleted)
-                        db.Books.Attach(book);
+            string name = txtName.Text.Trim().ToLower();
+            Book book = db.Books.FirstOrDefault(x => x.Name.ToLower() == name);
 
-                    db.Books.Remove(book);
-                    db.SaveChanges();
-                    DataView();
-                    Clear();
-                    MessageBox.Show("Deleted");
-                }
-               
+            if (book!=null)
+            {
+                db.Books.Remove(book);
+                db.SaveChanges();
+                DataView();
+                Clear();
+                MessageBox.Show("Deleted");
+                return;
             }
+            MessageBox.Show("This book not exist");
+        }
+
+        private void dtGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string name = dtGrid.Rows[e.RowIndex].Cells["Name"].Value.ToString();
+            Book book = db.Books.FirstOrDefault(x => x.Name == name);
+
+            txtName.Text = name;
+            txtPrice.Value = decimal.Parse(book.Price.ToString());
+            txtAmount.Value = book.Amount;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -83,35 +100,26 @@ namespace Library
             Clear();
         }
 
-
-        private void dtGrid_DoubleClick(object sender, EventArgs e)
+        public void DataView()
         {
-            if (dtGrid.CurrentRow.Index != -1)
-            {
-                book.ID = Convert.ToInt32(dtGrid.CurrentRow.Cells["ID"].Value);
-                book = db.Books.Where(x => x.ID == book.ID).FirstOrDefault();
-                txtName.Text = book.Name;
-                txtPrice.Text = book.Price.ToString();
-                txtAmount.Text = book.Amount.ToString();
+            //string name = txtName.Text.Trim().ToLower();
+            //dtGrid.DataSource = db.Books.Where(m => m.Name == name).Select(m => new
+            //{
+            //    m.Name,
+            //    m.Price,
+            //    m.Amount
 
-                btnDelete.Enabled = true;
-                btnSave.Text = "Update";
-            }        
+            //}).ToList();
+
+            dtGrid.DataSource = db.Books.ToList<Book>();
+
         }
 
-        //Method
         public void Clear()
         {
             txtName.Text = "";
             txtPrice.Value = 0;
             txtAmount.Value = 0;
-            btnSave.Text = "Save";
-            btnDelete.Enabled = false;
-        }
-
-        public void DataView()
-        {
-            dtGrid.DataSource = db.Books.ToList<Book>();
         }
     }
 }
