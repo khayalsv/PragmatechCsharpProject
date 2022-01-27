@@ -1,0 +1,12 @@
+C:\Users\selim\Desktop\Csharp\LibraryAPP\LibraryAPP\bin\Debug\LibraryAPP.exe.config
+C:\Users\selim\Desktop\Csharp\LibraryAPP\LibraryAPP\bin\Debug\LibraryAPP.exe
+C:\Users\selim\Desktop\Csharp\LibraryAPP\LibraryAPP\bin\Debug\LibraryAPP.pdb
+C:\Users\selim\Desktop\Csharp\LibraryAPP\LibraryAPP\obj\Debug\LibraryAPP.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\Csharp\LibraryAPP\LibraryAPP\obj\Debug\LibraryAPP.Form1.resources
+C:\Users\selim\Desktop\Csharp\LibraryAPP\LibraryAPP\obj\Debug\LibraryAPP.Properties.Resources.resources
+C:\Users\selim\Desktop\Csharp\LibraryAPP\LibraryAPP\obj\Debug\LibraryAPP.csproj.GenerateResource.cache
+C:\Users\selim\Desktop\Csharp\LibraryAPP\LibraryAPP\obj\Debug\LibraryAPP.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\Csharp\LibraryAPP\LibraryAPP\obj\Debug\LibraryAPP.exe
+C:\Users\selim\Desktop\Csharp\LibraryAPP\LibraryAPP\obj\Debug\LibraryAPP.pdb
+C:\Users\selim\Desktop\Csharp\LibraryAPP\LibraryAPP\obj\Debug\LibraryAPP.AddBook.resources
+C:\Users\selim\Desktop\Csharp\LibraryAPP\LibraryAPP\obj\Debug\LibraryAPP.Dashboard.resources

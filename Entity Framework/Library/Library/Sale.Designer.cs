@@ -38,15 +38,17 @@ namespace Library
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtGridBucket = new System.Windows.Forms.DataGridView();
+            this.dtGridSale = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridBucket)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridSale)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnCancel.Location = new System.Drawing.Point(423, 182);
+            this.btnCancel.Location = new System.Drawing.Point(565, 132);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(70, 42);
             this.btnCancel.TabIndex = 19;
@@ -57,7 +59,7 @@ namespace Library
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Red;
-            this.btnDelete.Location = new System.Drawing.Point(423, 110);
+            this.btnDelete.Location = new System.Drawing.Point(472, 132);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(70, 42);
             this.btnDelete.TabIndex = 18;
@@ -68,7 +70,7 @@ namespace Library
             // btnBuy
             // 
             this.btnBuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnBuy.Location = new System.Drawing.Point(423, 39);
+            this.btnBuy.Location = new System.Drawing.Point(377, 132);
             this.btnBuy.Name = "btnBuy";
             this.btnBuy.Size = new System.Drawing.Size(70, 42);
             this.btnBuy.TabIndex = 17;
@@ -128,12 +130,21 @@ namespace Library
             this.dtGridBucket.Size = new System.Drawing.Size(337, 237);
             this.dtGridBucket.TabIndex = 26;
             // 
+            // dtGridSale
+            // 
+            this.dtGridSale.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridSale.Location = new System.Drawing.Point(380, 0);
+            this.dtGridSale.Name = "dtGridSale";
+            this.dtGridSale.Size = new System.Drawing.Size(313, 109);
+            this.dtGridSale.TabIndex = 27;
+            // 
             // Sale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(693, 504);
+            this.Controls.Add(this.dtGridSale);
             this.Controls.Add(this.dtGridBucket);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.txtName);
@@ -149,6 +160,7 @@ namespace Library
             ((System.ComponentModel.ISupportInitialize)(this.dtGridList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridBucket)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridSale)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,5 +176,6 @@ namespace Library
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dtGridBucket;
+        private System.Windows.Forms.DataGridView dtGridSale;
     }
 }

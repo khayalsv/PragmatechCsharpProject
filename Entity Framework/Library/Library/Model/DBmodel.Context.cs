@@ -31,10 +31,5 @@ namespace Library.Model
         public virtual DbSet<SaleBook> SaleBooks { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
-
-        internal void DeleteObject(Book book)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

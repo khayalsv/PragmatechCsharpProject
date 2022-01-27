@@ -24,6 +24,7 @@ namespace Library
         {
             DataViewList();
             DataViewBucket();
+            DataViewSale();
             Clear();
 
         }
@@ -99,6 +100,22 @@ namespace Library
 
             //dtGridBucket.DataSource = db.Sales.ToList<Model.Sale>();
 
+        }
+
+        public void DataViewSale()
+        {
+            Sale sale = new Sale();
+            Book book = new Book();
+
+
+            dtGridSale.DataSource = db.Sales.Where(x => x.UserID == book.ID).Select(x => new
+            {
+                x.ID,
+                x.Total,
+                x.UserID
+            }).ToList();
+
+            dtGridSale.DataSource = db.Sales.ToList<Model.Sale>();
         }
 
         public void Clear()
