@@ -23,8 +23,9 @@ namespace BookList.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult BookPage()
         {
+            ViewBag.imgBOX = imgMODEL.GetimgItem();
             return View();
         }
 
