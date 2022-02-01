@@ -1,0 +1,30 @@
+﻿@*///////////////C# Code//////////////////////*@
+
+
+@{
+    string[] names = new string[]
+    {
+        "Khayal",
+        "Sadiq",
+        "Rasim",
+        "Nurlan"
+            };
+}
+
+
+@*///////////////////Html Code///////////////////////////*@
+
+
+<h1>List</h1>
+
+<ul>
+    @foreach (var item in names)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+<h3>SALAM</h3>
+
+
+
