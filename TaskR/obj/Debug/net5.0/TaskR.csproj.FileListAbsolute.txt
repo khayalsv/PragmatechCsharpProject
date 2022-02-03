@@ -1,0 +1,16 @@
+C:\Users\selim\Desktop\Csharp\TaskR\bin\Debug\net5.0\TaskR.exe
+C:\Users\selim\Desktop\Csharp\TaskR\bin\Debug\net5.0\TaskR.deps.json
+C:\Users\selim\Desktop\Csharp\TaskR\bin\Debug\net5.0\TaskR.runtimeconfig.json
+C:\Users\selim\Desktop\Csharp\TaskR\bin\Debug\net5.0\TaskR.runtimeconfig.dev.json
+C:\Users\selim\Desktop\Csharp\TaskR\bin\Debug\net5.0\TaskR.dll
+C:\Users\selim\Desktop\Csharp\TaskR\bin\Debug\net5.0\ref\TaskR.dll
+C:\Users\selim\Desktop\Csharp\TaskR\bin\Debug\net5.0\TaskR.pdb
+C:\Users\selim\Desktop\Csharp\TaskR\obj\Debug\net5.0\TaskR.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\Csharp\TaskR\obj\Debug\net5.0\TaskR.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\selim\Desktop\Csharp\TaskR\obj\Debug\net5.0\TaskR.AssemblyInfoInputs.cache
+C:\Users\selim\Desktop\Csharp\TaskR\obj\Debug\net5.0\TaskR.AssemblyInfo.cs
+C:\Users\selim\Desktop\Csharp\TaskR\obj\Debug\net5.0\TaskR.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\Csharp\TaskR\obj\Debug\net5.0\TaskR.dll
+C:\Users\selim\Desktop\Csharp\TaskR\obj\Debug\net5.0\ref\TaskR.dll
+C:\Users\selim\Desktop\Csharp\TaskR\obj\Debug\net5.0\TaskR.pdb
+C:\Users\selim\Desktop\Csharp\TaskR\obj\Debug\net5.0\TaskR.genruntimeconfig.cache
