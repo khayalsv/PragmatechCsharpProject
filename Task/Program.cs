@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace Task
 {
@@ -6,7 +7,29 @@ namespace Task
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Student student = new Student();
+            student.Name = "Khayal";
+            student.Surname = "Salimov";
+            student.Age = 22;
+
+
+            string x = "Name";
+            Console.WriteLine(student.GetType().GetProperty(x).GetValue(student));
+
+
+            MethodInfo method = student.GetType().GetMethod("GetStudent");
+            Console.WriteLine(method.Invoke(student, new object[] { }).ToString());
+        }
+    }
+    class Student
+    {
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public int Age { get; set; }
+
+        public string GetStudent()
+        {
+            return Name + " " + Surname + " " + Age;
         }
     }
 }
