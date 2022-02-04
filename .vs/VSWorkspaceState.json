@@ -3,9 +3,7 @@
     "",
     "\\AspNet",
     "\\AspNet\\Begin",
-    "\\Entity Framework",
-    "\\Entity Framework\\Library"
+    "\\Entity Framework"
   ],
-  "SelectedNode": "\\AspNet\\Begin\\Image.cshtml",
   "PreviewInSolutionExplorer": false
 }
