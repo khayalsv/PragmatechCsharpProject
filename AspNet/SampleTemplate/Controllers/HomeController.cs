@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using SampleTemplate.Models;
+using SampleTemplate.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -17,11 +19,18 @@ namespace SampleTemplate.Controllers
             dbContext = _dbContext;
         }
 
-        public IActionResult HomePage()
+        public async Task<IActionResult> HomePage()
         {
-           var category = dbContext.Categories.ToList();
+            var category = dbContext.Categories.ToList();
+            var slider = dbContext.Sliders.ToList();
 
-            return View(category);
+            HomeVM vM = new HomeVM
+            {
+                Categories = await dbContext.Categories.ToListAsync(),
+                Sliders = await dbContext.Sliders.ToListAsync(),
+            };
+
+            return View(vM);
         }
 
         public IActionResult AboutPage()
