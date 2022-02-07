@@ -1,0 +1,45 @@
+﻿
+@model IList<Slider>
+
+<div>
+<a class="btn btn-success" style="width:100%">Add new slider</a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">TrendWord</th>
+            <th scope="col">Discount price</th>
+            <th scope="col">Clothes type</th>
+            <th scope="col">Price</th>
+            <th scope="col">Image</th>
+            <th>CRUD</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th scope="row">@item.ID</th>
+            <td>@item.TrendWord</td>
+            <td>@item.DisCount</td>
+            <td>@item.ClothType</td>
+            <td>@item.Price</td>
+            <td>
+                <img width="200" height="150" src="~/images/demoes/demo3/slider/@item.Image" alt="Alternate Text" />
+            </td>
+            <td>
+                <a asp-controller="Slider" asp-action="Edit" asp-route-id="@item.ID" style="color:red"><i class="fas fa-edit"></i></a>
+                <a href="#"><i class="fas fa-trash-alt"></i></a>
+            </td>
+        </tr>
+
+        }
+
+
+
+    </tbody>
+</table>
