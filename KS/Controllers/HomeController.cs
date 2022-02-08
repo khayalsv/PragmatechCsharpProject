@@ -1,5 +1,7 @@
 ﻿using KS.Models;
+using KS.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,22 +13,24 @@ namespace KS.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly PortoDbContext dbContext;
+        public HomeController(PortoDbContext _dbContext)
         {
-            _logger = logger;
+            dbContext = _dbContext;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> HomePage()
         {
-            return View();
+            //var portfolio = dbContext.Portfolios.ToList();
+
+            HomeVM vM = new HomeVM
+            {
+                Portfolios = await dbContext.Portfolios.ToListAsync()
+            };
+
+            return View(vM);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
