@@ -1,0 +1,55 @@
+﻿@model IList<HomePageM>
+
+
+<table class="table table-bordered" style="margin-top:50px">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">HeadLine</th>
+            <th scope="col">Twitter</th>
+            <th scope="col">Facebook</th>
+            <th scope="col">Linkedin</th>
+            <th scope="col">Github</th>
+            <th scope="col">Instagram</th>
+            <th scope="col">Tag1</th>
+            <th scope="col">Tag2</th>
+            <th scope="col">Tag3</th>
+            <th scope="col">Image</th>
+            <th>CRUD</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th scope="row">@item.ID</th>
+            <td>@item.Name</td>
+            <td>@item.HeadLine</td>
+            <td>@item.Twitter</td>
+            <td>@item.Facebook</td>
+            <td>@item.Linkedin</td>
+            <td>@item.Github</td>
+            <td>@item.Instagram</td>
+            <td>@item.Tag1</td>
+            <td>@item.Tag2</td>
+            <td>@item.Tag3</td>
+            <td>
+                <img width="200" height="150" src="~/img/@item.Image" alt="Alternate Text" />
+            </td>
+
+            <td>
+                <a asp-controller="HomePageM" asp-action="Edit" asp-route-id="@item.ID" style="color:green"><i class="fas fa-edit"></i></a>
+
+                <a href="#"><i class="fas fa-trash-alt"></i></a>
+            </td>
+        </tr>
+
+        }
+
+
+
+    </tbody>
+</table>

@@ -17,6 +17,12 @@ namespace KS.Models
 
         [Required, StringLength(40)]
         public string HeadLine { get; set; }
+        [Required, StringLength(20)]
+        public string Tag1 { get; set; }
+        [Required, StringLength(20)]
+        public string Tag2 { get; set; }
+        [Required, StringLength(20)]
+        public string Tag3 { get; set; }
 
         [Required, StringLength(255)]
         public string Twitter { get; set; }
