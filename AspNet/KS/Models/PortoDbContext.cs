@@ -12,5 +12,6 @@ namespace KS.Models
 
         public DbSet<Portfolio> Portfolios { get; set; }
         public DbSet<Blog> Blogs { get; set; }
+        public DbSet<HomePageM> HomePageMs { get; set; }
     }
 }
