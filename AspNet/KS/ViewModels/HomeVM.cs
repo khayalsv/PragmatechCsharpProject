@@ -9,5 +9,6 @@ namespace KS.ViewModels
     public class HomeVM
     {
         public List<Portfolio> Portfolios { get; set; }
+        public List<Blog> Blogs { get; set; }
     }
 }

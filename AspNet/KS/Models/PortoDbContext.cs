@@ -11,6 +11,6 @@ namespace KS.Models
         public PortoDbContext(DbContextOptions<PortoDbContext> options) : base(options) { }
 
         public DbSet<Portfolio> Portfolios { get; set; }
-
+        public DbSet<Blog> Blogs { get; set; }
     }
 }

@@ -23,7 +23,9 @@ namespace KS.Controllers
         {
             HomeVM vM = new HomeVM
             {
-                Portfolios = await dbContext.Portfolios.ToListAsync()
+                Portfolios = await dbContext.Portfolios.ToListAsync(),
+                Blogs=await dbContext.Blogs.ToListAsync()
+               
             };
 
             return View(vM);

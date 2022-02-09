@@ -9,17 +9,18 @@ using System.Threading.Tasks;
 namespace KS.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class PortfolioController : Controller
+    public class BlogController : Controller
     {
+       
         private readonly PortoDbContext dbContext;
-        public PortfolioController(PortoDbContext _dbContext)
+        public BlogController(PortoDbContext _dbContext)
         {
             dbContext = _dbContext;
         }
 
-        public IActionResult PortfolioCRUD()
+        public IActionResult BlogCRUD()
         {
-            return View(dbContext.Portfolios.ToList());
+            return View(dbContext.Blogs.ToList());
         }
 
 
@@ -30,17 +31,19 @@ namespace KS.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(IFormFile photo, string name)
+        public IActionResult Create(IFormFile photo, string title,string text,string date)
         {
-            Portfolio portfolio = new Portfolio
+            Blog blog = new Blog
             {
-                Name=name,
+                Title = title,
+                Text=text,
+                Date=date,
                 Image = photo.FileName
             };
-            dbContext.Portfolios.Add(portfolio);
+            dbContext.Blogs.Add(blog);
             dbContext.SaveChanges();
 
-            return Redirect("PortfolioCRUD");
+            return Redirect("BlogCRUD");
         }
 
 
