@@ -33,8 +33,6 @@ namespace Guessing_Game
 
             int i = random.Next(split.Length);
 
-
-
             Console.WriteLine("\n" + split[i]);
 
             string secretWord;
@@ -103,9 +101,7 @@ namespace Guessing_Game
             total += scor;
 
 
-
-
-            Console.WriteLine("\nContinue ? (Y/N)");
+            Console.WriteLine("\nContinue ? (Y/Other)");
             Console.WriteLine("\n");
             if (Console.ReadKey().Key == ConsoleKey.Y)
             {
@@ -120,8 +116,6 @@ namespace Guessing_Game
 
             Console.ReadKey();
 
-
-
         }
         private static void ATmr_Elapsed(object sender, ElapsedEventArgs e)
         {
@@ -134,10 +128,6 @@ namespace Guessing_Game
              
                 System.Environment.Exit(0);         
             }
-
-
-
         }
-
     }
 }
