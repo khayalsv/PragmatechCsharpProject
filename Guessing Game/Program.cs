@@ -82,16 +82,20 @@ namespace Guessing_Game
             //Console.WriteLine("{0} find the number ",guessCount);
 
 
+
+
             //string words = "This is really fun. I am learning to code. ";
 
-            //char[] list = new char[] {' ', '.' };
+            //char[] list = new char[] { ' ', '.' };
 
             //Random random = new Random();
 
 
             //foreach (var item in words.Split(list, StringSplitOptions.RemoveEmptyEntries))
             //{
-            //    //Console.WriteLine(item.ToCharArray());
+            //    Console.WriteLine(item.ToCharArray());
+            //    item.ToCharArray();
+            //    Console.WriteLine(item);
             //    Console.WriteLine(item[random.Next(0, item.Length)]);
             //}
 
@@ -105,7 +109,15 @@ namespace Guessing_Game
 
             //Console.WriteLine(words);
 
+            string content = "This is really fun. I am learning to code.  ";
+            char[] list = new char[] { ' ', '.' };
 
+            var split = content.Split(list, StringSplitOptions.RemoveEmptyEntries);
+
+
+            Random random = new Random();
+            string randomString = split[random.Next(0, split.Length)];
+            Console.WriteLine(randomString);
 
 
 
