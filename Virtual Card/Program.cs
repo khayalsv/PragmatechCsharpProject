@@ -108,7 +108,10 @@ namespace Virtual_Card
                 }
 
             }
-
+            Console.WriteLine("\nKartin muddeti: ");
+            int date = Convert.ToInt32(Console.ReadLine());
+            DateTime dt = DateTime.Now.AddDays(date);
+            Console.WriteLine("Sizin kartin son isdifade muddeti: " + dt);
 
             Console.WriteLine("Yeni kart ucun mebleg: ");
             int virtualAmount = int.Parse(Console.ReadLine());
