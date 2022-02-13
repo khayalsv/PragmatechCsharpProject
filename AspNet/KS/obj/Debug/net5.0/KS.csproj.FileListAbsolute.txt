@@ -300,3 +300,5 @@ C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blog\Create.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePageM\HomeList.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\About\AboutList.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Resume\ResumeList.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Resume\Create.cshtml.g.cs

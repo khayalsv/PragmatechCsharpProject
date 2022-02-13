@@ -25,11 +25,6 @@ namespace KS.Models
         public string From { get; set; }
 
 
-        [Required, StringLength(100)]
-        public string IconLogo { get; set; }
-        [Required, StringLength(30)]
-        public string Servicetitle { get; set; }
-        [Required, StringLength(100)]
-        public string ServiceDescription { get; set; }
+
     }
 }

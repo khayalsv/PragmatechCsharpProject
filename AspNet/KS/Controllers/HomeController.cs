@@ -26,7 +26,8 @@ namespace KS.Controllers
                 Portfolios = await dbContext.Portfolios.ToListAsync(),
                 Blogs = await dbContext.Blogs.ToListAsync(),
                 HomePageMs=await dbContext.HomePageMs.ToListAsync(),
-                Abouts=await dbContext.Abouts.ToListAsync()
+                Aboutes=await dbContext.Aboutes.ToListAsync(),
+                Resumes=await dbContext.Resumes.ToListAsync()
             };
 
             return View(vM);

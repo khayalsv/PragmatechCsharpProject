@@ -1,0 +1,50 @@
+﻿@model IList<Resume>
+
+<div>
+    <a class="btn btn-success" style="width:100%">Add new slider</a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+
+            <th scope="col">Education Title</th>
+            <th scope="col">Education Detail</th>
+            <th scope="col">Education Description</th>
+
+            <th scope="col">Experience Title</th>
+            <th scope="col">Experience Detail</th>
+            <th scope="col">Experience Description</th>
+            <th>CRUD</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th scope="row">@item.ID</th>
+
+            <td>@item.edtitle</td>
+            <td>@item.eddetail</td>
+            <td>@item.eddescription</td>
+
+            <td>@item.extitle</td>
+            <td>@item.exdetail</td>
+            <td>@item.exdescription</td>
+
+            <td>
+                <a asp-controller="Resume" asp-action="Edit" asp-route-id="@item.ID" style="color:green"><i class="fas fa-edit"></i></a>
+
+                <a href="#"><i class="fas fa-trash-alt"></i></a>
+            </td>
+        </tr>
+
+        }
+
+
+
+    </tbody>
+</table>

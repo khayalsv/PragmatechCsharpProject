@@ -19,7 +19,7 @@ namespace KS.Areas.Admin.Controllers
 
         public IActionResult AboutList()
         {
-            return View(dbContext.Abouts.ToList());
+            return View(dbContext.Aboutes.ToList());
         }
 
         public IActionResult Edit(int? id)
@@ -30,5 +30,8 @@ namespace KS.Areas.Admin.Controllers
             }
             return View();
         }
+
+
+  
     }
 }

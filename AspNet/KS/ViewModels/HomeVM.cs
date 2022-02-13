@@ -11,6 +11,7 @@ namespace KS.ViewModels
         public List<Portfolio> Portfolios { get; set; }
         public List<Blog> Blogs { get; set; }
         public List<HomePageM> HomePageMs { get; set; }
-        public List<About> Abouts { get; set; }
+        public List<About> Aboutes { get; set; }
+        public List<Resume> Resumes { get; set; }
     }
 }

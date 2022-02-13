@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KS.Migrations
 {
     [DbContext(typeof(PortoDbContext))]
-    [Migration("20220212215203_aboutadd")]
-    partial class aboutadd
+    [Migration("20220213222014_addresume")]
+    partial class addresume
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,11 +45,6 @@ namespace KS.Migrations
                         .HasMaxLength(70)
                         .HasColumnType("nvarchar(70)");
 
-                    b.Property<string>("IconLogo")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<string>("Image")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -60,16 +55,6 @@ namespace KS.Migrations
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
 
-                    b.Property<string>("ServiceDescription")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Servicetitle")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
                     b.Property<string>("Subtitle")
                         .IsRequired()
                         .HasMaxLength(40)
@@ -77,7 +62,7 @@ namespace KS.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Abouts");
+                    b.ToTable("Aboutes");
                 });
 
             modelBuilder.Entity("KS.Models.Blog", b =>
@@ -199,6 +184,36 @@ namespace KS.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Portfolios");
+                });
+
+            modelBuilder.Entity("KS.Models.Resume", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("eddescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("eddetail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("edtitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("exdescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("exdetail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("extitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Resumes");
                 });
 #pragma warning restore 612, 618
         }
