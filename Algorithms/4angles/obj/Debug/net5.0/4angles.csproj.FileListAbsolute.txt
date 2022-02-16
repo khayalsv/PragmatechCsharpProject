@@ -1,0 +1,16 @@
+C:\Users\selim\Desktop\Csharp\Algorithms\4angles\bin\Debug\net5.0\4angles.exe
+C:\Users\selim\Desktop\Csharp\Algorithms\4angles\bin\Debug\net5.0\4angles.deps.json
+C:\Users\selim\Desktop\Csharp\Algorithms\4angles\bin\Debug\net5.0\4angles.runtimeconfig.json
+C:\Users\selim\Desktop\Csharp\Algorithms\4angles\bin\Debug\net5.0\4angles.runtimeconfig.dev.json
+C:\Users\selim\Desktop\Csharp\Algorithms\4angles\bin\Debug\net5.0\4angles.dll
+C:\Users\selim\Desktop\Csharp\Algorithms\4angles\bin\Debug\net5.0\ref\4angles.dll
+C:\Users\selim\Desktop\Csharp\Algorithms\4angles\bin\Debug\net5.0\4angles.pdb
+C:\Users\selim\Desktop\Csharp\Algorithms\4angles\obj\Debug\net5.0\4angles.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\Csharp\Algorithms\4angles\obj\Debug\net5.0\4angles.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\selim\Desktop\Csharp\Algorithms\4angles\obj\Debug\net5.0\4angles.AssemblyInfoInputs.cache
+C:\Users\selim\Desktop\Csharp\Algorithms\4angles\obj\Debug\net5.0\4angles.AssemblyInfo.cs
+C:\Users\selim\Desktop\Csharp\Algorithms\4angles\obj\Debug\net5.0\4angles.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\Csharp\Algorithms\4angles\obj\Debug\net5.0\4angles.dll
+C:\Users\selim\Desktop\Csharp\Algorithms\4angles\obj\Debug\net5.0\ref\4angles.dll
+C:\Users\selim\Desktop\Csharp\Algorithms\4angles\obj\Debug\net5.0\4angles.pdb
+C:\Users\selim\Desktop\Csharp\Algorithms\4angles\obj\Debug\net5.0\4angles.genruntimeconfig.cache
