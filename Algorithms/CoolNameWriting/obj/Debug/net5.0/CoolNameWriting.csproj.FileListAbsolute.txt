@@ -1,0 +1,16 @@
+C:\Users\selim\Desktop\Csharp\Algorithms\CoolNameWriting\bin\Debug\net5.0\CoolNameWriting.exe
+C:\Users\selim\Desktop\Csharp\Algorithms\CoolNameWriting\bin\Debug\net5.0\CoolNameWriting.deps.json
+C:\Users\selim\Desktop\Csharp\Algorithms\CoolNameWriting\bin\Debug\net5.0\CoolNameWriting.runtimeconfig.json
+C:\Users\selim\Desktop\Csharp\Algorithms\CoolNameWriting\bin\Debug\net5.0\CoolNameWriting.runtimeconfig.dev.json
+C:\Users\selim\Desktop\Csharp\Algorithms\CoolNameWriting\bin\Debug\net5.0\CoolNameWriting.dll
+C:\Users\selim\Desktop\Csharp\Algorithms\CoolNameWriting\bin\Debug\net5.0\ref\CoolNameWriting.dll
+C:\Users\selim\Desktop\Csharp\Algorithms\CoolNameWriting\bin\Debug\net5.0\CoolNameWriting.pdb
+C:\Users\selim\Desktop\Csharp\Algorithms\CoolNameWriting\obj\Debug\net5.0\CoolNameWriting.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\Csharp\Algorithms\CoolNameWriting\obj\Debug\net5.0\CoolNameWriting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\selim\Desktop\Csharp\Algorithms\CoolNameWriting\obj\Debug\net5.0\CoolNameWriting.AssemblyInfoInputs.cache
+C:\Users\selim\Desktop\Csharp\Algorithms\CoolNameWriting\obj\Debug\net5.0\CoolNameWriting.AssemblyInfo.cs
+C:\Users\selim\Desktop\Csharp\Algorithms\CoolNameWriting\obj\Debug\net5.0\CoolNameWriting.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\Csharp\Algorithms\CoolNameWriting\obj\Debug\net5.0\CoolNameWriting.dll
+C:\Users\selim\Desktop\Csharp\Algorithms\CoolNameWriting\obj\Debug\net5.0\ref\CoolNameWriting.dll
+C:\Users\selim\Desktop\Csharp\Algorithms\CoolNameWriting\obj\Debug\net5.0\CoolNameWriting.pdb
+C:\Users\selim\Desktop\Csharp\Algorithms\CoolNameWriting\obj\Debug\net5.0\CoolNameWriting.genruntimeconfig.cache
