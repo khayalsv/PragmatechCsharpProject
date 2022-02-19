@@ -23,7 +23,7 @@
         <tr>
             <th scope="row">@item.ID</th>
             <td>@item.Title</td>
-            <td>@item.Text</td>
+            <td>@Html.Raw(item.Text)</td>
             <td>@item.Date</td>
             <td>
                 <img width="200" height="150" src="~/img/@item.Image" alt="Alternate Text" />
