@@ -1,4 +1,6 @@
-﻿using KS.Models;
+﻿using KS.Extension;
+using KS.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,9 +14,11 @@ namespace KS.Areas.Admin.Controllers
     public class PortfolioController : Controller
     {
         private readonly PortoDbContext dbContext;
-        public PortfolioController(PortoDbContext _dbContext)
+        private readonly IWebHostEnvironment env;
+        public PortfolioController(PortoDbContext _dbContext, IWebHostEnvironment _env)
         {
             dbContext = _dbContext;
+            env = _env;
         }
 
         public IActionResult PortfolioCRUD()
@@ -26,19 +30,29 @@ namespace KS.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            Portfolio portfolio = new Portfolio();
+            return View(portfolio);
         }
 
         [HttpPost]
-        public IActionResult Create(IFormFile photo, string name)
+        public async Task<IActionResult> Create(Portfolio portfolio)
         {
-            Portfolio portfolio = new Portfolio
+            if (!ModelState.IsValid)
             {
-                Name=name,
-                Image = photo.FileName
-            };
-            dbContext.Portfolios.Add(portfolio);
-            dbContext.SaveChanges();
+                return View();
+            }
+
+            if (!portfolio.Photo.IsImage())
+            {
+                ModelState.AddModelError("Photo", "Img format error");
+                return View(portfolio);
+            }
+
+            string folder = @"img\";
+            portfolio.Image = await portfolio.Photo.SaveAsync(env.WebRootPath, folder);
+
+            await dbContext.Portfolios.AddAsync(portfolio);
+            await dbContext.SaveChangesAsync();
 
             return Redirect("PortfolioCRUD");
         }
