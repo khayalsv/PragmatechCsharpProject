@@ -19,6 +19,7 @@
     <!-- Custom styles for this template-->
     <link href="~/admin/css/sb-admin-2.min.css" rel="stylesheet">
 
+    @RenderSection("styles",false)
 </head>
 
 <body id="page-top">
@@ -210,6 +211,8 @@
     <!-- Page level custom scripts -->
     <script src="~/admin/js/demo/chart-area-demo.js"></script>
     <script src="~/admin/js/demo/chart-pie-demo.js"></script>
+
+    @RenderSection("scripts",false)
 
 </body>
 

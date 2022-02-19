@@ -1,4 +1,6 @@
-﻿using KS.Models;
+﻿using KS.Extension;
+using KS.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,9 +15,11 @@ namespace KS.Areas.Admin.Controllers
     {
        
         private readonly PortoDbContext dbContext;
-        public BlogController(PortoDbContext _dbContext)
+        private readonly IWebHostEnvironment env;
+        public BlogController(PortoDbContext _dbContext,IWebHostEnvironment _env)
         {
             dbContext = _dbContext;
+            env = _env;
         }
 
         public IActionResult BlogCRUD()
@@ -27,21 +31,29 @@ namespace KS.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            Blog blog = new Blog();
+            return View(blog);
         }
 
         [HttpPost]
-        public IActionResult Create(IFormFile photo, string title,string text,string date)
+        public async Task<IActionResult> Create(Blog blog)
         {
-            Blog blog = new Blog
+            if (!ModelState.IsValid)
             {
-                Title = title,
-                Text=text,
-                Date=date,
-                Image = photo.FileName
-            };
-            dbContext.Blogs.Add(blog);
-            dbContext.SaveChanges();
+                return View();
+            }
+
+            if (!blog.Photo.IsImage())
+            {
+                ModelState.AddModelError("Photo", "Img format error");
+                return View(blog);
+            }
+
+            string folder = @"img\";
+            blog.Image = await blog.Photo.SaveAsync(env.WebRootPath, folder);
+
+            await dbContext.Blogs.AddAsync(blog);
+            await dbContext.SaveChangesAsync();
 
             return Redirect("BlogCRUD");
         }

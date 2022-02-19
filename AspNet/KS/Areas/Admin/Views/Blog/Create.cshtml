@@ -1,24 +1,48 @@
-﻿
+﻿@model Blog 
+
+@{ 
+    ViewData["Title"] = "Create";
+}
+
+@section styles{
+
+    <style>
+        label{
+            color:green;
+        }
+    </style>
+ }
+
 <form method="post" enctype="multipart/form-data">
     <div class="mb-3">
         <label>Image</label>
-        <input type="file" class="form-control" name="photo">
+        <input type="file" class="form-control" asp-for="Photo">
+        <span asp-validation-for="Photo"></span>
     </div>
 
     <div class="mb-3">
         <label>Title</label>
-        <input type="text" class="form-control" name="title">
+        <input type="text" class="form-control" asp-for="Title">
+        <span asp-validation-for="Title" style="color:red"></span>
     </div>
 
     <div class="mb-3">
         <label>Text</label>
-        <input type="text" class="form-control" name="text">
+        <input type="text" class="form-control" asp-for="Text">
+        <span asp-validation-for="Text"></span>
+
     </div>
 
     <div class="mb-3">
         <label>Date</label>
-        <input type="text" class="form-control" name="date">
+        <input type="text" class="form-control" asp-for="Date">
+        <span asp-validation-for="Date"></span>
+
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+@section scripts{ 
+    <partial name="_ValidationScriptsPartial"/>
+}

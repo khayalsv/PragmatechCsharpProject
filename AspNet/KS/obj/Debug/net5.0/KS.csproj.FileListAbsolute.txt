@@ -277,8 +277,16 @@ C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\scopedcss\bundle\KS.sty
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\KS.TagHelpers.input.cache
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\KS.TagHelpers.output.cache
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\KS.RazorCoreGenerate.cache
+C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\About\AboutList.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blog\BlogCRUD.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blog\Create.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePageM\HomeList.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Portfolio\Create.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Portfolio\PortfolioCRUD.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Resume\Create.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Resume\ResumeList.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\AdminLayout.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Views\Home\HomePage.cshtml.g.cs
@@ -295,10 +303,3 @@ C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\KS.dll
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\ref\KS.dll
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\KS.pdb
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\KS.genruntimeconfig.cache
-C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blog\BlogCRUD.cshtml.g.cs
-C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Portfolio\PortfolioCRUD.cshtml.g.cs
-C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blog\Create.cshtml.g.cs
-C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePageM\HomeList.cshtml.g.cs
-C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\About\AboutList.cshtml.g.cs
-C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Resume\ResumeList.cshtml.g.cs
-C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Resume\Create.cshtml.g.cs
