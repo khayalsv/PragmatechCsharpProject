@@ -16,7 +16,7 @@ namespace KS.Models
         [Required, StringLength(15)]
         public string Title { get; set; }
 
-        [Required, StringLength(40)]
+        [Required]
         public string Text { get; set; }
 
         [Required, StringLength(10)]

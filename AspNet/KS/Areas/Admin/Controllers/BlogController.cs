@@ -43,6 +43,11 @@ namespace KS.Areas.Admin.Controllers
                 return View();
             }
 
+            //if (blog.Photo==null)
+            //{
+            //    ModelState.AddModelError("Photo", "Error [Download image]");
+            //}
+
             if (!blog.Photo.IsImage())
             {
                 ModelState.AddModelError("Photo", "Img format error");
