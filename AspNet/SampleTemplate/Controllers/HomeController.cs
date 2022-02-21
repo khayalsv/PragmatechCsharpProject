@@ -21,12 +21,10 @@ namespace SampleTemplate.Controllers
 
         public async Task<IActionResult> HomePage()
         {
-            var category = dbContext.Categories.ToList();
-            var slider = dbContext.Sliders.ToList();
+            //var slider = dbContext.Sliders.ToList();
 
             HomeVM vM = new HomeVM
             {
-                Categories = await dbContext.Categories.ToListAsync(),
                 Sliders = await dbContext.Sliders.ToListAsync(),
             };
 

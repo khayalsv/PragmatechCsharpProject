@@ -10,8 +10,10 @@ namespace SampleTemplate.Models
     {
         public PortoDbContext(DbContextOptions<PortoDbContext> options):base(options) { }
 
-        public DbSet<Category> Categories { get; set; }
         public DbSet<Slider> Sliders { get; set; }
+
+        public DbSet<Student> Students { get; set; }
+        public DbSet<StudentAddress> StudentAddress { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -36,6 +38,13 @@ namespace SampleTemplate.Models
                 Price = 200,
                 TrendWord = "Season Fashion Trends"
             });
+
+            ///////////////////////////////////////////////////////////////////////
+
+            modelBuilder.Entity<Student>()
+            .HasOne(a => a.Adress)
+            .WithOne(b => b.Student)
+            .HasForeignKey<StudentAddress>(b => b.StudentId);
         }
 
     }

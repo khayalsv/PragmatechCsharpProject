@@ -53,7 +53,6 @@ C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\scopedcss\b
 C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\SampleTemplate.TagHelpers.input.cache
 C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\SampleTemplate.TagHelpers.output.cache
 C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\SampleTemplate.RazorCoreGenerate.cache
-C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Views\Home\AboutPage.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Views\Home\HomePage.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -146,6 +145,6 @@ C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\SampleTempl
 C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\AdminLayout.cshtml.g.cs
-C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Areas\Admin\Views\Slider\Index.cshtml.g.cs
-C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Areas\Admin\Views\Slider\Create.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Areas\Admin\Views\Slider\List.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Areas\Admin\Views\Student\List.cshtml.g.cs

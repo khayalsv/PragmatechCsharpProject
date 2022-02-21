@@ -24,31 +24,6 @@
 
 </div><!-- End .home-slider -->
 
-    <section class="container">
-        <h2 class="section-title ls-n-15 text-center pt-2 m-b-4">Shop By Category</h2>
-
-        <div class="owl-carousel owl-theme nav-image-center show-nav-hover nav-outer cats-slider appear-animate"
-             data-animation-name="fadeInUpShorter" data-animation-delay="200" data-animation-duration="1000">
-
-
-            @foreach (var item in Model.Categories)
-            {
-                <div class="product-category">
-                    <a href="demo3-shop.html">
-                        <figure>
-                            <img src="~/images/demoes/demo3/categories/@item.Image" width="273" height="273"
-                                 alt="category" />
-                        </figure>
-                        <div class="category-content">
-                            <h3>@item.Name</h3>
-                            <span><mark class="count">@item.Count</mark> products</span>
-                        </div>
-                    </a>
-                </div>
-            }
-
-        </div>
-    </section>
 
     <section class="bg-gray banners-section text-center">
         <div class="container py-2">

@@ -18,7 +18,7 @@
             <th scope="row">
                 <img width="200" src="~/img/@Model.Image" />
             </th>
-            <td>@Model.Text</td>
+            <td>@Html.Raw(Model.Text)</td>
             <td>@Model.Title</td>
             <td>@Model.Date</td>
         </tr>

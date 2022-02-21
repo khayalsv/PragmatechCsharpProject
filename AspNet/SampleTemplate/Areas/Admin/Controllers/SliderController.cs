@@ -17,7 +17,7 @@ namespace SampleTemplate.Areas.Admin.Controllers
             dbContext = _dbContext;
         }
 
-        public IActionResult Index()
+        public IActionResult List()
         {
             return View(dbContext.Sliders.ToList());
         }
@@ -42,7 +42,7 @@ namespace SampleTemplate.Areas.Admin.Controllers
             dbContext.Sliders.Add(slider);
             dbContext.SaveChanges();
 
-            return Redirect("Index");
+            return Redirect("List");
         }
 
         public IActionResult Edit(int? id)

@@ -1,0 +1,40 @@
+﻿@model IList<StudentAddress>
+
+
+<h1>Index</h1>
+<div>
+    <a href="/Admin/Slider/Create" style="width:100%" class="btn btn-success">Add new slider</a>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Fullname</th>
+            <th>City</th>
+            <th>Adress</th>
+            <th>Edit/Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <th scope="row">@item.Student.Fullname</th>
+                <td>@item.City</td>
+                <td>@item.Adress</td>
+                <td>
+                    <a href="/Admin/Slider/Edit/@item.Id" style="color:red"><i class="fas fa-edit"></i></a>
+                    <a href="/Admin/Slider/Delete/@item.Id" onclick="return confirm('Silmek istediyinizden eminsiz?')" style="color:red">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                    <a href="/Admin/Slider/Details/@item.Id" style="color:red">Etrafli</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+

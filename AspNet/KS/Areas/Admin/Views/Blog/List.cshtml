@@ -1,5 +1,12 @@
 ﻿@model IList<Blog>
 
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @TempData["Success"]
+    </div>
+}
+
 <div>
     <a href="/Admin/Blog/Create" class="btn btn-success" style="width:100%">Add new slider</a>
 </div>
@@ -20,23 +27,23 @@
 
         @foreach (var item in Model)
         {
-        <tr>
-            <th scope="row">@item.ID</th>
-            <td>@item.Title</td>
-            <td>@Html.Raw(item.Text)</td>
-            <td>@item.Date</td>
-            <td>
-                <img width="200" height="150" src="~/img/@item.Image" alt="Alternate Text" />
-            </td>
+            <tr>
+                <th scope="row">@item.ID</th>
+                <td>@item.Title</td>
+                <td>@Html.Raw(item.Text)</td>
+                <td>@item.Date</td>
+                <td>
+                    <img width="200" height="150" src="~/img/@item.Image" alt="Alternate Text" />
+                </td>
 
-            <td>
-                <a href="/Admin/Blog/Edit/@item.ID" style="color:green"><i class="fas fa-edit"></i></a>
-                <a href="/Admin/Blog/Delete/@item.ID" onclick="return confirm('Are you delete?')" style="color:red">
-                    <i class="fas fa-trash-alt"></i>
-                </a>
-                <a href="/Admin/Blog/Details/@item.ID" style="color:red">Etrafli</a>
-            </td>
-        </tr>
+                <td>
+                    <a href="/Admin/Blog/Edit/@item.ID" style="color:green"><i class="fas fa-edit"></i></a>
+                    <a href="/Admin/Blog/Delete/@item.ID" onclick="return confirm('Are you delete?')" style="color:red">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                    <a href="/Admin/Blog/Details/@item.ID" style="color:red">Etrafli</a>
+                </td>
+            </tr>
 
         }
 
