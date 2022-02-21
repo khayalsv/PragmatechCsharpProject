@@ -22,7 +22,7 @@ namespace KS.Areas.Admin.Controllers
             env = _env;
         }
 
-        public IActionResult BlogCRUD()
+        public IActionResult List()
         {
             return View(dbContext.Blogs.ToList());
         }
@@ -38,15 +38,11 @@ namespace KS.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Blog blog)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid && blog.Photo == null)
             {
+                ModelState.AddModelError("Photo", "Error [Download image]");
                 return View();
             }
-
-            //if (blog.Photo==null)
-            //{
-            //    ModelState.AddModelError("Photo", "Error [Download image]");
-            //}
 
             if (!blog.Photo.IsImage())
             {
@@ -60,7 +56,7 @@ namespace KS.Areas.Admin.Controllers
             await dbContext.Blogs.AddAsync(blog);
             await dbContext.SaveChangesAsync();
 
-            return Redirect("BlogCRUD");
+            return Redirect("List");
         }
 
 
@@ -70,7 +66,63 @@ namespace KS.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            return View();
+            Blog blog = dbContext.Blogs.Find(id);
+            if (blog == null)
+            {
+                return NotFound();
+            }
+            return View(blog);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(Blog blog)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(blog);
+            }
+            var blogDb = dbContext.Blogs.Find(blog.ID);
+            if (blog.Photo != null)
+            {
+                try
+                {
+                    string folder = @"img\";
+                    var newImg = await blog.Photo.SaveAsync(env.WebRootPath, folder);
+
+                    FileExtension.Delete(env.WebRootPath, folder, blogDb.Image);
+                    blogDb.Image = newImg;
+                }
+                catch (Exception e)
+                {
+                    ModelState.AddModelError("", "Unexpted error happened while save img");
+                    return View();
+
+                }
+            }
+            blogDb.Text = blog.Text;
+            blogDb.Title = blog.Title;
+            blogDb.Date = blog.Date;
+            await dbContext.SaveChangesAsync();
+            return Redirect("/Admin/Blog/List");
+        }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null) return NotFound();
+            Blog blog = await dbContext.Blogs.FindAsync(id);
+            if (blog == null) return NotFound();
+            dbContext.Blogs.Remove(blog);
+            await dbContext.SaveChangesAsync();
+            TempData["Success"] = "Blog deleted!";
+            return Redirect("/Admin/Blog/List");
+        }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null) return NotFound();
+            Blog blog = await dbContext.Blogs.FindAsync(id);
+            if (blog == null) return NotFound();
+            return View(blog);
         }
     }
 }

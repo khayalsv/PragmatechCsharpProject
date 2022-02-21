@@ -1,7 +1,7 @@
 ﻿@model IList<Blog>
 
 <div>
-    <a class="btn btn-success" style="width:100%">Add new slider</a>
+    <a href="/Admin/Blog/Create" class="btn btn-success" style="width:100%">Add new slider</a>
 </div>
 
 <table class="table table-bordered">
@@ -30,9 +30,11 @@
             </td>
 
             <td>
-                <a asp-controller="Blog" asp-action="Edit" asp-route-id="@item.ID" style="color:green"><i class="fas fa-edit"></i></a>
-
-                <a href="#"><i class="fas fa-trash-alt"></i></a>
+                <a href="/Admin/Blog/Edit/@item.ID" style="color:green"><i class="fas fa-edit"></i></a>
+                <a href="/Admin/Blog/Delete/@item.ID" onclick="return confirm('Are you delete?')" style="color:red">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+                <a href="/Admin/Blog/Details/@item.ID" style="color:red">Etrafli</a>
             </td>
         </tr>
 

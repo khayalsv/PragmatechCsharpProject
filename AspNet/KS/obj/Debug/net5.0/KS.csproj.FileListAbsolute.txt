@@ -278,7 +278,6 @@ C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\KS.TagHelpers.input.cac
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\KS.TagHelpers.output.cache
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\KS.RazorCoreGenerate.cache
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\About\AboutList.cshtml.g.cs
-C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blog\BlogCRUD.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blog\Create.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePageM\HomeList.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Portfolio\Create.cshtml.g.cs
@@ -303,3 +302,6 @@ C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\KS.dll
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\ref\KS.dll
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\KS.pdb
 C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\KS.genruntimeconfig.cache
+C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blog\List.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blog\Edit.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KS\obj\Debug\net5.0\Razor\Areas\Admin\Views\Blog\Details.cshtml.g.cs

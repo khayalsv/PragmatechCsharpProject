@@ -38,5 +38,14 @@ namespace KS.Extension
             }
             return fileName;
         }
+
+        public static void Delete(string root, string folder, string filename)
+        {
+            string path = Path.Combine(root, folder, filename);
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+        }
     }
 }

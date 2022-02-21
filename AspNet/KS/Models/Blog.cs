@@ -23,7 +23,6 @@ namespace KS.Models
         public string Date { get; set; }
 
         [NotMapped]
-        [Required(ErrorMessage ="Please download image")]
         public IFormFile Photo { get; set; }
     }
 }
