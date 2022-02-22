@@ -1,0 +1,67 @@
+﻿@model Home
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@section styles{
+
+    <style>
+        label {
+            color: green;
+        }
+    </style>
+}
+
+
+<div asp-validation-summary="All" style="color:red"></div>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label>Image</label>
+        <input type="file" class="form-control" asp-for="Photo">
+        <span asp-validation-for="Photo"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Title</label>
+        <input type="text" class="form-control" asp-for="Title">
+        <span asp-validation-for="Title" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Text</label>
+        <textarea class="form-control" asp-for="Text"></textarea>
+        <span asp-validation-for="Text" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>HolderTitle</label>
+        <textarea class="form-control" asp-for="HolderTitle"></textarea>
+        <span asp-validation-for="HolderTitle" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Tag1</label>
+        <textarea class="form-control" asp-for="Tag1"></textarea>
+        <span asp-validation-for="Tag1" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Tag2</label>
+        <textarea class="form-control" asp-for="Tag2"></textarea>
+        <span asp-validation-for="Tag2" style="color:red"></span>
+    </div>
+    <div class="mb-3">
+        <label>Tag3</label>
+        <textarea class="form-control" asp-for="Tag3"></textarea>
+        <span asp-validation-for="Tag3" style="color:red"></span>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+
+}

@@ -6,7 +6,7 @@
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
-<!--<![endif]-->
+ <!--<![endif]-->
 <!-- Mirrored from frenify.net/envato/frenify/html/resumo/1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Feb 2022 21:23:43 GMT -->
 <head>
 
@@ -35,156 +35,9 @@
 
 <body>
 
-
-    <!-- Wrapper All -->
-    <div class="resumo_fn_wrapper">
-
-        <!-- MODALBOX -->
-        <div class="resumo_fn_modalbox">
-            <a class="extra_closer" href="#"></a>
-            <div class="box_inner">
-                <a class="closer" href="#"><span></span></a>
-                <div class="modal_content">
-
-                    <div class="modal_in">
-                        <!-- Content comes from JS -->
-                    </div>
-
-                    <div class="fn__nav" data-from="" data-index="">
-                        <a href="#" class="prev">
-                            <span class="text">Prev</span>
-                            <span class="arrow_wrapper"><span class="arrow"></span></span>
-                        </a>
-                        <a href="#" class="next">
-                            <span class="text">Next</span>
-                            <span class="arrow_wrapper"><span class="arrow"></span></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /MODALBOX -->
-
-        <div class="resumo_fn_content">
+    @RenderBody()
 
 
-            <div class="resumo_fn_left">
-
-                @RenderBody()
-            </div>
-
-
-
-            <footer id="footer">
-                <div class="footer_top">
-                    <a href="#" class="resumo_fn_totop"><span></span></a>
-                </div>
-                <div class="footer_content">
-                    <div class="container">
-                        <p>
-                            Copyright © 2021. All rights reserved. <br />
-                            Designed &amp; Developed by <a class="fn__link" href="https://frenify.com/" target="_blank">Frenify</a>
-                        </p>
-                    </div>
-                </div>
-            </footer>
-
-
-        </div>
-        <!-- /Main Left Part -->
-        <!-- Main Right Part -->
-        <div class="resumo_fn_right">
-
-            <!-- Menu Triggger -->
-            <a href="#" class="menu_trigger">
-                <span class="text">Menu</span>
-                <span class="hamb">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </span>
-            </a>
-            <!-- /Menu Triggger -->
-            <!-- Panel Content -->
-            @foreach (var item in Model.Homes)
-            {
-                <div class="right_in">
-                    <div class="right_top">
-                        <div class="border1"></div><div class="border2"></div>
-
-                        <div class="img_holder">
-                            <img src="img/thumb/square.jpg" alt="">
-                            <div class="abs_img" data-bg-img="img/@item.Image"></div>
-                        </div>
-                        <div class="title_holder">
-                            <h5>@item.HolderTitle</h5>
-                            <h3>
-                                <span class="animated_title">
-                                    <span class="title_in">@item.Tag1</span>
-                                    <span class="title_in">@item.Tag2</span>
-                                    <span class="title_in">@item.Tag3</span>
-                                </span>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-
-            }
-            <!-- /Panel Content -->
-
-        </div>
-        <!-- /Main Right Part -->
-
-    </div>
-
-    <!-- Right Hidden Navigation -->
-    <a href="#" class="resumo_fn_nav_overlay"></a>
-    <div class="resumo_fn_navigation">
-        <a href="#" class="closer"></a>
-
-        <!-- Navigation Content -->
-        <div class="nav_in">
-
-            <nav id="nav">
-                <h3 class="label">Menu</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#customers">Customers</a></li>
-                    <li><a href="#news">News &amp; Tips</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-
-            <div class="nav_footer">
-                <div class="social">
-                    <ul>
-                        <li><a href="#" target="_blank"><img src="svg/social/twitter.svg" alt="" class="fn__svg"></a></li>
-                        <li><a href="#" target="_blank"><img src="svg/social/facebook.svg" alt="" class="fn__svg"></a></li>
-                        <li><a href="#" target="_blank"><img src="svg/social/instagram.svg" alt="" class="fn__svg"></a></li>
-                        <li><a href="#" target="_blank"><img src="svg/social/pinterest.svg" alt="" class="fn__svg"></a></li>
-                        <li><a href="#" target="_blank"><img src="svg/social/behance.svg" alt="" class="fn__svg"></a></li>
-                    </ul>
-                </div>
-                <div class="copyright">
-                    <a href="https://frenify.com/" target="_blank">Developed by Frenify</a>
-                </div>
-            </div>
-
-        </div>
-        <!-- /Navigation Content -->
-
-    </div>
-    <!-- /Right Hidden Navigation -->
-
-
-    <div class="frenify-cursor cursor-outer" data-default="yes" data-link="yes" data-slider="yes"><span class="fn-cursor"></span></div>
-    <div class="frenify-cursor cursor-inner" data-default="yes" data-link="yes" data-slider="yes"><span class="fn-cursor"><span class="fn-left"></span><span class="fn-right"></span></span></div>
-
-   
-    <!-- /Wrapper All -->
     <!-- Scripts -->
     <script data-cfasync="false" src="../../../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="js/jquery7dd3.js?ver=4"></script>

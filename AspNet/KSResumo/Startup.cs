@@ -58,6 +58,10 @@ namespace KSResumo
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=HomePage}/{id?}");
+         
+                endpoints.MapControllerRoute(
+                 name: "areas",
+                      pattern: "{area:exists}/{controller=HerhansiSehife}/{action=HomePageM}/{id?}");
             });
         }
     }

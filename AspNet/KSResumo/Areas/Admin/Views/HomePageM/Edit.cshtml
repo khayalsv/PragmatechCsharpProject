@@ -1,0 +1,59 @@
+﻿@model Home
+
+
+<form method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label>Photo downlaod</label>
+        <input asp-for="Photo" class="form-control" />
+        <span asp-validation-for="Photo" class="text-danger"></span>
+    </div>
+    <div class="form-group mt-3">
+        <label>Current photo</label>
+        <img src="~/img/@Model.Image" width="200" />
+        <input type="hidden" name="Image" value="@Model.Image" />
+    </div>
+    <div class="form-group">
+        <label>Text</label>
+        <textarea class="form-control" asp-for="Text" id="Text"></textarea>
+        <span asp-validation-for="Text" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Title</label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>HolderTitle</label>
+        <input asp-for="HolderTitle" class="form-control" />
+        <span asp-validation-for="HolderTitle" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label>Tag1</label>
+        <input asp-for="Tag1" class="form-control" />
+        <span asp-validation-for="Tag1" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Tag2</label>
+        <input asp-for="Tag2" class="form-control" />
+        <span asp-validation-for="Tag2" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Tag3</label>
+        <input asp-for="Tag3" class="form-control" />
+        <span asp-validation-for="Tag3" class="text-danger"></span>
+    </div>
+    <input type="submit" class="btn btn-danger btn-block" value="update" />
+</form>
+
+
+
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+
+}

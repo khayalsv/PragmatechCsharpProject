@@ -142,3 +142,11 @@ C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\bin\Debug\net5.0\runtimes\win-arm\
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\AdminLayout.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePageM\Create.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePageM\Details.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePageM\Edit.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePageM\List.cshtml.g.cs
