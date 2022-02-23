@@ -9,5 +9,8 @@ namespace KSResumo.ViewModels
     public class HomeVM
     {
         public List<Home> Homes { get; set; }
+        public List<About> Abouts { get; set; }
+        public List<Portfolio> Portfolios { get; set; }
+
     }
 }

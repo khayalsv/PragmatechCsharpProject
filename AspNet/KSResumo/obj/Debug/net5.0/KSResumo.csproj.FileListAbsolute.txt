@@ -150,3 +150,11 @@ C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePageM\Details.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePageM\Edit.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePageM\List.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\About\Create.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\About\Details.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\About\Edit.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\About\List.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Portfolio\Create.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Portfolio\Details.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Portfolio\Edit.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Portfolio\List.cshtml.g.cs

@@ -11,6 +11,9 @@ namespace KSResumo.Models
         public PortoDbContext(DbContextOptions<PortoDbContext> options) : base(options) { }
 
         public DbSet<Home> Homes { get; set; }
-       
+        public DbSet<About> Abouts { get; set; }
+        public DbSet<Portfolio> Portfolios { get; set; }
+
+
     }
 }

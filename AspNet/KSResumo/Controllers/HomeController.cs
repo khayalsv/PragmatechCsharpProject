@@ -23,9 +23,11 @@ namespace KSResumo.Controllers
         {
             HomeVM vM = new HomeVM
             {
-                Homes =await dbContext.Homes.ToListAsync()
-            };
+                Homes = await dbContext.Homes.ToListAsync(),
+                Abouts=await dbContext.Abouts.ToListAsync(),
+                Portfolios = await dbContext.Portfolios.ToListAsync(),
 
+            };
             return View(vM);
         }
 

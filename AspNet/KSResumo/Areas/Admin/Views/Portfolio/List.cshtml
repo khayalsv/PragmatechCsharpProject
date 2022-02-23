@@ -1,0 +1,51 @@
+﻿@model IList<Portfolio>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @TempData["Success"]
+    </div>
+}
+
+<div>
+    <a href="/Admin/Portfolio/Create" class="btn btn-success" style="width:100%">Add new slider</a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Link</th>
+            <th scope="col">Image</th>
+            <th>CRUD</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.ID</th>
+                <td>@item.Name</td>
+                <td>@item.Link</td>
+                <td>
+                    <img width="200" height="150" src="~/img/@item.Image" alt="Alternate Text" />
+                </td>
+
+                <td>
+                    <a href="/Admin/Portfolio/Edit/@item.ID" style="color:green"><i class="fas fa-edit"></i></a>
+                    <a href="/Admin/Portfolio/Delete/@item.ID" onclick="return confirm('Are you delete?')" style="color:red">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                    <a href="/Admin/Portfolio/Details/@item.ID" style="color:red">Etrafli</a>
+                </td>
+            </tr>
+
+        }
+
+
+
+    </tbody>
+</table>

@@ -1,0 +1,36 @@
+﻿@model Portfolio
+
+
+<form method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label>Photo downlaod</label>
+        <input asp-for="Photo" class="form-control" />
+        <span asp-validation-for="Photo" class="text-danger"></span>
+    </div>
+    <div class="form-group mt-3">
+        <label>Current photo</label>
+        <img src="~/img/@Model.Image" width="200" />
+        <input type="hidden" name="Image" value="@Model.Image" />
+    </div>
+    <div class="form-group">
+        <label>Name</label>
+        <textarea class="form-control" asp-for="Name"></textarea>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Link</label>
+        <input asp-for="Link" class="form-control" />
+        <span asp-validation-for="Link" class="text-danger"></span>
+    </div>
+
+
+    <input type="submit" class="btn btn-danger btn-block" value="update" />
+</form>
+
+
+
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+
+}
