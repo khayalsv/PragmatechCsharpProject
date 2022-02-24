@@ -13,6 +13,8 @@ namespace KSResumo.Models
         public DbSet<Home> Homes { get; set; }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Portfolio> Portfolios { get; set; }
+        public DbSet<New> News { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
 
     }

@@ -1,0 +1,27 @@
+﻿@model New
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Date</th>
+            <th>Text</th>
+            <th>Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">
+                <img width="200" src="~/img/@Model.Image" />
+            </th>
+            <td>@Model.Date</td>
+            <td>@Model.Text</td>
+            <td>@Model.Link</td>
+        </tr>
+    </tbody>
+</table>
+
