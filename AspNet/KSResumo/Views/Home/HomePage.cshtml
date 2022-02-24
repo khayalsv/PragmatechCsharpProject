@@ -359,9 +359,13 @@
             <div class="nav_footer">
                 <div class="social">
                     <ul>
-                        <li><a href="#" target="_blank"><img src="svg/social/twitter.svg" alt="" class="fn__svg"></a></li>
-                        <li><a href="#" target="_blank"><img src="svg/social/facebook.svg" alt="" class="fn__svg"></a></li>
-                        <li><a href="#" target="_blank"><img src="svg/social/instagram.svg" alt="" class="fn__svg"></a></li>
+                        @foreach (var item in Model.Socials)
+                        {
+                            <li><a href="@item.Twitter" target="_blank"><img src="svg/social/twitter.svg" alt="" class="fn__svg"></a></li>
+                            <li><a href="@item.Facebook" target="_blank"><img src="svg/social/facebook.svg" alt="" class="fn__svg"></a></li>
+                            <li><a href="@item.Instagram" target="_blank"><img src="svg/social/instagram.svg" alt="" class="fn__svg"></a></li>
+                        }
+
                     </ul>
                 </div>
             </div>

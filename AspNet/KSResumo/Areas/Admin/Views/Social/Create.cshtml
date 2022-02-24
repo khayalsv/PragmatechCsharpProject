@@ -1,0 +1,50 @@
+﻿@model Social
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@section styles{
+
+    <style>
+        label {
+            color: green;
+        }
+    </style>
+}
+
+
+<div asp-validation-summary="All" style="color:red"></div>
+
+<form method="post" enctype="multipart/form-data">
+
+
+    <div class="mb-3">
+        <label>Twitter</label>
+        <textarea class="form-control" asp-for="Twitter"></textarea>
+        <span asp-validation-for="Twitter" style="color:red"></span>
+
+    </div>
+
+    <div class="mb-3">
+        <label>Facebook</label>
+        <textarea class="form-control" asp-for="Facebook"></textarea>
+        <span asp-validation-for="Facebook" style="color:red"></span>
+
+    </div>
+
+    <div class="mb-3">
+        <label>Instagram</label>
+        <textarea class="form-control" asp-for="Instagram"></textarea>
+        <span asp-validation-for="Instagram" style="color:red"></span>
+
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+
+}

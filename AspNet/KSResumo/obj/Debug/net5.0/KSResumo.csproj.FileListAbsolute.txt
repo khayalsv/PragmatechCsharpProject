@@ -146,10 +146,6 @@ C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
-C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePageM\Create.cshtml.g.cs
-C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePageM\Details.cshtml.g.cs
-C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePageM\Edit.cshtml.g.cs
-C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomePageM\List.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\About\Create.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\About\Details.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\About\Edit.cshtml.g.cs
@@ -162,3 +158,11 @@ C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\New\Details.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\New\Edit.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\New\List.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Social\Create.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Social\Details.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Social\Edit.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Social\List.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomeP\Create.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomeP\Details.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomeP\Edit.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomeP\List.cshtml.g.cs

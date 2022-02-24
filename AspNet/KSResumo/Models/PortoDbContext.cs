@@ -15,6 +15,7 @@ namespace KSResumo.Models
         public DbSet<Portfolio> Portfolios { get; set; }
         public DbSet<New> News { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Social> Socials { get; set; }
 
 
     }

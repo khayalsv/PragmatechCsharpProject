@@ -1,0 +1,50 @@
+﻿@model IList<Social>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @TempData["Success"]
+    </div>
+}
+
+<div>
+    <a href="/Admin/Social/Create" class="btn btn-success" style="width:100%">Add new slider</a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Twitter</th>
+            <th scope="col">Facebook</th>
+            <th scope="col">Instagram</th>
+            <th>CRUD</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th scope="row">@item.ID</th>
+            <td>@item.Twitter</td>
+            <td>@item.Facebook</td>
+            <td>@item.Instagram</td>
+
+
+            <td>
+                <a href="/Admin/Social/Edit/@item.ID" style="color:green"><i class="fas fa-edit"></i></a>
+                <a href="/Admin/Social/Delete/@item.ID" onclick="return confirm('Are you delete?')" style="color:red">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+                <a href="/Admin/Social/Details/@item.ID" style="color:red">Etrafli</a>
+            </td>
+        </tr>
+
+        }
+
+
+
+    </tbody>
+</table>

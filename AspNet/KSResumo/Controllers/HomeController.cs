@@ -28,6 +28,7 @@ namespace KSResumo.Controllers
                 Portfolios = await dbContext.Portfolios.ToListAsync(),
                 News = await dbContext.News.ToListAsync(),
                 Contacts = await dbContext.Contacts.ToListAsync(),
+                Socials = await dbContext.Socials.ToListAsync(),
             };
             return View(vM);
         }

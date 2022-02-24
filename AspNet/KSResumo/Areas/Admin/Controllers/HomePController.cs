@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 namespace KSResumo.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class HomePageMController : Controller
+    public class HomePController : Controller
     {
 
         private readonly PortoDbContext dbContext;
         private readonly IWebHostEnvironment env;
-        public HomePageMController(PortoDbContext _dbContext, IWebHostEnvironment _env)
+        public HomePController(PortoDbContext _dbContext, IWebHostEnvironment _env)
         {
             dbContext = _dbContext;
             env = _env;
