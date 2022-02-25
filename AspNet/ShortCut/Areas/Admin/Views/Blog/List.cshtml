@@ -1,0 +1,53 @@
+﻿@model IList<Blog>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @TempData["Success"]
+    </div>
+}
+
+<div>
+    <a href="/Admin/Blog/Create" class="btn btn-success" style="width:100%">Add new slider</a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Text</th>
+            <th scope="col">Date</th>
+            <th scope="col">Image</th>
+            <th>CRUD</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.ID</th>
+                <td>@item.Title</td>
+                <td>@Html.Raw(item.Text)</td>
+                <td>@item.Date</td>
+                <td>
+                    <img width="200" height="150" src="~/img/@item.Image" alt="Alternate Text" />
+                </td>
+
+                <td>
+                    <a href="/Admin/Blog/Edit/@item.ID" style="color:green"><i class="fas fa-edit"></i></a>
+                    <a href="/Admin/Blog/Delete/@item.ID" onclick="return confirm('Are you delete?')" style="color:red">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                    <a href="/Admin/Blog/Details/@item.ID" style="color:red">Etrafli</a>
+                </td>
+            </tr>
+
+        }
+
+
+
+    </tbody>
+</table>

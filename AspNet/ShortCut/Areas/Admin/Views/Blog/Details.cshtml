@@ -1,0 +1,27 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Text</th>
+            <th>Title</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">
+                <img width="200" src="~/img/@Model.Image" />
+            </th>
+            <td>@Html.Raw(Model.Text)</td>
+            <td>@Model.Title</td>
+            <td>@Model.Date</td>
+        </tr>
+    </tbody>
+</table>
+

@@ -1,0 +1,60 @@
+﻿@model Blog
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@section styles{
+
+    <style>
+        label {
+            color: green;
+        }
+    </style>
+}
+
+
+<div asp-validation-summary="All" style="color:red"></div>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label>Image</label>
+        <input type="file" class="form-control" asp-for="Photo">
+        <span asp-validation-for="Photo"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Title</label>
+        <input type="text" class="form-control" asp-for="Title">
+        <span asp-validation-for="Title" style="color:red"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Text</label>
+        <textarea class="form-control" asp-for="Text"></textarea>
+        <span asp-validation-for="Text" style="color:red"></span>
+
+    </div>
+
+    <div class="mb-3">
+        <label>Date</label>
+        <input type="text" class="form-control" asp-for="Date">
+        <span asp-validation-for="Date"></span>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#Text'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+}
