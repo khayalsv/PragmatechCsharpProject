@@ -11,17 +11,17 @@ namespace KS.Models
     {
         public PortoDbContext(DbContextOptions<PortoDbContext> options) : base(options) { }
 
-        public DbSet<Group> GROUP { get; set; }
+        public DbSet<Address> ADDRESS { get; set; }
         public DbSet<Student> STUDENT { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Group>()
+            modelBuilder.Entity<Address>()
           .HasOne(a => a.Students)
-          .WithOne(b => b.Groups)
-          .HasForeignKey<Student>(b => b.StudentID);
+          .WithOne(b => b.Addresses)
+          .HasForeignKey<Address>(c => c.StudentID);
         }
     }
 }

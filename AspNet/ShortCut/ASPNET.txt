@@ -170,7 +170,7 @@ Umumi ViewImports kodlari  Admin/Views/ViewImport-a kopyalamaq.
     {
         public int ID { get; set; }
         public string Fullname { get; set; }
-        public int StudentID { get; set; }
+        public int GroupID { get; set; }
         public virtual Group Groups { get; set; }
     }
 
@@ -195,7 +195,7 @@ Umumi ViewImports kodlari  Admin/Views/ViewImport-a kopyalamaq.
             modelBuilder.Entity<Group>()
           .HasOne(a => a.Students)
           .WithOne(b => b.Groups)
-          .HasForeignKey<Student>(b => b.StudentID);
+          .HasForeignKey<Student>(b => b.GroupID);
         }
     }
 

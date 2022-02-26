@@ -105,7 +105,7 @@ namespace KSResumo.Areas.Admin.Controllers
             homeDb.Tag2 = home.Tag2;
             homeDb.Tag3 = home.Tag3;
             await dbContext.SaveChangesAsync();
-            return Redirect("/Admin/HomePageM/List");
+            return Redirect("/Admin/HomeP/List");
         }
 
         public async Task<IActionResult> Delete(int? id)
@@ -116,7 +116,7 @@ namespace KSResumo.Areas.Admin.Controllers
             dbContext.Homes.Remove(home);
             await dbContext.SaveChangesAsync();
             TempData["Success"] = "Home deleted!";
-            return Redirect("/Admin/HomePageM/List");
+            return Redirect("/Admin/HomeP/List");
         }
 
         public async Task<IActionResult> Details(int? id)

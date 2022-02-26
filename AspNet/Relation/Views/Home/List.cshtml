@@ -9,10 +9,8 @@
     <thead>
         <tr>
             <th>Id</th>
-            <th>Group</th>
+            <th>Address</th>
             <th>Fullname</th>
-            <th>Scor</th>
-            <th>Image</th>
             <th>Edit/Delete</th>
         </tr>
     </thead>
@@ -22,11 +20,8 @@
         {
         <tr>
             <th scope="row">@item.ID</th>
-            <th scope="row">@item.Groups.Name</th>
+            <th scope="row">@item.Addresses.Name</th>
             <td>@item.Fullname</td>
-            <td>@item.Scor</td>
-            <td>@item.Image</td>
-
             <td>
                 <a href="/Edit/@item.ID" style="color:red"><i class="fas fa-edit"></i></a>
                 <a href="/Delete/@item.ID" onclick="return confirm('Silmek istediyinizden eminsiz?')" style="color:red">

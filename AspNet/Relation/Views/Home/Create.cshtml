@@ -1,0 +1,22 @@
+﻿@model StudentVM
+
+<div asp-validation-summary="All" style="color:red"></div>
+
+<form method="post" enctype="multipart/form-data">
+
+    <div class="mb-3">
+        <label>Address</label>
+        <input type="text" class="form-control" asp-for="Name">
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Student</label>
+        <input type="text" class="form-control" asp-for="Fullname">
+        <span asp-validation-for="Fullname"></span>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

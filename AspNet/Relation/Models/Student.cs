@@ -11,12 +11,6 @@ namespace Relation.Models
     {
         public int ID { get; set; }
         public string Fullname { get; set; }
-        public int Scor { get; set; }
-        public int StudentID { get; set; }
-        public virtual Group Groups { get; set; }
-        public string Image { get; set; }
-
-        [NotMapped]
-        public IFormFile Photo { get; set; }
+        public virtual Address Addresses { get; set; }
     }
 }

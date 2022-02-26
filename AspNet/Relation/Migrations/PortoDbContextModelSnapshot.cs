@@ -18,7 +18,7 @@ namespace Relation.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
-            modelBuilder.Entity("Relation.Models.Group", b =>
+            modelBuilder.Entity("Relation.Models.Address", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -28,9 +28,15 @@ namespace Relation.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("StudentID")
+                        .HasColumnType("int");
+
                     b.HasKey("ID");
 
-                    b.ToTable("GROUP");
+                    b.HasIndex("StudentID")
+                        .IsUnique();
+
+                    b.ToTable("ADDRESS");
                 });
 
             modelBuilder.Entity("Relation.Models.Student", b =>
@@ -43,37 +49,25 @@ namespace Relation.Migrations
                     b.Property<string>("Fullname")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Scor")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StudentID")
-                        .HasColumnType("int");
-
                     b.HasKey("ID");
-
-                    b.HasIndex("StudentID")
-                        .IsUnique();
 
                     b.ToTable("STUDENT");
                 });
 
-            modelBuilder.Entity("Relation.Models.Student", b =>
+            modelBuilder.Entity("Relation.Models.Address", b =>
                 {
-                    b.HasOne("Relation.Models.Group", "Groups")
-                        .WithOne("Students")
-                        .HasForeignKey("Relation.Models.Student", "StudentID")
+                    b.HasOne("Relation.Models.Student", "Students")
+                        .WithOne("Addresses")
+                        .HasForeignKey("Relation.Models.Address", "StudentID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Groups");
+                    b.Navigation("Students");
                 });
 
-            modelBuilder.Entity("Relation.Models.Group", b =>
+            modelBuilder.Entity("Relation.Models.Student", b =>
                 {
-                    b.Navigation("Students");
+                    b.Navigation("Addresses");
                 });
 #pragma warning restore 612, 618
         }
