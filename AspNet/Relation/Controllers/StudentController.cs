@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 
 namespace Relation.Controllers
 {
-    public class HomeController : Controller
+    public class StudentController : Controller
     {
 
         private readonly PortoDbContext dbContext;
-        public HomeController(PortoDbContext _dbContext)
+        public StudentController(PortoDbContext _dbContext)
         {
             dbContext = _dbContext;
         }
@@ -57,7 +57,7 @@ namespace Relation.Controllers
             dbContext.ADDRESS.Add(address);
             dbContext.SaveChanges();
 
-            return Redirect("/Home/List");
+            return Redirect("/Student/List");
         }
     }
 }

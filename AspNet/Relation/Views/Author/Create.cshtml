@@ -1,0 +1,32 @@
+﻿@model Book
+
+
+
+<form method="post">
+    <div class="mb-3">
+        <label>Author</label>
+        <select asp-for="AuthorID" class="form-control">
+            @foreach (var item in ViewBag.AUTHORBAG)
+            {
+                <option value="@item.ID">@item.AuthorName</option>
+            }
+        </select>
+
+    </div>
+    <div class="mb-3">
+        <label>Book</label>
+        <input type="text" class="form-control" asp-for="BookName">
+        <span asp-validation-for="BookName" style="color:red"></span>
+
+    </div>
+
+    <div class="mb-3">
+        <label>Page</label>
+        <input type="number" class="form-control" asp-for="Page">
+        <span asp-validation-for="Page" style="color:red"></span>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

@@ -58,7 +58,7 @@ namespace Relation
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=List}/{id?}");
+                    pattern: "{controller=Author}/{action=List}/{id?}");
             });
         }
     }

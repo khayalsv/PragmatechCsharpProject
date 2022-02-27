@@ -1,0 +1,35 @@
+﻿@model IList<Book>
+
+<div>
+    <a href="/Author/Create" style="width:100%" class="btn btn-success">Add</a>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>AuthorName</th>
+            <th>BookName</th>
+            <th>Page</th>
+            <th>CRUD</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th scope="row">@item.ID</th>
+            <th scope="row">@item.Authors.AuthorName</th>
+            <td>@item.BookName</td>
+            <td>@item.Page</td>
+            <td>
+                <a href="/Author/Edit/@item.ID" style="color:green"><i class="fas fa-edit"></i></a>
+                <a href="/Author/Delete/@item.ID" onclick="return confirm('Are you delete?')" style="color:red"><i class="fas fa-trash-alt"></i></a>
+                <a href="/Author/Details/@item.ID" style="color:steelblue">About</a>
+            </td>
+        </tr>
+
+        }
+    </tbody>
+</table>

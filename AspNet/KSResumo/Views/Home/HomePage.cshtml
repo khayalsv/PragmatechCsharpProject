@@ -1,4 +1,24 @@
 ﻿@model HomeVM
+@{ 
+    List<New> news = new List<New>();
+    List<New> animatednews = new List<New>();
+    int num = 1;
+    foreach (var item in Model.News)
+    {
+        if (num>4)
+        {
+            news.Add(item);
+        }
+        else
+        {
+            animatednews.Add(item);
+        }
+        num += 1;
+
+    }
+
+
+}
 <!-- Wrapper All -->
 <div class="resumo_fn_wrapper">
 
@@ -158,42 +178,44 @@
                             <div class="resumo_fn_blog_list">
 
                                 <ul class="modal_items" data-from="blog" data-count="5">
-
-
-                                    @foreach (var item in Model.News)
+                                    @foreach (var item in animatednews)
                                     {
-                                        if (item.ID > 4)
-                                        {
-                                            <li class="be_animated">
-                                                <div class="item modal_itemmm" data-index="@item.ID">
-                                                    <div class="img_holder">
-                                                        <img src="img/thumb/square.jpg" alt="">
-                                                        <div class="abs_img" data-bg-img="img/@item.Image"></div>
-                                                    </div>
-                                                    <div class="title_holder">
-                                                        <p>@item.Date</p>
-                                                        <h3><a href="@item.Link" target="_blank">@item.Text</a></h3>
-                                                    </div>
+                                        <li>
+                                            <div class="item modal_itemmm" data-index="@item.ID">
+                                                <div class="img_holder">
+                                                    <img src="img/thumb/square.jpg" alt="">
+                                                    <div class="abs_img" data-bg-img="img/@item.Image"></div>
                                                 </div>
-                                            </li>
-                                        }
-                                        else
-                                        {
-                                            <li>
-                                                <div class="item modal_itemmm" data-index="@item.ID">
-                                                    <div class="img_holder">
-                                                        <img src="img/thumb/square.jpg" alt="">
-                                                        <div class="abs_img" data-bg-img="img/@item.Image"></div>
-                                                    </div>
-                                                    <div class="title_holder">
-                                                        <p>@item.Date</p>
-                                                        <h3><a href="@item.Link" target="_blank">@item.Text</a></h3>
-                                                    </div>
+                                                <div class="title_holder">
+                                                    <p>@item.Date</p>
+                                                    <h3><a href="@item.Link" target="_blank">@item.Text</a></h3>
                                                 </div>
-                                            </li>
-                                        }
+                                            </div>
+                                        </li>
 
                                     }
+
+
+                                    @foreach (var item in news)
+                                    {
+
+                                        <li class="be_animated">
+                                            <div class="item modal_itemmm" data-index="@item.ID">
+                                                <div class="img_holder">
+                                                    <img src="img/thumb/square.jpg" alt="">
+                                                    <div class="abs_img" data-bg-img="img/@item.Image"></div>
+                                                </div>
+                                                <div class="title_holder">
+                                                    <p>@item.Date</p>
+                                                    <h3><a href="@item.Link" target="_blank">@item.Text</a></h3>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    }
+
+
+
                                 </ul>
 
                                 <div class="clearfix"></div>

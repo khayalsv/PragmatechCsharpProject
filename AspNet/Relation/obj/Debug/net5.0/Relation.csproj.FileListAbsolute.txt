@@ -68,5 +68,10 @@ C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Relation.dll
 C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\ref\Relation.dll
 C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Relation.pdb
 C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Relation.genruntimeconfig.cache
-C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Home\List.cshtml.g.cs
-C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Home\Create.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Student\Create.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Student\List.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Author\Create.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Author\List.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Author\Edit.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Author\Details.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Author\CreateAuthor.cshtml.g.cs
