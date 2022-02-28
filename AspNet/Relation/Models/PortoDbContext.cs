@@ -20,6 +20,9 @@ namespace KS.Models
         public DbSet<Customer> CUSTOMER { get; set; }
         public DbSet<Product> PRODUCT { get; set; }
 
+        public DbSet<Hobby> HOBBY { get; set; }
+        public DbSet<Teacher> TEACHER { get; set; }
+        public DbSet<TeacherToHobby> TEACHERTOHOBBY { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -40,6 +43,21 @@ namespace KS.Models
            .HasOne(a => a.Authors)
            .WithMany(b => b.Books)
            .HasForeignKey(c => c.AuthorID);
+
+
+            modelBuilder.Entity<TeacherToHobby>()
+                .HasKey(x => new { x.TeacherID, x.HobbyID });
+            modelBuilder.Entity<TeacherToHobby>()
+                .HasOne(x => x.HobbyTable)
+                .WithMany(x => x.collectionTable)
+                .HasForeignKey(x => x.HobbyID);
+            modelBuilder.Entity<TeacherToHobby>()
+                .HasOne(x => x.TeacherTable)
+                .WithMany(x => x.collectionTable)
+                .HasForeignKey(x => x.TeacherID);
+                
+                
+
         }
     }
 }

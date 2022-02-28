@@ -1,0 +1,26 @@
+﻿@model IList<TeacherToHobby>
+
+<div>
+    <a href="/Author/Create" style="width:100%" class="btn btn-success">Add</a>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Teacher</th>
+            <th>Hobby</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th scope="row">@item.TeacherTable.TeacherName</th>
+            <th scope="row">@item.HobbyTable.HobbyName</th>
+
+        </tr>
+
+        }
+    </tbody>
+</table>
