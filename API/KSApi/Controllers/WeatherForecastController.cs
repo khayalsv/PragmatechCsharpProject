@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace KSApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -24,7 +24,7 @@ namespace KSApi.Controllers
             _user = user;
         }
 
-        [HttpGet]
+        [HttpGet("Gett")]
         public List<WeatherForecast> Get()
         {
             var text = _user.FullName();
