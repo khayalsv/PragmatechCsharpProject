@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace KS.Models
 {
-    public class PortoDbContext: IdentityDbContext<User>
+    public class PortoDbContext: IdentityDbContext<IdentityUser>
     {
         public PortoDbContext(DbContextOptions<PortoDbContext> options) : base(options) { }
 
@@ -16,5 +17,7 @@ namespace KS.Models
         public DbSet<HomePageM> HomePageMs { get; set; }
         public DbSet<About> Aboutes { get; set; }
         public DbSet<Resume> Resumes { get; set; }
+
+
     }
 }

@@ -468,3 +468,5 @@ C:\Users\selim\Desktop\Csharp\AspNet\KSKitzu\obj\Debug\net5.0\KS.dll
 C:\Users\selim\Desktop\Csharp\AspNet\KSKitzu\obj\Debug\net5.0\ref\KS.dll
 C:\Users\selim\Desktop\Csharp\AspNet\KSKitzu\obj\Debug\net5.0\KS.pdb
 C:\Users\selim\Desktop\Csharp\AspNet\KSKitzu\obj\Debug\net5.0\KS.genruntimeconfig.cache
+C:\Users\selim\Desktop\Csharp\AspNet\KSKitzu\obj\Debug\net5.0\Razor\Areas\Admin\Views\Account\Login.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSKitzu\obj\Debug\net5.0\Razor\Areas\Admin\Views\Account\Register.cshtml.g.cs

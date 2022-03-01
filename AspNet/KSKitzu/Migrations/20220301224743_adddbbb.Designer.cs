@@ -4,14 +4,16 @@ using KS.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KS.Migrations
 {
     [DbContext(typeof(PortoDbContext))]
-    partial class PortoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220301224743_adddbbb")]
+    partial class adddbbb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

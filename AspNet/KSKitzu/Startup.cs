@@ -34,7 +34,7 @@ namespace KS
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
-            services.AddIdentity<User, IdentityRole>()
+            services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<PortoDbContext>();
 
             services.Configure<IdentityOptions>(options =>
