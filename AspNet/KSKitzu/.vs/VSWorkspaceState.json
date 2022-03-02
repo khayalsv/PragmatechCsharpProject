@@ -5,6 +5,6 @@
     "\\Areas\\Admin",
     "\\Areas\\Admin\\Controllers"
   ],
-  "SelectedNode": "\\Areas\\Admin\\Controllers\\BlogController.cs",
+  "SelectedNode": "\\Startup.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -148,3 +148,10 @@ C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Areas
 C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Areas\Admin\Views\Slider\Create.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Areas\Admin\Views\Slider\List.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Areas\Admin\Views\Student\List.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Areas\Admin\Views\Account\Register.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\SampleTemplate\obj\Debug\net5.0\Razor\Areas\Admin\Views\Account\Login.cshtml.g.cs

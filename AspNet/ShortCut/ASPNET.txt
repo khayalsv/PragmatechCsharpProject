@@ -4,7 +4,8 @@ microsoft.entityframeworkcore.sqlserver\5.0.1\
 microsoft.entityframeworkcore.design\5.0.1\
 microsoft.entityframeworkcore.tools\5.0.1\
 microsoft.visualstudio.web.codegeneration.design\5.0.2\
-
+misrosoft.extensions.identity.core\5.0.1\
+misrosoft.aspnetcore.identity.entityframeworkcore\5.0.1\
 
 2.appsetting.json faylına database kodu yazmaq:
  "ConnectionStrings": {
@@ -164,8 +165,75 @@ Umumi ViewImports kodlari  Admin/Views/ViewImport-a kopyalamaq.
 
 10.Layihenin oldugu (AdminLayout) head hissesi @RenderSection("styles",false)  axrda(("script",false))
 
-------------------One to one-----------------
 
+
+
+-----------------AdminLoginRegisterUser--------
+1.PortodbContext modelinde->
+    public class PortoDbContext: IdentityDbContext<IdentityUser>
+
+2.Startup.cs ConfigureServicer->
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<PortoDbContext>();
+
+
+3.User login editleme:
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 8;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false; //!@%#%^%#
+
+                //options.User.AllowedUserNameCharacters = "ssadsafsadsvds";
+                options.Lockout.MaxFailedAccessAttempts = 3;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromSeconds(5);
+                options.Lockout.AllowedForNewUsers = true; //new user not block
+
+                //options.SignIn.RequireConfirmedAccount = true;
+
+
+            });
+
+4.AccountController create->
+
+    [Area("Admin")]
+    public class AccountController : Controller
+    {
+        private readonly PortoDbContext _dbContext;
+        private readonly UserManager<IdentityUser> _userManager; //user-in emaili dogrulugu,crud
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
+
+        public AccountController(PortoDbContext dbContext,
+            UserManager<IdentityUser> userManager,
+            RoleManager<IdentityRole> roleManager,
+            SignInManager<IdentityUser> signInManager)
+        {
+            _dbContext = dbContext;
+            _userManager = userManager;
+            _roleManager = roleManager;
+            _signInManager = signInManager;
+        }
+
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+    }
+
+
+------------------Relation-----------------
+
+one to one///
 1.public class Student
     {
         public int ID { get; set; }

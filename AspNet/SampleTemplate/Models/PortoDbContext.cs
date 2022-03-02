@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SampleTemplate.Models
 {
-    public class PortoDbContext:DbContext
+    public class PortoDbContext:IdentityDbContext
     {
         public PortoDbContext(DbContextOptions<PortoDbContext> options):base(options) { }
 
