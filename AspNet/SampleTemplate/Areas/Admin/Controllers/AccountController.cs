@@ -35,7 +35,7 @@ namespace SampleTemplate.Areas.Admin.Controllers
             {
                 var user = new IdentityUser()
                 {
-                    UserName = model.Email,
+                    UserName=model.Email,
                     Email = model.Email
                 };
 

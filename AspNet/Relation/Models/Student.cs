@@ -11,6 +11,7 @@ namespace Relation.Models
     {
         public int ID { get; set; }
         public string Fullname { get; set; }
+
         public virtual Address Addresses { get; set; }
     }
 }

@@ -22,6 +22,7 @@ namespace Relation.Controllers
             dbContext = _dbContext;
         }
 
+        [HttpGet]
         public IActionResult List()
         {
             var studentList = dbContext.STUDENT.Include(x => x.Addresses).ToList();
@@ -29,6 +30,7 @@ namespace Relation.Controllers
             return View(studentList);
         }
 
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
@@ -55,6 +57,53 @@ namespace Relation.Controllers
                 Students = student
             };
             dbContext.ADDRESS.Add(address);
+            dbContext.SaveChanges();
+
+            return Redirect("/Student/List");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            Student studentList = dbContext.STUDENT.Include(x=>x.Addresses).FirstOrDefault(x=>x.ID==id);
+
+            if (studentList == null)
+                return NotFound();
+
+            return View(studentList);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Student student)
+        {
+            if (!ModelState.IsValid)
+                return NotFound();
+
+            Student studentList = dbContext.STUDENT.Include(x => x.Addresses).FirstOrDefault(x => x.ID == student.ID);
+            if (studentList == null)
+                return NotFound();
+
+            studentList.Fullname = student.Fullname;
+            studentList.Addresses.Name = student.Addresses.Name;
+
+            dbContext.SaveChanges();
+            return Redirect("/Student/List");
+        }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            Student studentList = dbContext.STUDENT.Find(id);
+
+            if (studentList == null)
+                return NotFound();
+            
+            dbContext.STUDENT.Remove(studentList);
             dbContext.SaveChanges();
 
             return Redirect("/Student/List");

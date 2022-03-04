@@ -1,9 +1,7 @@
 ﻿@model IList<Student>
 
-
-<h1>Index</h1>
 <div>
-    <a href="/Student/Create" style="width:100%" class="btn btn-success">Add new slider</a>
+    <a href="/Student/Create" style="width:100%" class="btn btn-success">Add</a>
 </div>
 <table class="table table-bordered">
     <thead>
@@ -15,7 +13,6 @@
         </tr>
     </thead>
     <tbody>
-
         @foreach (var item in Model)
         {
         <tr>
@@ -23,14 +20,12 @@
             <th scope="row">@item.Addresses.Name</th>
             <td>@item.Fullname</td>
             <td>
-                <a href="/Edit/@item.ID" style="color:red"><i class="fas fa-edit"></i></a>
-                <a href="/Delete/@item.ID" onclick="return confirm('Silmek istediyinizden eminsiz?')" style="color:red">
+                <a href="/Student/Edit/@item.ID" style="color:green"><i class="fas fa-edit"></i></a>
+                <a href="/Student/Delete/@item.ID" onclick="return confirm('Silmek istediyinizden eminsiz?')" style="color:red">
                     <i class="fas fa-trash-alt"></i>
                 </a>
-                <a href="/Details/@item.ID" style="color:red">Etrafli</a>
             </td>
         </tr>
-
         }
     </tbody>
 </table>

@@ -194,8 +194,13 @@ Umumi ViewImports kodlari  Admin/Views/ViewImport-a kopyalamaq.
 
 
             });
+add-migration
+update-database
 
-4.AccountController create->
+
+4.LoginViewModel ,RegisterViewModel modelleri yaratmaq
+
+5.AccountController create->
 
     [Area("Admin")]
     public class AccountController : Controller
