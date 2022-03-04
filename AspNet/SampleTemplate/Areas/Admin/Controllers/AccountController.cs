@@ -72,7 +72,7 @@ namespace SampleTemplate.Areas.Admin.Controllers
             {
                 var result = await signInManager.PasswordSignInAsync(model.Email,
                     model.Password,
-                    model.RememberMe, false);
+                    model.RememberMe,false);
 
                 if (result.Succeeded)
                 {
