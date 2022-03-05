@@ -27,27 +27,13 @@ namespace KSResumo.Controllers
                 Abouts=await dbContext.Abouts.ToListAsync(),
                 Portfolios = await dbContext.Portfolios.ToListAsync(),
                 News = await dbContext.News.ToListAsync(),
-                Contacts = await dbContext.Contacts.ToListAsync(),
                 Socials = await dbContext.Socials.ToListAsync(),
+                
             };
             return View(vM);
         }
 
-        //[HttpGet]
-        //public IActionResult Create()
-        //{
-        //    Contact contact = new Contact();
-        //    return View(contact);
-        //}
-
-        //[HttpPost]
-        //public async Task<IActionResult> Create(Contact contact)
-        //{ 
-        //    await dbContext.Contacts.AddAsync(contact);
-        //    await dbContext.SaveChangesAsync();
-
-        //    return Redirect("HomePage");
-        //}
+    
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

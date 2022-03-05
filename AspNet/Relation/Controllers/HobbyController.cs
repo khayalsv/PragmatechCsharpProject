@@ -27,6 +27,7 @@ namespace Relation.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            ViewBag.TEACHERBAG = dbContext.TEACHER.ToList();
             TeacherToHobby teacherToHobby = new TeacherToHobby();
             return View(teacherToHobby);
         }
@@ -49,12 +50,11 @@ namespace Relation.Controllers
             if (id == null)
                 return NotFound();
 
-            TeacherToHobby hobbyList=dbContext.TEACHERTOHOBBY.Include(x => x.TeacherTable).Include(y => y.HobbyTable).FirstOrDefault(x=>x.TeacherID==id);
+            var teacherList = dbContext.TEACHERTOHOBBY.Include(x => x.TeacherTable).Include(x=>x.HobbyTable).First(x => x.TeacherID==id);
 
-            if (hobbyList == null)
-                return NotFound();
+           
 
-            return View(hobbyList);
+            return View(teacherList);
         }
 
         [HttpPost]
@@ -63,17 +63,15 @@ namespace Relation.Controllers
             if (!ModelState.IsValid)
                 return NotFound();
 
-            TeacherToHobby teacherList = dbContext.TEACHERTOHOBBY.Include(x => x.TeacherTable).FirstOrDefault(x => x.TeacherID == x.TeacherID);
-            TeacherToHobby hobbyList = dbContext.TEACHERTOHOBBY.Include(x => x.HobbyTable).FirstOrDefault(x => x.HobbyID == x.HobbyID);
+            var teacherList = dbContext.TEACHERTOHOBBY.First(x => x.TeacherID == teacherToHobby.TeacherID);
 
             if (teacherList == null)
                 return View(teacherToHobby);
 
-            if (hobbyList == null)
-                return View(teacherToHobby);
-           
+            teacherList.HobbyTable.HobbyName = teacherToHobby.HobbyTable.HobbyName;
             teacherList.TeacherTable.TeacherName = teacherToHobby.TeacherTable.TeacherName;
-            hobbyList.HobbyTable.HobbyName = teacherToHobby.HobbyTable.HobbyName;
+
+
 
             dbContext.SaveChanges();
             return Redirect("/Hobby/List");

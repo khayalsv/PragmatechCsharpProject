@@ -166,3 +166,10 @@ C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomeP\Details.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomeP\Edit.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Areas\Admin\Views\HomeP\List.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
