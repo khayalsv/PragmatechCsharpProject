@@ -136,5 +136,11 @@ namespace KSResumo.Controllers
             return Redirect("/");
 
         }
+
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+            return Redirect("/");
+        }
     }
 }

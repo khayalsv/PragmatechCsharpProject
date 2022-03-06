@@ -1,4 +1,13 @@
-﻿@model HomeVM
+﻿@inject Microsoft.AspNetCore.Identity.UserManager<IdentityUser> userManager;
+
+@{
+    IdentityUser user = null;
+    if (User.Identity.IsAuthenticated)
+    {
+        user = userManager.Users.FirstOrDefault(x => x.UserName == User.Identity.Name);
+    }
+}
+
 
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
@@ -6,7 +15,7 @@
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
- <!--<![endif]-->
+<!--<![endif]-->
 <!-- Mirrored from frenify.net/envato/frenify/html/resumo/1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Feb 2022 21:23:43 GMT -->
 <head>
 
@@ -34,6 +43,17 @@
 </head>
 
 <body>
+    @if (user == null)
+    {
+        <a asp-action="Login" asp-controller="Account" target="_blank">Login</a>
+        <a asp-action="Register" asp-controller="Account" target="_blank">Register</a>
+    }
+    else
+    {
+        <h3>@user.UserName</h3>
+        <a href="/Account/Logout">Logout</a>
+
+    }
 
     @RenderBody()
 
