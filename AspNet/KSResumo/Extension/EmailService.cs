@@ -20,7 +20,7 @@ namespace KSResumo.Extension
         {
             //create message
             var email=new MimeMessage();
-            email.From.Add(MailboxAddress.Parse("selimovxeyal@gmail.com"));
+            email.From.Add(MailboxAddress.Parse("salimovkhayal@gmail.com"));
             email.To.Add(MailboxAddress.Parse(to));
             email.Subject = subject;
             email.Body = new TextPart(TextFormat.Html) { Text = html };

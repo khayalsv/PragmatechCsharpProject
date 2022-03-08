@@ -178,3 +178,4 @@ C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\bin\Debug\net5.0\MailKit.dll
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\bin\Debug\net5.0\MimeKit.dll
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\bin\Debug\net5.0\BouncyCastle.Crypto.dll
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Views\Account\ForgetPassword.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Views\Account\ResetPassword.cshtml.g.cs

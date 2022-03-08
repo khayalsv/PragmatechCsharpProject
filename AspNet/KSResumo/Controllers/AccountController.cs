@@ -242,5 +242,39 @@ namespace KSResumo.Controllers
             return RedirectToAction("Login", "Account");
         }
 
+        [HttpGet]
+        public IActionResult ResetPassword(string token,string email)
+        {
+            ResetPasswordVM resetVM = new ResetPasswordVM
+            {
+                Token = token,
+                Email = email
+            };
+            return View(resetVM);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(ResetPasswordVM resetVM)
+        {
+            if (!ModelState.IsValid)
+                return View(resetVM);
+
+            IdentityUser user = await userManager.FindByEmailAsync(resetVM.Email);
+            
+            var result = await userManager.ResetPasswordAsync(user, resetVM.Token, resetVM.Password);
+
+            if (!result.Succeeded)
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError("", item.Description);
+                }
+                return View(resetVM);
+            }
+
+            return RedirectToAction("Login", "Account");
+        }
+
     }
 }
