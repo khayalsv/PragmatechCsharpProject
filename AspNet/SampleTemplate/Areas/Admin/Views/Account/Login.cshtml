@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "User Login";
+    Layout = null;
 }
 
 <h1>User Login</h1>
@@ -17,7 +18,6 @@
     <div style="margin-top:100px" class="row justify-content-center">
         <div class="col-md-6 col-lg-4">
             <div class="login-wrap p-0">
-                <h3 class="mb-4 text-center">Have an account?</h3>
                 <form method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Username" asp-for="Email">
@@ -44,8 +44,6 @@
                         </div>
                     </div>
                 </form>
-                <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
-
             </div>
         </div>
     </div>

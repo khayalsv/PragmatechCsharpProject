@@ -1,9 +1,12 @@
-﻿using KSResumo.Models;
+﻿using KSResumo.Extension;
+using KSResumo.Models;
 using KSResumo.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,16 +18,20 @@ namespace KSResumo.Controllers
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly UserManager<IdentityUser> userManager;
         private readonly SignInManager<IdentityUser> signInManager;
+        private readonly IEmailService emailService;
+
 
         public AccountController(PortoDbContext dbContext,
             RoleManager<IdentityRole> roleManager,
             UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager)
+            SignInManager<IdentityUser> signInManager,
+             IEmailService emailService)
         {
             this.dbContext = dbContext;
             this.roleManager = roleManager;
             this.userManager = userManager;
             this.signInManager = signInManager;
+            this.emailService = emailService;
         }
 
         public async Task SeedRoles()
@@ -61,6 +68,7 @@ namespace KSResumo.Controllers
             }
         }
 
+        [HttpGet]
         public IActionResult Register()
         {
             return View();
@@ -103,6 +111,7 @@ namespace KSResumo.Controllers
             return Redirect("/");
         }
 
+        [HttpGet]
         public IActionResult Login()
         {
             return View();
@@ -137,10 +146,101 @@ namespace KSResumo.Controllers
 
         }
 
+        
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();
             return Redirect("/");
         }
+
+
+        [HttpGet]
+        [Authorize(Roles="User")]
+        public async Task<IActionResult> Edit()
+        {
+            IdentityUser user = await userManager.FindByNameAsync(User.Identity.Name);
+            UserUpdateVM updateVM = new UserUpdateVM
+            {
+                Email=user.Email,
+            };
+            return View(updateVM);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "User")]
+        public async Task<IActionResult> Edit(UserUpdateVM updateVM)
+        {
+            if (!ModelState.IsValid)
+                return View();
+
+            IdentityUser user = await userManager.FindByNameAsync(User.Identity.Name);
+
+            if (user.Email != updateVM.Email && userManager.Users.Any(x=>x.NormalizedEmail== updateVM.Email.ToUpper()))
+            {
+                ModelState.AddModelError("", "Username is already exist");
+                return View();
+            }
+
+            if (!string.IsNullOrWhiteSpace(updateVM.NewPassword))
+            {
+                if (updateVM.NewPassword != updateVM.NewConfirmPassword)
+                {
+                    ModelState.AddModelError("", "Password with not macthed confirm pass");
+                    return View();
+                }
+
+                var result= await userManager.ChangePasswordAsync(user, updateVM.CurrentPassword, updateVM.NewPassword);
+                if (!result.Succeeded)
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                        return View();
+                    }
+                }
+            }
+            user.Email = updateVM.Email;
+
+            await userManager.UpdateAsync(user);
+            await signInManager.SignInAsync(user, true);
+
+            return Redirect("/");
+        }
+
+     
+        [HttpGet]
+        public IActionResult ForgetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ForgetPassword(ForgetPasswordVM forgetVM)
+        {          
+            var user = await userManager.FindByEmailAsync(forgetVM.Email);
+
+            if (user == null)
+            {
+                ModelState.AddModelError("Email", "Email is not valid");
+                return View();
+            }
+           
+            string token= await userManager.GeneratePasswordResetTokenAsync(user);
+            string callback=Url.Action("resetpassword", "account", new { token, email = user.Email }, Request.Scheme);
+
+            string body = string.Empty;
+            using(StreamReader reader =new StreamReader("wwwroot/templates/forgetpassword.html"))
+            {
+                body = reader.ReadToEnd();
+            }
+            body = body.Replace("{{url}}", callback);
+
+            emailService.Send(user.Email, "Reset Password", body);
+
+            return RedirectToAction("Login", "Account");
+        }
+
     }
 }

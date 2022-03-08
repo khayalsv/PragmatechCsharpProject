@@ -27,7 +27,6 @@ namespace Relation.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            ViewBag.TEACHERBAG = dbContext.TEACHER.ToList();
             TeacherToHobby teacherToHobby = new TeacherToHobby();
             return View(teacherToHobby);
         }

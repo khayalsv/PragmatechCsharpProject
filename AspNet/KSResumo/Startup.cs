@@ -1,3 +1,4 @@
+using KSResumo.Extension;
 using KSResumo.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,7 +35,11 @@ namespace KSResumo
             });
 
             services.AddIdentity<IdentityUser, IdentityRole>()
-               .AddEntityFrameworkStores<PortoDbContext>();
+               .AddEntityFrameworkStores<PortoDbContext>()
+               .AddTokenProvider<DataProtectorTokenProvider<IdentityUser>>(TokenOptions.DefaultProvider);
+
+            services.AddScoped<IEmailService, EmailService>();
+
 
             services.Configure<IdentityOptions>(options =>
             {
