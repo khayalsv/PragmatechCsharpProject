@@ -4,6 +4,7 @@ using KSResumo.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,7 +20,6 @@ namespace KSResumo.Controllers
         private readonly UserManager<IdentityUser> userManager;
         private readonly SignInManager<IdentityUser> signInManager;
         private readonly IEmailService emailService;
-
 
         public AccountController(PortoDbContext dbContext,
             RoleManager<IdentityRole> roleManager,
@@ -105,10 +105,48 @@ namespace KSResumo.Controllers
                 }
             }
 
+            string token = await userManager.GenerateEmailConfirmationTokenAsync(user);
+            string callback = Url.Action("ConfirmEmail", "account", new { token, email = user.Email }, Request.Scheme);
+
+            string body = string.Empty;
+            using (StreamReader reader = new StreamReader("wwwroot/templates/forgetpassword.html"))
+            {
+                body = reader.ReadToEnd();
+            }
+            body = body.Replace("{{url}}", callback);
+
+            emailService.Send(user.Email, "Confirm Email", body);
+
+     
             await userManager.AddToRoleAsync(user, "User");
             await signInManager.SignInAsync(user, true);
 
-            return Redirect("/");
+            return RedirectToAction("Login", "Account");
+        }
+
+        [AllowAnonymous]
+        public async Task<IActionResult> ConfirmEmail(string token,string email)
+        {
+            if (email == null || token == null)
+            {
+                return RedirectToAction("index", "home");
+            }
+
+            var user = await userManager.FindByEmailAsync(email);
+            if (user == null)
+            {
+                ViewBag.ErrorMessage = $"The User ID {email} is invalid";
+                return View("NotFound");
+            }
+
+            var result = await userManager.ConfirmEmailAsync(user, token);
+            if (result.Succeeded)
+            {
+                return View();
+            }
+
+            ViewBag.ErrorTitle = "Email cannot be confirmed";
+            return View("Error");
         }
 
         [HttpGet]

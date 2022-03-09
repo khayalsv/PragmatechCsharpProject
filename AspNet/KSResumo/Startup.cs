@@ -38,6 +38,8 @@ namespace KSResumo
                .AddEntityFrameworkStores<PortoDbContext>()
                .AddTokenProvider<DataProtectorTokenProvider<IdentityUser>>(TokenOptions.DefaultProvider);
 
+
+
             services.AddScoped<IEmailService, EmailService>();
 
 
