@@ -24,7 +24,18 @@ namespace NoTech.Controllers
         {
             var vM = new ALLVM
             {
-                homes = await myContext.Homes.ToListAsync()
+                homes = await myContext.Homes.ToListAsync(),
+                features = await myContext.Features.ToListAsync(),
+                abouts = await myContext.Abouts.ToListAsync(),
+                servicesTitles = await myContext.ServicesTitles.ToListAsync(),
+                servicesBoxes = await myContext.ServicesBoxes.ToListAsync(),
+                testimonials = await myContext.Testimonials.ToListAsync(),
+                projectBoxes = await myContext.ProjectBoxes.ToListAsync(),
+                projectAbouts = await myContext.ProjectAbouts.ToListAsync(),
+                counters = await myContext.Counters.ToListAsync(),
+                helpings=await myContext.Helpings.ToListAsync(),
+                blogs=await myContext.Blogs.ToListAsync(),
+                layouts=await myContext.Layouts.ToListAsync()
             };
 
             return View(vM);

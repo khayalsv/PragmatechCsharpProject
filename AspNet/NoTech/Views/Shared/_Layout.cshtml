@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model ALLVM
+<!DOCTYPE html>
 <html lang="en">
 
 
@@ -69,37 +70,36 @@
             <div class="main-header__top">
                 <div class="main-header__top-inner clearfix">
                     <div class="main-header__top-left">
-                        <ul class="list-unstyled main-header__top-address">
-                            <li>
-                                <div class="icon">
-                                    <span class="icon-pin"></span>
-                                </div>
-                                <div class="text">
-                                    <p>66 broklyn golden street line. New York</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon">
-                                    <span class="icon-email"></span>
-                                </div>
-                                <div class="text">
-                                    <p><a href="mailto:needhelp@company.com">needhelp@company.com</a></p>
-                                </div>
-                            </li>
-                        </ul>
+                        @foreach (var item in Model.layouts)
+                        {
+                            <ul class="list-unstyled main-header__top-address">
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-pin"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>@item.Address</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-email"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><a href="@item.Email">@item.Email</a></p>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        }
                     </div>
                     <div class="main-header__top-right">
                         <div class="main-header__top-right-content">
-                            <ul class="list-unstyled main-header__top-right-menu">
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Leadership</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
                             <div class="main-header__top-right-social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                @foreach (var item in Model.layouts)
+                                {
+                                    <a href="@item.SocialLink">@item.SocialIcon</a>
+                                }
                             </div>
                         </div>
                     </div>
@@ -146,10 +146,14 @@
                                 <div class="main-menu__call-icon">
                                     <img src="~/assets/images/icon/main-menu-icon-comment.png" alt="">
                                 </div>
-                                <div class="main-menu__call-number">
-                                    <p>Have any question?</p>
-                                    <h5><a href="tel:926668880000"><span>Free</span> +98 (000)-9850</a></h5>
-                                </div>
+                                @foreach (var item in Model.layouts)
+                                {
+                                    <div class="main-menu__call-number">
+                                        <p>@item.Question</p>
+                                        <h5><a href="tel:@item.Phone"><span>Free</span> @item.Phone</a></h5>
+                                    </div>
+
+                                }
                             </div>
                             <div class="main-menu__search-box">
                                 <a href="#" class="main-menu__search search-toggler icon-magnifying-glass"></a>
@@ -195,81 +199,84 @@
             <div class="site-footer__middle">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                            <div class="footer-widget__column footer-widget__about">
-                                <div class="footer-widget__logo">
-                                    <a href="index.html"><img src="~/assets/images/resources/footer-logo.png" alt=""></a>
+                        @*<div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+            <div class="footer-widget__column footer-widget__about">
+                <div class="footer-widget__logo">
+                    <a href="index.html"><img src="~/assets/images/resources/footer-logo.png" alt=""></a>
+                </div>
+                <div class="footer-widget__about-text-box">
+                    <p class="footer-widget__about-text">
+                        Subsrcibe for our upcoming latest articles and
+                        news resources
+                    </p>
+                </div>
+                <form class="footer-widget__newsletter-form">
+                    <div class="footer-widget__newsletter-input-box">
+                        <input type="email" placeholder="Email address" name="email">
+                        <button type="submit" class="footer-widget__newsletter-btn">
+                            <img src="~/assets/images/icon/footer-widget-newsletter-send-icon.png"
+                                 alt="">
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>*@
+                        @*<div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+            <div class="footer-widget__column footer-widget__links clearfix">
+                <h3 class="footer-widget__title">Links</h3>
+                <ul class="footer-widget__links-list list-unstyled clearfix">
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="team.html">Meet our team</a></li>
+                    <li><a href="blog.html">News & media</a></li>
+                    <li><a href="projects-page-1.html">Our projects</a></li>
+                    <li><a href="contact.html">Contacts</a></li>
+                </ul>
+            </div>
+        </div>*@
+                        @foreach (var item in Model.layouts)
+                        {
+                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                                <div class="footer-widget__column footer-widget__contact clearfix">
+                                    <h3 class="footer-widget__title">Contact</h3>
+                                    <ul class="footer-widget__contact-list list-unstyled clearfix">
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-telephone"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p><a href="tel:@item.Phone">@item.Phone</a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-email"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p><a href="@item.Email">@item.Email</a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-pin"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>@item.Address</p>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="footer-widget__about-text-box">
-                                    <p class="footer-widget__about-text">
-                                        Subsrcibe for our upcoming latest articles and
-                                        news resources
-                                    </p>
-                                </div>
-                                <form class="footer-widget__newsletter-form">
-                                    <div class="footer-widget__newsletter-input-box">
-                                        <input type="email" placeholder="Email address" name="email">
-                                        <button type="submit" class="footer-widget__newsletter-btn">
-                                            <img src="~/assets/images/icon/footer-widget-newsletter-send-icon.png"
-                                                 alt="">
-                                        </button>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                                <div class="footer-widget__column footer-widget__social-box clearfix">
+                                    <div class="site-footer__social">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-facebook"></i></a>
+                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
                                     </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                            <div class="footer-widget__column footer-widget__links clearfix">
-                                <h3 class="footer-widget__title">Links</h3>
-                                <ul class="footer-widget__links-list list-unstyled clearfix">
-                                    <li><a href="about.html">About us</a></li>
-                                    <li><a href="team.html">Meet our team</a></li>
-                                    <li><a href="blog.html">News & media</a></li>
-                                    <li><a href="projects-page-1.html">Our projects</a></li>
-                                    <li><a href="contact.html">Contacts</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                            <div class="footer-widget__column footer-widget__contact clearfix">
-                                <h3 class="footer-widget__title">Contact</h3>
-                                <ul class="footer-widget__contact-list list-unstyled clearfix">
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-telephone"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p><a href="tel:980009850">+98 (000)-9850</a></p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-email"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p><a href="mailto:needhelp@company.com">needhelp@company.com</a></p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-pin"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p>66 broklyn golden street line <br> new york</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                            <div class="footer-widget__column footer-widget__social-box clearfix">
-                                <div class="site-footer__social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -279,7 +286,7 @@
                         <div class="col-xl-12">
                             <div class="site-footer__bottom-inner">
                                 <p class="site-footer__bottom-text">
-                                    © All Copyright 2022 by <a href="#">Layerdrops.com</a>
+                                    © All Copyright 2022 by <a href="#">KS</a>
                                 </p>
                             </div>
                         </div>
@@ -308,26 +315,26 @@
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>
             <!-- /.mobile-nav__container -->
-
+@foreach (var item in Model.layouts)
+{
+    
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="fa fa-envelope"></i>
-                    <a href="mailto:needhelp@packageName__.com">needhelp@notech.com</a>
+                    <a href="@item.Email">@item.Email</a>
                 </li>
                 <li>
                     <i class="fa fa-phone-alt"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
-                </li>
+                    <a href="tel:@item.Phone">@item.Phone</a>
             </ul><!-- /.mobile-nav__contact -->
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-facebook-square"></a>
-                    <a href="#" class="fab fa-pinterest-p"></a>
-                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="@item.SocialLink" class="@item.SocialIcon"></a>
+                    
                 </div><!-- /.mobile-nav__social -->
             </div><!-- /.mobile-nav__top -->
 
+}
 
 
         </div>
