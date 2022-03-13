@@ -1,0 +1,50 @@
+﻿@model About
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<form method="post" enctype="multipart/form-data">
+    @*<div asp-validation-summary="All"></div>*@
+
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input class="form-control" type="text" asp-for="Title" />
+        <span asp-validation-for="Title"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Text</label>
+        <input class="form-control" type="text" asp-for="Text" />
+        <span asp-validation-for="Text"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">List</label>
+        <input class="form-control" type="text" asp-for="List" />
+        <span asp-validation-for="List"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">SubHeading</label>
+        <input class="form-control" type="text" asp-for="Subheading" />
+        <span asp-validation-for="Subheading"></span>
+    </div>
+
+
+    <div class="mb-3">
+        <label class="form-label">Photo 1</label>
+        <input class="form-control" type="file" asp-for="Photo1">
+        <span asp-validation-for="Photo1"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Photo 2</label>
+        <input class="form-control" type="file" asp-for="Photo2">
+        <span asp-validation-for="Photo2"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

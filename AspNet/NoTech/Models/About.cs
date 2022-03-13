@@ -33,6 +33,8 @@ namespace NoTech.Models
         public string Image2 { get; set; }
 
         [NotMapped]
-        public IFormFile Photo { get; set; }
+        public IFormFile Photo1 { get; set; }
+        [NotMapped]
+        public IFormFile Photo2 { get; set; }
     }
 }
