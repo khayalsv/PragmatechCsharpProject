@@ -43,7 +43,7 @@
 </head>
 
 <body>
-    @if (user == null)
+    @if (user == null )
     {
         <a asp-action="Login" asp-controller="Account" target="_blank">Login</a>
         <a asp-action="Register" asp-controller="Account" target="_blank">Register</a>
@@ -52,9 +52,10 @@
     {
         <h3>@user.UserName</h3>
         <a asp-action="Edit" asp-controller="Account" target="_blank">Update</a>
+        <a asp-action="EditAdmin" asp-controller="Account" target="_blank">Admin Update</a>
         <a href="/Account/Logout">Logout</a>
-
     }
+
 
     @RenderBody()
 

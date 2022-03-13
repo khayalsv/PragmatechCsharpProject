@@ -180,3 +180,5 @@ C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\bin\Debug\net5.0\BouncyCastle.Cryp
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Views\Account\ForgetPassword.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Views\Account\ResetPassword.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Views\Account\ConfirmEmail.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Views\Account\EditAdmin.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\KSResumo\obj\Debug\net5.0\Razor\Views\Account\ErrorRegister.cshtml.g.cs

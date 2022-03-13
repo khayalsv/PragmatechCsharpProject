@@ -10,7 +10,7 @@ namespace Relation.Models
         public int HobbyID { get; set; }
         public string HobbyName { get; set; }
 
-        public ICollection<TeacherToHobby> collectionTable { get; set; }
+        public IList<TeacherToHobby> collectionTable { get; set; }
 
     }
 }

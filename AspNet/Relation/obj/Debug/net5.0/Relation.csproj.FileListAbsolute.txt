@@ -75,8 +75,6 @@ C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Autho
 C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Author\Edit.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Author\Details.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Author\CreateAuthor.cshtml.g.cs
-C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Customer\List.cshtml.g.cs
-C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Customer\Create.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Hobby\List.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Student\Edit.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Hobby\Create.cshtml.g.cs

@@ -1,4 +1,4 @@
-﻿@model IList<TeacherToHobby>
+﻿@model List<Teacher>
 
 <div>
     <a href="/Hobby/Create" style="width:100%" class="btn btn-success">Add</a>
@@ -6,21 +6,26 @@
 <table class="table table-bordered">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Teacher</th>
-            <th>Hobby</th>
-            <th>CRUD</th>
+            <th class="text-center whitespace-no-wrap">Hobby</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
         <tr>
-            <th scope="row">@item.TeacherTable.TeacherName</th>
-            <th scope="row">@item.HobbyTable.HobbyName</th>
-            <td>
-                <a href="/Hobby/Edit/@item.TeacherID" style="color:green"><i class="fas fa-edit"></i></a>
-                <a href="/Hobby/Delete/@item.TeacherID" onclick="return confirm('Are you delete?')" style="color:red"><i class="fas fa-trash-alt"></i></a>
-            </td>
+            <td>@item.TeacherID</td>
+            <td>@item.TeacherName</td>
+            @foreach (var item2 in item.collectionTable.ToList())
+            {
+           
+                <td>@item2.HobbyTable.HobbyName</td>
+}
+            @*<td>
+            <a href="/Hobby/Edit/@item.TeacherID" style="color:green"><i class="fas fa-edit"></i></a>
+            <a href="/Hobby/Delete/@item.TeacherID" onclick="return confirm('Are you delete?')" style="color:red"><i class="fas fa-trash-alt"></i></a>
+        </td>*@
         </tr>
         }
     </tbody>

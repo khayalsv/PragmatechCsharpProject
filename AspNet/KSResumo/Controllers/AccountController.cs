@@ -21,6 +21,7 @@ namespace KSResumo.Controllers
         private readonly SignInManager<IdentityUser> signInManager;
         private readonly IEmailService emailService;
 
+
         public AccountController(PortoDbContext dbContext,
             RoleManager<IdentityRole> roleManager,
             UserManager<IdentityUser> userManager,
@@ -54,11 +55,11 @@ namespace KSResumo.Controllers
             {
                 IdentityUser user = new IdentityUser()
                 {
-                    UserName = "admin",
-                    Email = "admin@gmail.com"
+                    UserName = "admin2022@gmail.com",
+                    Email = "admin2022@gmail.com"
                 };
 
-                IdentityResult result = await userManager.CreateAsync(user, "admin123!A");
+                IdentityResult result = await userManager.CreateAsync(user, "Xeyal123");
                 if (result.Succeeded)
                 {
                     userManager.AddToRoleAsync(user, "Admin").Wait();
@@ -119,7 +120,7 @@ namespace KSResumo.Controllers
 
      
             await userManager.AddToRoleAsync(user, "User");
-            await signInManager.SignInAsync(user, true);
+            //await signInManager.SignInAsync(user, true);
 
             return RedirectToAction("Login", "Account");
         }
@@ -145,8 +146,9 @@ namespace KSResumo.Controllers
                 return View();
             }
 
-            ViewBag.ErrorTitle = "Email cannot be confirmed";
-            return View("Error");
+          
+            ModelState.AddModelError("", "mail cannot be confirmed");
+            return View();
         }
 
         [HttpGet]
@@ -164,24 +166,31 @@ namespace KSResumo.Controllers
                 return View(login);
             }
 
-            IdentityUser user = await userManager.FindByNameAsync(login.Email);
+
+            var user = await userManager.FindByNameAsync(login.Email);
+
+            if (user != null && !user.EmailConfirmed &&
+                        (await userManager.CheckPasswordAsync(user, login.Password)))
+            {
+                ModelState.AddModelError("","Email not confirmed yet");
+                return View(login);
+            }
+
 
             if (user == null)
             {
                 ModelState.AddModelError("", "Email is invalid");
                 return View();
             }
-
+          
             var result = await signInManager.PasswordSignInAsync(user, login.Password, true, false);
             if (!result.Succeeded)
             {
                 ModelState.AddModelError("", "Password is invalid");
                 return View();
-
             }
 
             return Redirect("/");
-
         }
 
         
@@ -312,6 +321,61 @@ namespace KSResumo.Controllers
             }
 
             return RedirectToAction("Login", "Account");
+        }
+
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> EditAdmin()
+        {
+            IdentityUser user = await userManager.FindByNameAsync(User.Identity.Name);
+            AdminUpdateVM updateVM = new AdminUpdateVM
+            {
+                Email = user.Email,
+            };
+            return View(updateVM);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> EditAdmin(AdminUpdateVM updateVM)
+        {
+            if (!ModelState.IsValid)
+                return View();
+
+            IdentityUser user = await userManager.FindByNameAsync(User.Identity.Name);
+
+            if (user.Email != updateVM.Email && userManager.Users.Any(x => x.NormalizedEmail == updateVM.Email.ToUpper()))
+            {
+                ModelState.AddModelError("", "Username is already exist");
+                return View();
+            }
+
+            if (!string.IsNullOrWhiteSpace(updateVM.NewPassword))
+            {
+                if (updateVM.NewPassword != updateVM.NewConfirmPassword)
+                {
+                    ModelState.AddModelError("", "Password with not macthed confirm pass");
+                    return View();
+                }
+
+                var result = await userManager.ChangePasswordAsync(user, updateVM.CurrentPassword, updateVM.NewPassword);
+                if (!result.Succeeded)
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                        return View();
+                    }
+                }
+            }
+            user.Email = updateVM.Email;
+
+            await userManager.UpdateAsync(user);
+            await signInManager.SignInAsync(user, true);
+
+            return Redirect("/");
         }
 
     }
