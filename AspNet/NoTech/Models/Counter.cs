@@ -27,9 +27,9 @@ namespace NoTech.Models
         public string Icon { get; set; }
 
 
-        public string Image { get; set; }
+        //public string Image { get; set; }
 
-        [NotMapped]
-        public IFormFile Photo { get; set; }
+        //[NotMapped]
+        //public IFormFile Photo { get; set; }
     }
 }

@@ -10,6 +10,7 @@ namespace Relation.Models
         public int TeacherID { get; set; }
         public int HobbyID { get; set; }
 
+
         public Teacher TeacherTable { get; set; }
         public Hobby HobbyTable { get; set; }
 

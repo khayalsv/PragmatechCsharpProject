@@ -13,7 +13,7 @@ namespace NoTech.Models
         public string SocialLink { get; set; }
         public string SocialIcon { get; set; }
         public string Question { get; set; }
-        public int Phone { get; set; }
+        public string Phone { get; set; }
 
     }
 }

@@ -127,9 +127,9 @@
                                 <li class="scrollToLink">
                                     <a href="#services">Services</a>
                                 </li>
-                                <li class="scrollToLink">
+                                @*<li class="scrollToLink">
                                     <a href="#testimonials">Testimonials</a>
-                                </li>
+                                </li>*@
                                 <li class="scrollToLink">
                                     <a href="#projects">Projects</a>
                                 </li>
@@ -269,10 +269,8 @@
                             <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                                 <div class="footer-widget__column footer-widget__social-box clearfix">
                                     <div class="site-footer__social">
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fab fa-facebook"></i></a>
-                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="@item.SocialLink" target="_blank">@item.SocialIcon</a>
+                                      
                                     </div>
                                 </div>
                             </div>

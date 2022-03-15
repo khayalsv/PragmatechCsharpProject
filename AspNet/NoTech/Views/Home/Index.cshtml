@@ -1,5 +1,4 @@
 ﻿@model ALLVM
-
 <!-- style switcher -->
 <div class="style-switcher">
     <a href="#" id="switcher-toggler"><i class="fa fa-cog"></i></a>
@@ -11,8 +10,6 @@
     </div><!-- /.language-feature -->
 </div>
 <!-- end style switcher -->
-
-
 <!--Main Slider Start-->
 <section class="main-slider" id="home">
     <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
@@ -84,14 +81,13 @@
     </div>
 </section>
 <!--Main Slider End-->
-
 <!--Feature One Start-->
 <section class="feature-one">
     <div class="container">
         <div class="row">
-                <!--Feature One Single-->
-                @foreach (var item in Model.features)
-                {<div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+            <!--Feature One Single-->
+            @foreach (var item in Model.features)
+            {<div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                     <div class="feature-one__single">
                         <div class="feature-one__img">
                             <img src="~/assets/images/resources/@item.Image" style="height:300px" alt="">
@@ -100,7 +96,7 @@
                             </div>
                             <div class="feature-one__hover-content">
                                 <div class="feature-one__icon">
-                                    @Html.Raw(item.Icon) 
+                                    @Html.Raw(item.Icon)
                                 </div>
                                 <h3 class="feature-one__hover-title">
                                     <a href="@item.Link">@item.Title</a>
@@ -115,7 +111,7 @@
                         </div>
                     </div>
                 </div>
-                }    
+            }
         </div>
     </div>
 </section>
@@ -131,7 +127,7 @@
                          data-wow-duration="2500ms">
                         <div class="get-to-know__img-box">
                             <div class="get-to-know__img">
-                                <img src="~/assets/images/resources/@item.Image1"  style="height:400px" alt="">
+                                <img src="~/assets/images/resources/@item.Image1" style="height:400px" alt="">
                             </div>
                             <div class="get-to-know__small-img">
                                 <img src="~/assets/images/resources/@item.Image2" style="height:250px" alt="">
@@ -155,7 +151,7 @@
                             <h2 class="section-title__title">@item.Title</h2>
                         </div>
                         <p class="get-to-know__text">
-                           @item.Text
+                            @item.Text
                         </p>
                         <ul class="list-unstyled get-to-know__points">
                             <li>
@@ -167,13 +163,13 @@
                                 </div>
                             </li>
                             @*<li>
-                                <div class="icon">
-                                    <span class="icon-check"></span>
-                                </div>
-                                <div class="text">
-                                    <p>Mauris imperdiet non ligula et lobortis.</p>
-                                </div>
-                            </li>*@
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>Mauris imperdiet non ligula et lobortis.</p>
+                                    </div>
+                                </li>*@
                         </ul>
                         <div class="get-to-know__it-solutions">
                             <div class="get-to-know__it-solutions-icon">
@@ -219,7 +215,7 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="services-one__top-right">
                             <p class="services-one__top-text">
-                               @item.Text
+                                @item.Text
                             </p>
                         </div>
                     </div>
@@ -271,66 +267,67 @@
 </section>
 <!--Business From End-->
 <!--Testimonial One Start-->
-<section class="testimonial-one" id="testimonials">
-    <div class="testimonial-one__inner">
-        <div class="testimonial-one-shape float-bob-x">
-            <img src="~/assets/images/shapes/testimonial-one-shape.png" alt="">
-        </div>
-        <div class="container">
-            <div class="testimonial-one__inner-content">
-                <div class="owl-carousel owl-theme thm-owl__carousel testimonial-one__carousel"
-                     data-owl-options='{
-                     "loop" : true,
-                     "autoplay" : true,
-                     "margin" : 30,
-                     "nav" : false,
-                     "dots" : true,
-                     "smartSpeed" : 500,
-                     "autoplayTimeout" : 10000,
-                   
-                            "responsive": {
-                                "0": {
-                                    "items": 1
-                                },
-                                "768": {
-                                    "items": 1
-                                },
-                                "992": {
-                                    "items": 1
-                                },
-                                "1200": {
-                                    "items": 1
-                                }
-                            }
-                        }'>
-@foreach (var item in Model.testimonials)
-{
-    							<div class="testimonial-one__single">
-								<div class="testimonial-one__top-content">
-									<div class="testimonial-one__img">
-										<img src="~/assets/images/testimonial/@item.Image" alt="">
-									</div>
-									<div class="testimonial-one__content">
-										<p class="testimonial-one__text">@item.Text</p>
-										<div class="testimonial-one__bottom-content">
-											<div class="testimonial-one__client-info">
-												<h5 class="testimonial-one__client-name">@item.Name</h5>
-												<p class="testimonial-one__client-company">@item.Company</p>
-											</div>
-											<div class="testimonial-one__quote">
-												<img src="~/assets/images/testimonial/testimonial-1-quote.png" alt="">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+@* <section class="testimonial-one" id="testimonials">
+        <div class="testimonial-one__inner">
+            <div class="testimonial-one-shape float-bob-x">
+                <img src="~/assets/images/shapes/testimonial-one-shape.png" alt="">
+            </div>
+            <div class="container">
+                <div class="testimonial-one__inner-content">
+                    <div class="owl-carousel owl-theme thm-owl__carousel testimonial-one__carousel"
+                         data-owl-options='{
+                         "loop" : true,
+                         "autoplay" : true,
+                         "margin" : 30,
+                         "nav" : false,
+                         "dots" : true,
+                         "smartSpeed" : 500,
+                         "autoplayTimeout" : 10000,
 
-}
-				</div>
+                                "responsive": {
+                                    "0": {
+                                        "items": 1
+                                    },
+                                    "768": {
+                                        "items": 1
+                                    },
+                                    "992": {
+                                        "items": 1
+                                    },
+                                    "1200": {
+                                        "items": 1
+                                    }
+                                }
+                            }'>
+                        @foreach (var item in Model.testimonials)
+                        {
+                            <div class="testimonial-one__single">
+                                <div class="testimonial-one__top-content">
+                                    <div class="testimonial-one__img">
+                                        <img src="assets/images/testimonial/@item.Image" style="height:170px" alt="">
+                                    </div>
+                                    <div class="testimonial-one__content">
+                                        <p class="testimonial-one__text">
+                                            @item.Text
+                                        </p>
+                                        <div class="testimonial-one__bottom-content">
+                                            <div class="testimonial-one__client-info">
+                                                <h5 class="testimonial-one__client-name">@item.Name</h5>
+                                                <p class="testimonial-one__client-company">@item.Company</p>
+                                            </div>
+                                            <div class="testimonial-one__quote">
+                                                <img src="assets/images/testimonial/testimonial-1-quote.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>*@
 <!--Testimonial One End-->
 <!--Project One Start-->
 <section class="project-one" id="projects">
@@ -387,11 +384,11 @@
                         <div class="tech-services__img-box wow slideInLeft" data-wow-delay="100ms"
                              data-wow-duration="2500ms">
                             <div class="tech-services__img">
-                                <img src="~/assets/images/resources/@item.Image" alt="">
+                                <img src="~/assets/images/project/@item.Image" alt="">
                             </div>
                             <div class="tech-services__img-content">
                                 <p class="tech-services__img-text">
-                                   @item.BoxText
+                                    @item.BoxText
                                 </p>
                                 <div class="tech-services__learn-more">
                                     <a href="about.html">Learn more<i class="fa fa-long-arrow-alt-right"></i></a>
@@ -412,7 +409,7 @@
                             <h2 class="section-title__title">@item.Title</h2>
                         </div>
                         <p class="tech-services__text">
-                           @item.Text
+                            @item.Text
                         </p>
                         <ul class="list-unstyled tech-services__points">
                             <li>
@@ -434,31 +431,30 @@
 <!--Tech Services End-->
 <!--Counter One Start-->
 <section class="counter-one">
-        @foreach (var item in Model.counters)
-	{
-    <div class="counter-one__bg" style="background-image: url(../assets/images/backgrounds/funfact-bg-1-1.png);"></div>
-	}
+
+    <div class="counter-one__bg" style="background-image: url(../assets/images/backgrounds/main-slider-1-1.jpg); "></div>
+
     <!-- /.counter-one__bg -->
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <ul class="list-unstyled counter-one__list">
-                        @foreach (var item in Model.counters)
-                        {
-                            <li class="counter-one__single wow fadeInUp" data-wow-delay="100ms">
-                                <div class="counter-one__icon">
-                                    <span class="@item.Icon"></span>
-                                </div>
-                                <h3 class="odometer"  >@item.Odometer</h3>
-                                <p class="counter-one__title">@item.Title</p>
-                                <p class="counter-one__text">@item.Text</p>
-                            </li>
-                        }
-                    </ul>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <ul class="list-unstyled counter-one__list">
+                    @foreach (var item in Model.counters)
+                    {
+                        <li class="counter-one__single wow fadeInUp" data-wow-delay="100ms">
+                            <div class="counter-one__icon">
+                                <span class="@item.Icon"></span>
+                            </div>
+                            <h3 class="odometer">@item.Odometer</h3>
+                            <p class="counter-one__title">@item.Title</p>
+                            <p class="counter-one__text">@item.Text</p>
+                        </li>
+                    }
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 <!--Counter One End-->
 <!--Helping Start-->
 <section class="helping">
@@ -484,7 +480,7 @@
                         <h2 class="section-title__title">@item.Title</h2>
                     </div>
                     <p class="helping__text">
-                       @item.Text
+                        @item.Text
                     </p>
                     <ul class="list-unstyled helping__points">
                         <li>
@@ -504,29 +500,27 @@
 <!--Blog One Start-->
 <section class="blog-one" id="blog">
     <div class="container">
-      
         <div class="section-title text-center">
             <div class="section-title__tagline-box">
                 <span class="section-title__tagline">What’s happening</span>
                 <div class="section-title-shape">
-                    <img src="~/assets/images/shapes/section-title-shape.png" alt="">
+                    <img src="assets/images/shapes/section-title-shape.png" alt="">
                 </div>
             </div>
             @foreach (var item in Model.blogs)
             {
                 <h2 class="section-title__title">@item.Title</h2>
-            }
-            </div>
 
-              
+            }
+        </div>
         <div class="row">
-            <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                <!--Blog One single-->
-                @foreach (var item in Model.blogs)
-                {
+            @foreach (var item in Model.blogs)
+            {
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                    <!--Blog One single-->
                     <div class="blog-one__single">
                         <div class="blog-one__img">
-                            <img src="~/assets/images/blog/@item.Image" alt="">
+                            <img src="assets/images/blog/@item.Image" alt="">
                             <div class="blog-one__tag">
                                 <p>Tech</p>
                             </div>
@@ -537,24 +531,24 @@
                         <div class="blog-one__content">
                             <ul class="list-unstyled blog-one__meta">
                                 <li>
-                                    <a href="blog-details.html"><i class="far fa-clock"></i>@item.DateTime</a>
+                                    <a href="@item.Link"><i class="far fa-clock"></i> @item.DateTime</a>
                                 </li>
                                 <li>
-                                    <a href="blog-details.html"><i class="far fa-user-circle"></i> @item.byFrom</a>
+                                    <a href="@item.Link"><i class="far fa-user-circle"></i> @item.byFrom</a>
                                 </li>
                             </ul>
                             <h3 class="blog-one__title">
-                                <a href="blog-details.html">@item.Name</a>
+                                <a href="@item.Link">@item.Name</a>
                             </h3>
                             <div class="blog-one__bottom">
                                 <a href="@item.Link">Learn more<i class="fa fa-long-arrow-alt-right"></i></a>
                             </div>
                         </div>
                     </div>
-                }
-            </div>
+                </div>
+
+            }
         </div>
     </div>
 </section>
 <!--Blog One End-->
-

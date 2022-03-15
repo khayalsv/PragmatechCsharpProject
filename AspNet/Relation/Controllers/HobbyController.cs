@@ -19,32 +19,25 @@ namespace Relation.Controllers
         }
         public IActionResult List()
         {
-            var list = dbContext.TEACHER.Include(x=>x.collectionTable).ThenInclude(x=>x.HobbyTable).ToList();
+            var hobbyList = dbContext.TEACHERTOHOBBY.Include(x=>x.TeacherTable).Include(y=>y.HobbyTable).ToList();
 
-            return View(list);
+            return View(hobbyList);
         }
 
         [HttpGet]
         public IActionResult Create()
         {
-            ViewBag.Hobby = dbContext.HOBBY.ToList();
-            ViewBag.Teacher = dbContext.TEACHER.ToList();
-            var teacher = new Teacher();
-            return View(teacher);
+            TeacherToHobby teacherToHobby = new TeacherToHobby();
+            return View(teacherToHobby);
         }
 
         [HttpPost]
-        public IActionResult Create(Teacher teacher)
+        public IActionResult Create(TeacherToHobby teacherToHobby)
         {
             if (!ModelState.IsValid)
-            {
-                ViewBag.Hobby = dbContext.HOBBY.ToList();
-                ViewBag.Teacher = dbContext.TEACHER.ToList();
-                return View(teacher);
-            }
+                return NotFound();
 
-            
-            dbContext.TEACHER.Add(teacher);
+            dbContext.TEACHERTOHOBBY.Add(teacherToHobby);
             dbContext.SaveChanges();
 
             return Redirect("/Hobby/List");   
@@ -58,7 +51,8 @@ namespace Relation.Controllers
 
             var teacherList = dbContext.TEACHERTOHOBBY.Include(x => x.TeacherTable).Include(x=>x.HobbyTable).First(x => x.TeacherID==id);
 
-          
+           
+
             return View(teacherList);
         }
 

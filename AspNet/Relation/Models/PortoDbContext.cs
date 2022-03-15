@@ -17,6 +17,9 @@ namespace KS.Models
         public DbSet<Author> AUTHOR { get; set; }
         public DbSet<Book> BOOK { get; set; }
 
+        public DbSet<Customer> CUSTOMER { get; set; }
+        public DbSet<Product> PRODUCT { get; set; }
+
         public DbSet<Hobby> HOBBY { get; set; }
         public DbSet<Teacher> TEACHER { get; set; }
         public DbSet<TeacherToHobby> TEACHERTOHOBBY { get; set; }
@@ -30,6 +33,11 @@ namespace KS.Models
           .WithOne(b => b.Addresses)
           .HasForeignKey<Address>(c => c.StudentID);
 
+
+            modelBuilder.Entity<Customer>()
+          .HasOne(a => a.Products)
+          .WithOne(b => b.Customers)
+          .HasForeignKey<Product>(c => c.CustomerID);
 
             modelBuilder.Entity<Book>()
            .HasOne(a => a.Authors)

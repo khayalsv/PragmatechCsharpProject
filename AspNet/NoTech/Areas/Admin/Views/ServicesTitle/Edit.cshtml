@@ -1,0 +1,47 @@
+﻿@model ServicesTitle
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<form method="post" enctype="multipart/form-data">
+    @*<div asp-validation-summary="All"></div>*@
+
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input class="form-control" type="text" asp-for="Title" />
+        <span asp-validation-for="Title"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Text</label>
+        <input class="form-control" type="text" asp-for="Text" />
+        <span asp-validation-for="Text"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">SubTitle1</label>
+        <input class="form-control" type="text" asp-for="SubTitle1" />
+        <span asp-validation-for="SubTitle1"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">SubTitle2</label>
+        <input class="form-control" type="text" asp-for="SubTitle2" />
+        <span asp-validation-for="SubTitle2"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Photo</label>
+        <input class="form-control" type="file" asp-for="Photo">
+        <span asp-validation-for="Photo"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Current photo</label>
+        <input class="form-control" type="hidden" name="Image" value="@Model.Image" />
+        <img src="~/assets/images/backgrounds/@Model.Image" width="200" />
+    </div>
+
+    <input type="submit" class="btn btn-danger btn-block" value="update" />
+</form>

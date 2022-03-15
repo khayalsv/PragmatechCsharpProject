@@ -1,0 +1,50 @@
+﻿@model IList<Helping>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @TempData["Success"]
+    </div>
+}
+
+<div class="table-responsive scrollbar">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Text</th>
+                <th scope="col">Icon</th>
+                <th scope="col">SubTitle</th>
+                <th scope="col">SubText</th>
+                <th scope="col">Image</th>
+
+                <th class="text-end" scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.Title</td>
+                    <td>@item.Text</td>
+                    <td>@item.Icon</td>
+                    <td>@item.SubTitle</td>
+                    <td>@item.SubText</td>
+                    <td>
+                        <img width="200" height="150" src="~/assets/images/backgrounds/@item.Image">
+                    </td>
+
+                    <td class="text-end">
+                        <div>
+                            <a href="/Admin/Helping/Edit/@item.ID"><i class="fas fa-edit"></i></a>
+                            <a href="/Admin/Helping/Delete/@item.ID" onclick="return confirm('Are you delete?')"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

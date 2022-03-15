@@ -1,0 +1,50 @@
+﻿@model IList<ProjectBox>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @TempData["Success"]
+    </div>
+}
+
+<div class="table-responsive scrollbar">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">TopTitle</th>
+                <th scope="col">BoxTitle</th>
+                <th scope="col">Name1</th>
+                <th scope="col">Name2</th>
+                <th scope="col">Link</th>
+                <th scope="col">Image</th>
+
+                <th class="text-end" scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.TopTitle</td>
+                <td>@item.BoxTitle</td>
+                <td>@item.Name1</td>
+                <td>@item.Name2</td>
+                <td>@item.Link</td>
+                <td>
+                    <img width="200" height="150" src="~/assets/images/project/@item.Image">
+                </td>
+
+                <td class="text-end">
+                    <div>
+                        <a href="/Admin/ProjectBox/Edit/@item.ID"><i class="fas fa-edit"></i></a>
+                        <a href="/Admin/ProjectBox/Delete/@item.ID" onclick="return confirm('Are you delete?')"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

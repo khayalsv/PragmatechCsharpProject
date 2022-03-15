@@ -1,0 +1,49 @@
+﻿@model IList<Layout>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @TempData["Success"]
+    </div>
+}
+
+<div class="table-responsive scrollbar">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Address</th>
+                <th scope="col">Email</th>
+                <th scope="col">SocialLink</th>
+                <th scope="col">SocialIcon</th>
+                <th scope="col">Question</th>
+                <th scope="col">Phone</th>
+
+                <th class="text-end" scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Address</td>
+                <td>@item.Email</td>
+                <td>@item.SocialLink</td>
+                <td>@item.SocialIcon</td>
+                <td>@item.Question</td>
+                <td>@item.Phone</td>
+             
+
+                <td class="text-end">
+                    <div>
+                        <a href="/Admin/Layout/Edit/@item.ID"><i class="fas fa-edit"></i></a>
+                        <a href="/Admin/Layout/Delete/@item.ID" onclick="return confirm('Are you delete?')"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

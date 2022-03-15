@@ -1,0 +1,48 @@
+﻿@model Layout
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form method="post" enctype="multipart/form-data">
+    @*<div asp-validation-summary="All"></div>*@
+
+    <div class="mb-3">
+        <label class="form-label">Address</label>
+        <input class="form-control" type="text" asp-for="Address" />
+        <span asp-validation-for="Address"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input class="form-control" type="text" asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">SocialLink</label>
+        <input class="form-control" type="text" asp-for="SocialLink" />
+        <span asp-validation-for="SocialLink"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">SocialIcon</label>
+        <input class="form-control" type="text" asp-for="SocialIcon" />
+        <span asp-validation-for="SocialIcon"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Question</label>
+        <input class="form-control" type="text" asp-for="Question" />
+        <span asp-validation-for="Question"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Phone</label>
+        <input class="form-control" type="text" asp-for="Phone" />
+        <span asp-validation-for="Phone"></span>
+    </div>
+
+    <input type="submit" class="btn btn-danger btn-block" value="update" />
+</form>
+

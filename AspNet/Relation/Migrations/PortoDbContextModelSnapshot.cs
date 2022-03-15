@@ -77,6 +77,22 @@ namespace Relation.Migrations
                     b.ToTable("BOOK");
                 });
 
+            modelBuilder.Entity("Relation.Models.Customer", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("CustomerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("CUSTOMER");
+                });
+
             modelBuilder.Entity("Relation.Models.Hobby", b =>
                 {
                     b.Property<int>("HobbyID")
@@ -90,6 +106,28 @@ namespace Relation.Migrations
                     b.HasKey("HobbyID");
 
                     b.ToTable("HOBBY");
+                });
+
+            modelBuilder.Entity("Relation.Models.Product", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("CustomerID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("CustomerID")
+                        .IsUnique();
+
+                    b.ToTable("PRODUCT");
                 });
 
             modelBuilder.Entity("Relation.Models.Student", b =>
@@ -159,6 +197,17 @@ namespace Relation.Migrations
                     b.Navigation("Authors");
                 });
 
+            modelBuilder.Entity("Relation.Models.Product", b =>
+                {
+                    b.HasOne("Relation.Models.Customer", "Customers")
+                        .WithOne("Products")
+                        .HasForeignKey("Relation.Models.Product", "CustomerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customers");
+                });
+
             modelBuilder.Entity("Relation.Models.TeacherToHobby", b =>
                 {
                     b.HasOne("Relation.Models.Hobby", "HobbyTable")
@@ -181,6 +230,11 @@ namespace Relation.Migrations
             modelBuilder.Entity("Relation.Models.Author", b =>
                 {
                     b.Navigation("Books");
+                });
+
+            modelBuilder.Entity("Relation.Models.Customer", b =>
+                {
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("Relation.Models.Hobby", b =>

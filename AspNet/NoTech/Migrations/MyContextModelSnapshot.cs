@@ -96,9 +96,6 @@ namespace NoTech.Migrations
                     b.Property<string>("Icon")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Odometer")
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
@@ -217,8 +214,8 @@ namespace NoTech.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Phone")
-                        .HasColumnType("int");
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Question")
                         .HasColumnType("nvarchar(max)");
@@ -242,8 +239,8 @@ namespace NoTech.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("BoxText")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");

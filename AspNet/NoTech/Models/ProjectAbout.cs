@@ -20,7 +20,7 @@ namespace NoTech.Models
         [StringLength(70)]
         public string Text { get; set; }
 
-        [StringLength(30)]
+        [StringLength(25)]
         public string BoxText { get; set; }
 
 

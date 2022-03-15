@@ -1,0 +1,48 @@
+﻿@model Blog
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form method="post" enctype="multipart/form-data">
+    @*<div asp-validation-summary="All"></div>*@
+
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input class="form-control" type="text" asp-for="Title" />
+        <span asp-validation-for="Title"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">DateTime</label>
+        <input class="form-control" type="date" asp-for="DateTime" />
+        <span asp-validation-for="DateTime"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">By From</label>
+        <input class="form-control" type="text" asp-for="byFrom" />
+        <span asp-validation-for="byFrom"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input class="form-control" type="text" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Link</label>
+        <input class="form-control" type="text" asp-for="Link" />
+        <span asp-validation-for="Link"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Photo</label>
+        <input class="form-control" type="file" asp-for="Photo">
+        <span asp-validation-for="Photo"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

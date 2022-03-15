@@ -1,42 +1,18 @@
-﻿@model Teacher
+﻿@model TeacherToHobby
 
 <form method="post">
 
-
-
-    <label for="organizerMultiple">Multiple</label>
-    <select asp-for="TeacherName" class="form-select js-choice" id="organizerMultiple" multiple="multiple" size="1" name="organizerMultiple" data-options='{"removeItemButton":true,"placeholder":true}'>
-        @foreach (var item in ViewBag.Teacher)
-        {
-
-<option value="@item.TeacherID">@item.TeacherName</option>
-}
-    </select>
-
-    <select class="select" multiple>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-        <option value="4">Four</option>
-        <option value="5">Five</option>
-        <option value="6">Six</option>
-        <option value="7">Seven</option>
-        <option value="8">Eight</option>
-    </select>
-
-    <div>
-        <label asp-for="TeacherName">Teacher</label>
-        <input asp-for="TeacherName" class="input w-full border mt-2" placeholder="Input text">
+    <div class="mb-3">
+        <label>Teacher</label>
+        <input type="text" class="form-control" asp-for="TeacherTable.TeacherName">
+        <span asp-validation-for="TeacherTable.TeacherName" style="color:red"></span>
     </div>
 
 
     <div class="mb-3">
         <label>Hobby</label>
-        <select asp-for="collectionTable[0].HobbyID" class="form-control">
-            @foreach (var item in ViewBag.Hobby)
-            {
-<option value="@item.HobbyID">@item.HobbyName</option>}
-        </select>
+        <input type="text" class="form-control" asp-for="HobbyTable.HobbyName">
+        <span asp-validation-for="HobbyTable.HobbyName" style="color:red"></span>
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
