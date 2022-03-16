@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NoTech.Models
 {
-    public class MyContext:DbContext
+    public class MyContext:IdentityDbContext<IdentityUser>
     {
         public MyContext(DbContextOptions<MyContext> options) : base(options) { }
         public DbSet<Home> Homes { get; set; }
@@ -21,14 +23,5 @@ namespace NoTech.Models
         public DbSet<Helping> Helpings { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Layout> Layouts { get; set; }
-
-
-
-
-
-
-
-
-
     }
 }
