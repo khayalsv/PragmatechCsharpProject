@@ -7,6 +7,21 @@
     </div>
 }
 
+
+<style>
+    .addcreate {
+        display:inline-block
+    }
+</style>
+
+<div class="addcreate">
+    <a href="/Admin/Counter/Create" class="btn btn-success">Add</a>
+</div>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
+    Create (Ajax)
+</button>
+
 <div class="table-responsive scrollbar">
     <table class="table table-hover">
         <thead>
@@ -23,22 +38,88 @@
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
-                <td>@item.ID</td>
-                <td>@item.Odometer</td>
-                <td>@item.Title</td>
-                <td>@item.Text</td>
-                <td>@item.Icon</td>
-         
-                <td class="text-end">
-                    <div>
-                        <a href="/Admin/Counter/Edit/@item.ID"><i class="fas fa-edit"></i></a>
-                        <a href="/Admin/Counter/Delete/@item.ID" onclick="return confirm('Are you delete?')"><i class="fas fa-trash-alt"></i></a>
-                    </div>
-                </td>
-            </tr>
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.Odometer</td>
+                    <td>@item.Title</td>
+                    <td>@item.Text</td>
+                    <td>@item.Icon</td>
+
+                    <td class="text-end">
+                        <div>
+                            <a href="/Admin/Counter/Edit/@item.ID"><i class="fas fa-edit"></i></a>
+                            <a href="/Admin/Counter/Delete/@item.ID" onclick="return confirm('Are you delete?')"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createModalLabel"> Create Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post">
+                    <div class="mb-3">
+
+                        <label class="form-label">odometer</label>
+                        <input type="text" class="form-control" id="odometerCreate">
+
+                        <label class="form-label">title</label>
+                        <input type="text" class="form-control" id="titleCreate">
+
+                        <label class="form-label">text</label>
+                        <input type="text" class="form-control" id="textCreate">
+
+                        <label class="form-label">icon</label>
+                        <input type="text" class="form-control" id="iconCreate">
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button id="btnCreate" type="button" class="btn btn-primary">SaveChanges</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section script{
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+
+
+    <script>
+        $(document).ready(() => {
+            $(document).on('click', '#btnCreate', (e) => {
+                $.ajax({
+                    url: '/Admin/Counter/CreateAjax',
+                    type: 'POST',
+                    data: { odometer: $('#odometerCreate').val() },
+                    data: { title: $('#titleCreate').val() },
+                    data: { text: $('#textCreate').val() },
+                    data: { icon: $('#iconCreate').val() },
+                    success: (Response) => {
+                        if (Response.hasOwnProperty('status') && Response.status === 200) {
+                            location.href = '/Admin/Counter/List';
+                        }
+                        else if (Response.status === 400) {
+                            alert("Not Fount")
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+}
