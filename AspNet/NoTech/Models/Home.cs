@@ -12,11 +12,11 @@ namespace NoTech.Models
     {
         public int ID { get; set; }
 
-        [Required,StringLength(15)]
+        [Required,StringLength(35)]
         public string Title1 { get; set; }
 
 
-        [Required, StringLength(15)]
+        [Required, StringLength(35)]
         public string Title2 { get; set; }
 
 

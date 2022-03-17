@@ -106,10 +106,7 @@
                 $.ajax({
                     url: '/Admin/Counter/CreateAjax',
                     type: 'POST',
-                    data: { odometer: $('#odometerCreate').val() },
-                    data: { title: $('#titleCreate').val() },
-                    data: { text: $('#textCreate').val() },
-                    data: { icon: $('#iconCreate').val() },
+                    data: { icon: $('#iconCreate').val(), odometer: $('#odometerCreate').val(), title: $('#titleCreate').val(), text: $('#textCreate').val()},
                     success: (Response) => {
                         if (Response.hasOwnProperty('status') && Response.status === 200) {
                             location.href = '/Admin/Counter/List';

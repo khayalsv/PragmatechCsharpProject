@@ -13,19 +13,19 @@ namespace NoTech.Models
         public int ID { get; set; }
 
 
-        [StringLength(35)]
+        [StringLength(50)]
         public string Title { get; set; }
 
 
-        [StringLength(70)]
+        [StringLength(200)]
         public string Text { get; set; }
         
 
-        [StringLength(35)]
+        [StringLength(70)]
         public string List { get; set; }
 
 
-        [StringLength(35)]
+        [StringLength(90)]
         public string Subheading { get; set; }
 
 

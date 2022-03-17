@@ -2198,7 +2198,7 @@ ul {
 #main-slider-pagination {
   z-index: 10;
   bottom: 59px;
-  left: 50%;
+  left: 48%;
   width: 100%;
   max-width: 1200px;
   -webkit-transform: translate(-50%, calc(-50% + 95px));

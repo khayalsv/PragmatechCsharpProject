@@ -13,10 +13,10 @@ namespace NoTech.Models
         public int ID { get; set; }
         public string Icon { get; set; }
 
-        [Required,StringLength(15)]
+        [Required,StringLength(30)]
         public string Title { get; set; }
 
-        [StringLength(25)]
+        [StringLength(100)]
         public string Text { get; set; }
 
         public string Link { get; set; }

@@ -96,7 +96,7 @@ namespace NoTech.Areas.Admin.Controllers
             }
 
             list.Icon = item.Icon;
-            list.Title = item.Text;
+            list.Title = item.Title;
             list.Text = item.Text;
             list.Link = item.Link;
 

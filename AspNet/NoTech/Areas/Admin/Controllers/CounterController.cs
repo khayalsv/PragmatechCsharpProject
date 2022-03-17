@@ -101,23 +101,15 @@ namespace NoTech.Areas.Admin.Controllers
 
         //AJAX
         [HttpPost]
-        public async Task<JsonResult> CreateAjax(string odometer, string title, string text, string icon)
+        public async Task<JsonResult> CreateAjax(Counter item)
         {
-            if (odometer== null && title == null && text == null && icon == null)
+            if (item==null)
             {
                 return Json(new
                 {
                     status = 400
                 });
             }
-
-            var item = new Counter()
-            {
-                Odometer = odometer,
-                Title = title,
-                Text = text,
-                Icon = icon
-            };
 
             await myContext.Counters.AddAsync(item);
             await myContext.SaveChangesAsync();
