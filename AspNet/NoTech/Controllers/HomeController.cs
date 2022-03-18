@@ -35,14 +35,17 @@ namespace NoTech.Controllers
                 counters = await myContext.Counters.ToListAsync(),
                 helpings=await myContext.Helpings.ToListAsync(),
                 blogs=await myContext.Blogs.ToListAsync(),
-                layouts=await myContext.Layouts.ToListAsync()
+                layouts=await myContext.Layouts.ToListAsync(),
+                contacts = await myContext.Contacts.ToListAsync()
             };
 
             return View(vM);
         }
 
-   
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+
+       
+
+            [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

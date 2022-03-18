@@ -23,5 +23,6 @@ namespace NoTech.Models
         public DbSet<Helping> Helpings { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Layout> Layouts { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
     }
 }
