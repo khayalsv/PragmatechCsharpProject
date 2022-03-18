@@ -187,3 +187,4 @@ C:\Users\selim\Desktop\Csharp\AspNet\NoTech\bin\Debug\net5.0\Microsoft.AspNetCor
 C:\Users\selim\Desktop\Csharp\AspNet\NoTech\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\selim\Desktop\Csharp\AspNet\NoTech\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\selim\Desktop\Csharp\AspNet\NoTech\obj\Debug\net5.0\Razor\Areas\Admin\Views\Account\Login.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\NoTech\obj\Debug\net5.0\Razor\Areas\Admin\Views\Contact\List.cshtml.g.cs
