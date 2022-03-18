@@ -99,7 +99,10 @@
                             <div class="main-header__top-right-social">
                                 @foreach (var item in Model.layouts)
                                 {
-                                    <a href="@item.SocialLink">@Html.Raw(item.SocialIcon)</a>
+                                    <a href="@item.SocialLink1">@Html.Raw(item.SocialIcon1)</a>
+                                    <a href="@item.SocialLink2">@Html.Raw(item.SocialIcon2)</a>
+                                    <a href="@item.SocialLink3">@Html.Raw(item.SocialIcon3)</a>
+                                    <a href="@item.SocialLink4">@Html.Raw(item.SocialIcon4)</a>
                                 }
                             </div>
                         </div>
@@ -267,8 +270,11 @@
                             <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                                 <div class="footer-widget__column footer-widget__social-box clearfix">
                                     <div class="site-footer__social">
-                                        <a href="@item.SocialLink" target="_blank">@Html.Raw(item.SocialIcon)</a>
-                                      
+                                        <a href="@item.SocialLink1" target="_blank">@Html.Raw(item.SocialIcon1)</a>
+                                        <a href="@item.SocialLink2" target="_blank">@Html.Raw(item.SocialIcon2)</a>
+                                        <a href="@item.SocialLink3" target="_blank">@Html.Raw(item.SocialIcon3)</a>
+                                        <a href="@item.SocialLink4" target="_blank">@Html.Raw(item.SocialIcon4)</a>
+
                                     </div>
                                 </div>
                             </div>
@@ -325,8 +331,12 @@
             </ul><!-- /.mobile-nav__contact -->
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">
-                    <a href="@item.SocialLink" class="@Html.Raw(item.SocialIcon)"></a>
-                    
+                    <a href="@item.SocialLink1" target="_blank">@Html.Raw(item.SocialIcon1)</a>
+                    <a href="@item.SocialLink2" target="_blank">@Html.Raw(item.SocialIcon2)</a>
+                    <a href="@item.SocialLink3" target="_blank">@Html.Raw(item.SocialIcon3)</a>
+                    <a href="@item.SocialLink4" target="_blank">@Html.Raw(item.SocialIcon4)</a>
+
+
                 </div><!-- /.mobile-nav__social -->
             </div><!-- /.mobile-nav__top -->
 

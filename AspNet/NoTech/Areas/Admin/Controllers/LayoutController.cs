@@ -71,8 +71,14 @@ namespace NoTech.Areas.Admin.Controllers
 
             list.Address = item.Address;
             list.Email = item.Email;
-            list.SocialIcon = item.SocialIcon;
-            list.SocialIcon = item.SocialIcon;
+            list.SocialIcon1 = item.SocialIcon1;
+            list.SocialLink1 = item.SocialLink1;
+            list.SocialIcon2 = item.SocialIcon2;
+            list.SocialLink2 = item.SocialLink2;
+            list.SocialIcon3 = item.SocialIcon3;
+            list.SocialLink3 = item.SocialLink3;
+            list.SocialIcon4 = item.SocialIcon4;
+            list.SocialLink4 = item.SocialLink4;
             list.Question = item.Question;
             list.Phone = item.Phone;
 
