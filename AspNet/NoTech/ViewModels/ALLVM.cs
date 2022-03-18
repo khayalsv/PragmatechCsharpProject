@@ -21,5 +21,7 @@ namespace NoTech.ViewModels
         public List<Blog> blogs { get; set; }
         public List<Layout> layouts { get; set; }
         public List<Contact> contacts { get; set; }
+        public Contact contact { get; set; }
+
     }
 }

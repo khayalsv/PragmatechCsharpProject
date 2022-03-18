@@ -10,6 +10,7 @@
     </div><!-- /.language-feature -->
 </div>
 <!-- end style switcher -->
+
 <!--Main Slider Start-->
 <section class="main-slider" id="home">
     <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
@@ -548,28 +549,33 @@
 
 
 <!--Contact Page Start-->
-<section class="contact-page" id="contact">
+<section  class="blog-one" id="contact">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
+                <h2 class="section-title__title" style="padding-bottom: 30px" >Contact</h2>
                 <div class="contact-page__form">
-                    <form action="https://layerdrops.com/notech/main-html/assets/inc/sendemail.php" class="comment-one__form contact-form-validated" novalidate="novalidate">
+                    <div asp-validation-summary="All"></div>
+                    <form method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-xl-6">
                                 <div class="comment-form__input-box">
-                                    <input type="text" placeholder="Your name" name="name">
+                                    <input type="text" placeholder="Your name" asp-for="contact.Name">
+                                    <span asp-validation-for="contact.Name"></span>
                                 </div>
                             </div>
                             <div class="col-xl-6">
                                 <div class="comment-form__input-box">
-                                    <input type="email" placeholder="Email address" name="email">
+                                    <input type="email" placeholder="Email address" asp-for="contact.Email">
+                                    <span asp-validation-for="contact.Email"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="comment-form__input-box text-message-box">
-                                    <textarea name="message" placeholder="Write comment"></textarea>
+                                    <textarea placeholder="Write comment"  asp-for="contact.Message"></textarea>
+                                    <span asp-validation-for="contact.Message"></span>
                                 </div>
                                 <div class="comment-form__btn-box">
                                     <button type="submit" class="thm-btn comment-form__btn">Send a message</button>

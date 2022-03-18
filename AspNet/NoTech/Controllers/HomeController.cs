@@ -42,8 +42,21 @@ namespace NoTech.Controllers
             return View(vM);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Index(Contact contact)
+        {
+            if (contact == null) return View(contact);
 
-       
+            if (!ModelState.IsValid) return View(contact);
+
+            await myContext.Contacts.AddAsync(contact);
+            await myContext.SaveChangesAsync();
+
+            return Redirect("/");
+
+        }
+
 
             [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

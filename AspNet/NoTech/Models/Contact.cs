@@ -9,11 +9,11 @@ namespace NoTech.Models
     public class Contact
     {
         public int ID { get; set; }
-        [StringLength(50)]
+        [Required,StringLength(50)]
         public string Name { get; set; }
         [EmailAddress,StringLength(60)]
         public string Email { get; set; }
-        [StringLength(70)]
+        [Required,StringLength(70)]
         public string Message { get; set; }
 
     }
