@@ -13,21 +13,17 @@ namespace NoTech.Models
         public int ID { get; set; }
 
 
-        [StringLength(50)]
         public string Title { get; set; }
 
 
-        [StringLength(70)]
         public string Text { get; set; }
 
         [StringLength(25)]
         public string BoxText { get; set; }
 
 
-        [StringLength(40)]
         public string List1 { get; set; }
 
-        [StringLength(35)]
         public string List2 { get; set; }
 
 

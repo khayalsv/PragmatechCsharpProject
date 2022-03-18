@@ -5,6 +5,7 @@
 
 <!-- Mirrored from layerdrops.com/notech/main-html/index-one-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 07 Mar 2022 19:16:21 GMT -->
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>One Page || Home One || Notech || Notech HTML Template For It Solution </title>
@@ -98,7 +99,7 @@
                             <div class="main-header__top-right-social">
                                 @foreach (var item in Model.layouts)
                                 {
-                                    <a href="@item.SocialLink">@item.SocialIcon</a>
+                                    <a href="@item.SocialLink">@Html.Raw(item.SocialIcon)</a>
                                 }
                             </div>
                         </div>
@@ -190,9 +191,6 @@
                             </div>
                             <h3 class="site-footer__top-title">Helping you overcome your technology challenges</h3>
                         </div>
-                        <div class="site-footer__top-right">
-                            <a href="about.html" class="thm-btn site-footer__btn">Discover more</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -269,7 +267,7 @@
                             <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                                 <div class="footer-widget__column footer-widget__social-box clearfix">
                                     <div class="site-footer__social">
-                                        <a href="@item.SocialLink" target="_blank">@item.SocialIcon</a>
+                                        <a href="@item.SocialLink" target="_blank">@Html.Raw(item.SocialIcon)</a>
                                       
                                     </div>
                                 </div>
@@ -327,7 +325,7 @@
             </ul><!-- /.mobile-nav__contact -->
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">
-                    <a href="@item.SocialLink" class="@item.SocialIcon"></a>
+                    <a href="@item.SocialLink" class="@Html.Raw(item.SocialIcon)"></a>
                     
                 </div><!-- /.mobile-nav__social -->
             </div><!-- /.mobile-nav__top -->

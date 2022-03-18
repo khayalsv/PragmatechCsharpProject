@@ -349,7 +349,7 @@
                         <!--Project One Single-->
                         <div class="project-one__single">
                             <div class="project-one__img">
-                                <img src="~/assets/images/project/@item.Image" alt="">
+                                <img src="~/assets/images/project/@item.Image" style="height:300px" alt="">
                                 <a href="project-details.html"></a>
                             </div>
                             <div class="project-one__content">
@@ -387,9 +387,6 @@
                                 <p class="tech-services__img-text">
                                     @item.BoxText
                                 </p>
-                                <div class="tech-services__learn-more">
-                                    <a href="about.html">Learn more<i class="fa fa-long-arrow-alt-right"></i></a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -440,9 +437,9 @@
                     {
                         <li class="counter-one__single wow fadeInUp" data-wow-delay="100ms">
                             <div class="counter-one__icon">
-                                <span class="@item.Icon"></span>
+                                <span>@Html.Raw(item.Icon)</span>
                             </div>
-                            <h3 class="odometer">@item.Odometer</h3>
+                            <h3>@item.Odometer</h3>
                             <p class="counter-one__title">@item.Title</p>
                             <p class="counter-one__text">@item.Text</p>
                         </li>
@@ -482,7 +479,7 @@
                     <ul class="list-unstyled helping__points">
                         <li>
                             <div class="icon">
-                                <span class="@item.Icon"></span>
+                                <span class="icon-data-protection"></span>
                             </div>
                             <h3 class="helping__title">@item.SubTitle</h3>
                             <p class="helping__text-2">@item.SubText</p>
@@ -517,11 +514,9 @@
                     <!--Blog One single-->
                     <div class="blog-one__single">
                         <div class="blog-one__img">
-                            <img src="assets/images/blog/@item.Image" alt="">
-                            <div class="blog-one__tag">
-                                <p>Tech</p>
-                            </div>
-                            <a href="blog-details.html">
+                            <img src="assets/images/blog/@item.Image" style="height:250px" alt="">
+                          
+                            <a href="@item.Link">
                                 <span class="blog-one__plus"></span>
                             </a>
                         </div>

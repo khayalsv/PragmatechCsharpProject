@@ -20,7 +20,7 @@ namespace NoTech.Models
         public string Title { get; set; }
 
 
-        [StringLength(25)]
+
         public string Text { get; set; }
 
 
