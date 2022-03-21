@@ -1,4 +1,5 @@
 ﻿using KS.Extension;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using NoTech.Models;
@@ -9,7 +10,9 @@ using System.Threading.Tasks;
 
 namespace NoTech.Areas.Admin.Controllers
 {
+    
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class HomeController : Controller
     {
         private readonly MyContext myContext;

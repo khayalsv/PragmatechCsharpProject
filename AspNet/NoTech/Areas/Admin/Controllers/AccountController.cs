@@ -79,7 +79,7 @@ namespace NoTech.Areas.Admin.Controllers
                 return View();
             }
 
-            var result = await signInManager.PasswordSignInAsync(user, login.Password,true,false);
+            var result = await signInManager.PasswordSignInAsync(user, login.Password,false,false);
             if (!result.Succeeded)
             {
                 ModelState.AddModelError("", "Password is invalid");
@@ -87,7 +87,13 @@ namespace NoTech.Areas.Admin.Controllers
 
             }
 
-            return Redirect("/Admin/Home/List");
+            return View(login);
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+            return Redirect("/");
         }
     }
 }

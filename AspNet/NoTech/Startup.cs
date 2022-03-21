@@ -34,7 +34,11 @@ namespace NoTech
             });
 
             services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<MyContext>();
+                .AddEntityFrameworkStores<MyContext>()
+                .AddDefaultTokenProviders();
+
+
+            services.ConfigureApplicationCookie(options => options.LoginPath = "/admin/Account/LogIn");
 
         }
 
@@ -52,9 +56,11 @@ namespace NoTech
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
 
             app.UseAuthentication();
+
+            app.UseStaticFiles();
+            
 
             app.UseRouting();
 
