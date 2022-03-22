@@ -1,3 +1,4 @@
+using KSResumo.Extension;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -35,8 +36,10 @@ namespace NoTech
 
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<MyContext>()
-                .AddDefaultTokenProviders();
+                .AddTokenProvider<DataProtectorTokenProvider<IdentityUser>>(TokenOptions.DefaultProvider);
 
+
+            services.AddScoped<IEmailService, EmailService>();
 
             services.ConfigureApplicationCookie(options => options.LoginPath = "/admin/Account/LogIn");
 

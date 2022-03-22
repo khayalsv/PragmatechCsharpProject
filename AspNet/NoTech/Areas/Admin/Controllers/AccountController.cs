@@ -46,15 +46,15 @@ namespace NoTech.Areas.Admin.Controllers
 
         public async Task SeedAdmin()
         {
-            if (userManager.FindByEmailAsync("admin@gmail.com").Result == null)
+            if (userManager.FindByEmailAsync("selimovxeyal@gmail.com").Result == null)
             {
                 IdentityUser user = new IdentityUser()
                 {
-                    UserName = "admin",
-                    Email = "admin@gmail.com"
+                    UserName = "khayalsalimov",
+                    Email = "selimovxeyal@gmail.com"
                 };
 
-                IdentityResult result = await userManager.CreateAsync(user, "admin123!A");
+                IdentityResult result = await userManager.CreateAsync(user, "Xeyal123!");
 
                 if (result.Succeeded)
                 {
@@ -128,6 +128,41 @@ namespace NoTech.Areas.Admin.Controllers
             emailService.Send(user.Email, "Reset Password", body);
 
             return Redirect("/Admin/Account/Login");
+        }
+
+
+        [HttpGet]
+        public IActionResult ResetPassword(string token, string email)
+        {
+            ResetVM resetVM = new ResetVM
+            {
+                Token = token,
+                Email = email
+            };
+            return View(resetVM);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(ResetVM resetVM)
+        {
+            if (!ModelState.IsValid)
+                return View(resetVM);
+
+            IdentityUser user = await userManager.FindByEmailAsync(resetVM.Email);
+
+            var result = await userManager.ResetPasswordAsync(user, resetVM.Token, resetVM.Password);
+
+            if (!result.Succeeded)
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError("", item.Description);
+                }
+                return View(resetVM);
+            }
+
+            return Redirect("/admin/account/login");
         }
     }
 }
