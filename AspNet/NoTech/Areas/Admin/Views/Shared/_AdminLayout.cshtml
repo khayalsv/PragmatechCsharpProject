@@ -74,7 +74,7 @@
     <main class="main" id="top">
         <div class="container" data-layout="container">
             <script>
-    var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+                var isFluid = JSON.parse(localStorage.getItem('isFluid'));
                 if (isFluid) {
                     var container = document.querySelector('[data-layout]');
                     container.classList.remove('container');
@@ -82,14 +82,14 @@
                 }</script>
             <nav class="navbar navbar-light navbar-vertical navbar-expand-xl" style="display: none;">
                 <script>
-    var navbarStyle = localStorage.getItem("navbarStyle");
+                    var navbarStyle = localStorage.getItem("navbarStyle");
                     if (navbarStyle && navbarStyle !== 'transparent') {
                         document.querySelector('.navbar-vertical').classList.add(`navbar-${navbarStyle}`);
                     }</script>
                 <div class="d-flex align-items-center">
                     <div class="toggle-icon-wrapper">
                         <button class="btn navbar-toggler-humburger-icon navbar-vertical-toggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
-                    </div><a class="navbar-brand" href="index.html">
+                    </div><a class="navbar-brand" href="/">
                         <div class="d-flex align-items-center py-3"><span class="font-sans-serif">KS</span></div>
                     </a>
                 </div>
@@ -105,7 +105,7 @@
                                     </div>
                                 </div>
                                 <!-- parent pages--><a class="nav-link dropdown-indicator" href="#home" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="home">
-                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-envelope-open"></span></span><span class="nav-link-text ps-1">Home</span></div>
+                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="far fa-address-card"></span></span><span class="nav-link-text ps-1">Home</span></div>
                                 </a>
                                 <ul class="nav collapse" id="home">
                                     <li class="nav-item">
@@ -122,7 +122,7 @@
                                 <!-- parent pages-->
                                 <!-- parent pages-->
                                 <a class="nav-link dropdown-indicator" href="#feature" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="feature">
-                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-envelope-open"></span></span><span class="nav-link-text ps-1">Feature</span></div>
+                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="far fa-comment-alt"></span></span><span class="nav-link-text ps-1">Feature</span></div>
                                 </a>
                                 <ul class="nav collapse" id="feature">
                                     <li class="nav-item">
@@ -139,7 +139,7 @@
                                 <!-- parent pages-->
                                 <!-- parent pages-->
                                 <a class="nav-link dropdown-indicator" href="#About" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="About">
-                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-envelope-open"></span></span><span class="nav-link-text ps-1">About</span></div>
+                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="far fa-chart-bar"></span></span><span class="nav-link-text ps-1">About</span></div>
                                 </a>
                                 <ul class="nav collapse" id="About">
                                     <li class="nav-item">
@@ -156,7 +156,7 @@
                                 <!-- parent pages-->
                                 <!-- parent pages-->
                                 <a class="nav-link dropdown-indicator" href="#ServicesTitle" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="ServicesTitle">
-                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-envelope-open"></span></span><span class="nav-link-text ps-1">ServicesTitle</span></div>
+                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="far fa-clipboard"></span></span><span class="nav-link-text ps-1">ServicesTitle</span></div>
                                 </a>
                                 <ul class="nav collapse" id="ServicesTitle">
                                     <li class="nav-item">
@@ -173,7 +173,7 @@
                                 <!-- parent pages-->
                                 <!-- parent pages-->
                                 <a class="nav-link dropdown-indicator" href="#ServicesBox" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="ServicesBox">
-                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-envelope-open"></span></span><span class="nav-link-text ps-1">ServicesBox</span></div>
+                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="far fa-eye"></span></span><span class="nav-link-text ps-1">ServicesBox</span></div>
                                 </a>
                                 <ul class="nav collapse" id="ServicesBox">
                                     <li class="nav-item">
@@ -190,7 +190,7 @@
                                 <!-- parent pages-->
                                 <!-- parent pages-->
                                 <a class="nav-link dropdown-indicator" href="#ProjectBox" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="ProjectBox">
-                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-envelope-open"></span></span><span class="nav-link-text ps-1">ProjectBox</span></div>
+                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="far fa-file-archive"></span></span><span class="nav-link-text ps-1">ProjectBox</span></div>
                                 </a>
                                 <ul class="nav collapse" id="ProjectBox">
                                     <li class="nav-item">
@@ -207,7 +207,7 @@
                                 <!-- parent pages-->
                                 <!-- parent pages-->
                                 <a class="nav-link dropdown-indicator" href="#ProjectAbout" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="ProjectAbout">
-                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-envelope-open"></span></span><span class="nav-link-text ps-1">ProjectAbout</span></div>
+                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="far fa-flag"></span></span><span class="nav-link-text ps-1">ProjectAbout</span></div>
                                 </a>
                                 <ul class="nav collapse" id="ProjectAbout">
                                     <li class="nav-item">
@@ -224,7 +224,7 @@
                                 <!-- parent pages-->
                                 <!-- parent pages-->
                                 <a class="nav-link dropdown-indicator" href="#Counter" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Counter">
-                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-envelope-open"></span></span><span class="nav-link-text ps-1">Counter</span></div>
+                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="far fa-hourglass"></span></span><span class="nav-link-text ps-1">Counter</span></div>
                                 </a>
                                 <ul class="nav collapse" id="Counter">
                                     <li class="nav-item">
@@ -241,7 +241,7 @@
                                 <!-- parent pages-->
                                 <!-- parent pages-->
                                 <a class="nav-link dropdown-indicator" href="#Helping" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Helping">
-                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-envelope-open"></span></span><span class="nav-link-text ps-1">Helping</span></div>
+                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="far fa-share-square"></span></span><span class="nav-link-text ps-1">Helping</span></div>
                                 </a>
                                 <ul class="nav collapse" id="Helping">
                                     <li class="nav-item">
@@ -258,7 +258,7 @@
                                 <!-- parent pages-->
                                 <!-- parent pages-->
                                 <a class="nav-link dropdown-indicator" href="#Blog" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Blog">
-                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-envelope-open"></span></span><span class="nav-link-text ps-1">Blog</span></div>
+                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fab fa-adobe"></span></span><span class="nav-link-text ps-1">Blog</span></div>
                                 </a>
                                 <ul class="nav collapse" id="Blog">
                                     <li class="nav-item">
@@ -275,7 +275,7 @@
                                 <!-- parent pages-->
                                 <!-- parent pages-->
                                 <a class="nav-link dropdown-indicator" href="#Layout" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Layout">
-                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-envelope-open"></span></span><span class="nav-link-text ps-1">Layout</span></div>
+                                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fab fa-acquisitions-incorporated"></span></span><span class="nav-link-text ps-1">Layout</span></div>
                                 </a>
                                 <ul class="nav collapse" id="Layout">
                                     <li class="nav-item">
@@ -309,13 +309,24 @@
             </nav>
             <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand-xl" style="display: none;">
                 <button class="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarStandard" aria-controls="navbarStandard" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
-                <a class="navbar-brand me-1 me-sm-3" href="index.html">
-                    <div class="d-flex align-items-center"><img class="me-2" src="~/admin/assets/img/icons/spot-illustrations/falcon.png" alt="" width="40" /><span class="font-sans-serif">falcon</span></div>
+                <a class="navbar-brand me-1 me-sm-3" href="/">
+                    <div class="d-flex align-items-center"><img class="me-2" src="~/admin/assets/img/ks.jpg" alt="" width="40" /><span class="font-sans-serif">KS</span></div>
                 </a>
 
 
             </nav>
             <div class="content">
+
+                <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand">
+                    <button class="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
+                    <a class="navbar-brand me-1 me-sm-3" href="/">
+                        <div class="d-flex align-items-center"><img class="me-2" src="~/admin/assets/img/ks.jpg" alt="" width="40"><span class="font-sans-serif"></span></div>
+                    </a>
+
+                    <div class="theme-control-toggle fa-icon-wait px-2"><input class="form-check-input ms-0 theme-control-toggle-input" id="themeControlToggle" type="checkbox" data-theme-control="theme" value="dark" /><label class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch to light theme"><span class="fas fa-sun fs-0"></span></label><label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch to dark theme"><span class="fas fa-moon fs-0"></span></label></div>
+
+                </nav>
+
                 <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand" style="display: none;">
                     <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
                         <li class="nav-item">
@@ -329,14 +340,14 @@
                                 <a href="/Admin/Account/Logout">Logout</a>
                             }
                         </li>
-                      
+
 
 
 
                     </ul>
                 </nav>
                 <script>
-    var navbarPosition = localStorage.getItem('navbarPosition');
+                    var navbarPosition = localStorage.getItem('navbarPosition');
                     var navbarVertical = document.querySelector('.navbar-vertical');
                     var navbarTopVertical = document.querySelector('.content .navbar-top');
                     var navbarTop = document.querySelector('[data-layout] .navbar-top');
