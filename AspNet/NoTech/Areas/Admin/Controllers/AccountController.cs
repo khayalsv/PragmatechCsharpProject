@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using KSResumo.Extension;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NoTech.Models;
 using NoTech.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,16 +18,19 @@ namespace NoTech.Areas.Admin.Controllers
         private readonly SignInManager<IdentityUser> signInManager;
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly MyContext myContext;
+        private readonly IEmailService emailService;
 
         public AccountController(UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
             RoleManager<IdentityRole> roleManager,
-            MyContext myContext)
+            MyContext myContext,
+            IEmailService emailService)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.roleManager = roleManager;
             this.myContext = myContext;
+            this.emailService = emailService;
         }
         public async Task SeedRoles()
         {
@@ -94,6 +99,35 @@ namespace NoTech.Areas.Admin.Controllers
         {
             await signInManager.SignOutAsync();
             return Redirect("/");
+        }
+
+        public IActionResult ForgetPassword() { return View(); }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ForgetPassword(ForgetVM forgetVM)
+        {
+            var user = await userManager.FindByEmailAsync(forgetVM.Email);
+
+            if (user==null)
+            {
+                ModelState.AddModelError("Email", "Email is not valid");
+                return View();
+            }
+
+            string token = await userManager.GeneratePasswordResetTokenAsync(user);
+            string callback = Url.Action("resetpassword", "account", new { token, email = user.Email }, Request.Scheme);
+
+            string body = string.Empty;
+            using (StreamReader reader = new StreamReader("wwwroot/template/forgetpassword.html"))
+            {
+                body = reader.ReadToEnd();
+            }
+            body = body.Replace("{{url}}", callback);
+
+            emailService.Send(user.Email, "Reset Password", body);
+
+            return Redirect("/Admin/Account/Login");
         }
     }
 }
