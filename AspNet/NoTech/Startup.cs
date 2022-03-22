@@ -27,6 +27,15 @@ namespace NoTech
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 8;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false; //!@%#%^%#
+            });
+
             services.AddControllersWithViews();
 
             services.AddDbContext<MyContext>(options =>
@@ -36,7 +45,7 @@ namespace NoTech
 
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<MyContext>()
-                .AddTokenProvider<DataProtectorTokenProvider<IdentityUser>>(TokenOptions.DefaultProvider);
+                .AddDefaultTokenProviders();
 
 
             services.AddScoped<IEmailService, EmailService>();

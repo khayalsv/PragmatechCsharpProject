@@ -191,5 +191,5 @@ C:\Users\selim\Desktop\Csharp\AspNet\NoTech\obj\Debug\net5.0\Razor\Areas\Admin\V
 C:\Users\selim\Desktop\Csharp\AspNet\NoTech\bin\Debug\net5.0\MailKit.dll
 C:\Users\selim\Desktop\Csharp\AspNet\NoTech\bin\Debug\net5.0\MimeKit.dll
 C:\Users\selim\Desktop\Csharp\AspNet\NoTech\bin\Debug\net5.0\BouncyCastle.Crypto.dll
-C:\Users\selim\Desktop\Csharp\AspNet\NoTech\obj\Debug\net5.0\Razor\Areas\Admin\Views\Account\ForgetPassword.cshtml.g.cs
-C:\Users\selim\Desktop\Csharp\AspNet\NoTech\obj\Debug\net5.0\Razor\Areas\Admin\Views\Account\ResetPassword.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\NoTech\obj\Debug\net5.0\Razor\Views\Account\ForgetPassword.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\NoTech\obj\Debug\net5.0\Razor\Views\Account\ResetPassword.cshtml.g.cs

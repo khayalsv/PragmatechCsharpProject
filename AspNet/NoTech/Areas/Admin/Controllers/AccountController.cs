@@ -50,11 +50,11 @@ namespace NoTech.Areas.Admin.Controllers
             {
                 IdentityUser user = new IdentityUser()
                 {
-                    UserName = "khayalsalimov",
+                    UserName = "khayal",
                     Email = "selimovxeyal@gmail.com"
                 };
 
-                IdentityResult result = await userManager.CreateAsync(user, "Xeyal123!");
+                IdentityResult result = await userManager.CreateAsync(user, "Xeyal123");
 
                 if (result.Succeeded)
                 {
@@ -76,7 +76,7 @@ namespace NoTech.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid) return View(login);
 
-            var user = await userManager.FindByNameAsync(login.UserName);
+            var user = await userManager.FindByEmailAsync(login.Email);
 
             if (user==null)
             {
@@ -92,7 +92,7 @@ namespace NoTech.Areas.Admin.Controllers
 
             }
 
-            return View(login);
+            return Redirect("/admin/home/list");
         }
 
         public async Task<IActionResult> Logout()
@@ -101,68 +101,5 @@ namespace NoTech.Areas.Admin.Controllers
             return Redirect("/");
         }
 
-        public IActionResult ForgetPassword() { return View(); }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ForgetPassword(ForgetVM forgetVM)
-        {
-            var user = await userManager.FindByEmailAsync(forgetVM.Email);
-
-            if (user==null)
-            {
-                ModelState.AddModelError("Email", "Email is not valid");
-                return View();
-            }
-
-            string token = await userManager.GeneratePasswordResetTokenAsync(user);
-            string callback = Url.Action("resetpassword", "account", new { token, email = user.Email }, Request.Scheme);
-
-            string body = string.Empty;
-            using (StreamReader reader = new StreamReader("wwwroot/template/forgetpassword.html"))
-            {
-                body = reader.ReadToEnd();
-            }
-            body = body.Replace("{{url}}", callback);
-
-            emailService.Send(user.Email, "Reset Password", body);
-
-            return Redirect("/Admin/Account/Login");
-        }
-
-
-        [HttpGet]
-        public IActionResult ResetPassword(string token, string email)
-        {
-            ResetVM resetVM = new ResetVM
-            {
-                Token = token,
-                Email = email
-            };
-            return View(resetVM);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ResetPassword(ResetVM resetVM)
-        {
-            if (!ModelState.IsValid)
-                return View(resetVM);
-
-            IdentityUser user = await userManager.FindByEmailAsync(resetVM.Email);
-
-            var result = await userManager.ResetPasswordAsync(user, resetVM.Token, resetVM.Password);
-
-            if (!result.Succeeded)
-            {
-                foreach (var item in result.Errors)
-                {
-                    ModelState.AddModelError("", item.Description);
-                }
-                return View(resetVM);
-            }
-
-            return Redirect("/admin/account/login");
-        }
     }
 }
