@@ -10,7 +10,7 @@
 
 <style>
     .addcreate {
-        display:inline-block
+        display: inline-block
     }
 </style>
 
@@ -21,6 +21,7 @@
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
     Create (Ajax)
 </button>
+
 
 <div class="table-responsive scrollbar">
     <table class="table table-hover">
@@ -49,6 +50,11 @@
                         <div>
                             <a href="/Admin/Counter/Edit/@item.ID"><i class="fas fa-edit"></i></a>
                             <a href="/Admin/Counter/Delete/@item.ID" onclick="return confirm('Are you delete?')"><i class="fas fa-trash-alt"></i></a>
+
+                            <button type="button" class="btn btn-primary btnEdit" data-id="@item.ID " data-bs-toggle="modal" data-bs-target="#editModal">
+                                Edit
+                            </button>
+
                         </div>
                     </td>
                 </tr>
@@ -57,7 +63,7 @@
     </table>
 </div>
 
-<!-- Modal -->
+<!-- Create Modal -->
 <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -93,20 +99,61 @@
 </div>
 
 
+<!-- Edit Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel"> Edit Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" id="editCounterForm">
+                    <div class="mb-3">
+
+                        <input type="hidden" id="editId" />
+
+                        <label class="form-label">odometer</label>
+                        <input type="text" class="form-control" id="odometerEdit">
+
+                        <label class="form-label">title</label>
+                        <input type="text" class="form-control" id="titleEdit">
+
+                        <label class="form-label">text</label>
+                        <input type="text" class="form-control" id="textEdit">
+
+                        <label class="form-label">icon</label>
+                        <input type="text" class="form-control" id="iconEdit">
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button form="editCounterForm" type="submit" class="btn btn-primary">Save Changes</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 
 @section script{
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        $(document).ready(() => {
+        $(document).ready(() =>
+        {
             $(document).on('click', '#btnCreate', (e) => {
                 $.ajax({
                     url: '/Admin/Counter/CreateAjax',
                     type: 'POST',
-                    data: { icon: $('#iconCreate').val(), odometer: $('#odometerCreate').val(), title: $('#titleCreate').val(), text: $('#textCreate').val()},
+                    data: { icon: $('#iconCreate').val(), odometer: $('#odometerCreate').val(), title: $('#titleCreate').val(), text: $('#textCreate').val() },
                     success: (Response) => {
                         if (Response.hasOwnProperty('status') && Response.status === 200) {
                             location.href = '/Admin/Counter/List';
@@ -117,6 +164,55 @@
                     }
                 })
             })
-        })
+
+
+        
+            $(document).on('click', '.btnEdit', (e) => {
+                const id = $(e.currentTarget).data('id');
+                $.ajax({
+                    url: `/Admin/Counter/EditAjax/${id}`,
+                    type: 'GET',
+                    success: (response) => {
+                        if (response.hasOwnProperty('status') && response.status === 404) {
+                            alert('Not Found')
+                        } else {
+                            console.log(response);
+                            $('#odometerEdit').val(response.odometer);
+                            $('#titleEdit').val(response.odometer);
+                            $('#textEdit').val(response.odometer);
+                            $('#iconEdit').val(response.odometer);
+                            $('#editId').val(response.id);
+                        }
+                    }
+
+                });
+            });
+
+
+
+
+            $('#editCounterForm').submit((e) => {
+                e.preventDefault();
+                console.log("DRGDFrgvd");
+                $.ajax({
+                    url: `/Admin/Counter/EditAjax`,
+                    headers: {
+                        'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                    },
+                    type: 'POST',
+                    data: { Id: $('#editId').val(), odometer: $('#odometerEdit').val()},
+                    success: (response) => {
+                        if (response.hasOwnProperty('status')) {
+                            if (response.status == 200) {
+                                location.href = '/Admin/Counter/List';
+                            } else if (response.status == 400) {
+                                alert('Not Found');
+                            }
+                        }
+                    }
+
+                })
+            });         
+        }
     </script>
-}
+ }

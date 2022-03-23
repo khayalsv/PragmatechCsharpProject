@@ -11,8 +11,8 @@ namespace Relation.Models
         public int HobbyID { get; set; }
 
 
-        public Teacher TeacherTable { get; set; }
-        public Hobby HobbyTable { get; set; }
+        public virtual Teacher TeacherTable { get; set; }
+        public virtual Hobby HobbyTable { get; set; }
 
     }
 }

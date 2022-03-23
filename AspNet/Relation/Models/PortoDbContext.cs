@@ -49,11 +49,11 @@ namespace KS.Models
                 .HasKey(x => new { x.TeacherID, x.HobbyID });
             modelBuilder.Entity<TeacherToHobby>()
                 .HasOne(x => x.HobbyTable)
-                .WithMany(x => x.collectionTable)
+                .WithMany(x => x.TeacherToHobbies)
                 .HasForeignKey(x => x.HobbyID);
             modelBuilder.Entity<TeacherToHobby>()
                 .HasOne(x => x.TeacherTable)
-                .WithMany(x => x.collectionTable)
+                .WithMany(x => x.TeacherToHobbies)
                 .HasForeignKey(x => x.TeacherID);
                 
                 

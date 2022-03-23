@@ -96,7 +96,7 @@
                             </div>
                             <div class="feature-one__hover-content">
                                 <div class="feature-one__icon">
-                                    <span class="icon-system"></span>
+                                    <span>@Html.Raw(item.Icon)</span>
                                 </div>
                                 <h3 class="feature-one__hover-title">
                                     <a href="@item.Link">@item.Title</a>
@@ -219,7 +219,7 @@
                     </div>
                 }
             </div>
-        </div>se
+        </div>
         <div class="services-one__bottom">
             <ul class="list-unstyled services-one__list">
                 @foreach (var item in Model.servicesBoxes)

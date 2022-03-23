@@ -19,16 +19,18 @@ namespace Relation.Controllers
         }
         public IActionResult List()
         {
-            var hobbyList = dbContext.TEACHERTOHOBBY.Include(x=>x.TeacherTable).Include(y=>y.HobbyTable).ToList();
+            ViewBag.LISTBAG = dbContext.TEACHERTOHOBBY.Include(x=>x.TeacherTable).Include(y=>y.HobbyTable).ToList();
+            var teacherlist = dbContext.TEACHER.Include(x => x.TeacherToHobbies).ToList();
 
-            return View(hobbyList);
+            return View(teacherlist);
         }
 
         [HttpGet]
         public IActionResult Create()
         {
-            TeacherToHobby teacherToHobby = new TeacherToHobby();
-            return View(teacherToHobby);
+            ViewBag.Teacher = dbContext.TEACHER.ToList();
+            ViewBag.Hobby = dbContext.HOBBY.ToList();
+            return View();
         }
 
         [HttpPost]

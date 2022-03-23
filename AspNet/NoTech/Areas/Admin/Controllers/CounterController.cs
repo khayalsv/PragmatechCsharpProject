@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NoTech.Models;
 using System;
 using System.Collections.Generic;
@@ -122,6 +123,57 @@ namespace NoTech.Areas.Admin.Controllers
                 status = 200
             });
         }
-      
+
+        
+        public async Task<JsonResult> EditAjax(int? id)
+        {
+            if (id == null)
+            {
+                return Json(new
+                {
+                    status = 404
+                }); ;
+            }
+              
+
+            var item = await myContext.Counters.FindAsync(id);
+
+            if (item == null)
+            {
+                return Json(new
+                {
+                    status = 404
+                }); ;
+            }
+
+            return Json(item);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<JsonResult> EditAjax(Counter item)
+        {
+            var list = await myContext.Counters.FirstOrDefaultAsync(x=>x.ID == item.ID);
+            if (list == null)
+            {
+                return Json(new
+                {
+                    status = 404
+                });
+            }
+            list.Odometer = item.Odometer;
+            list.Title = item.Title;
+            list.Text = item.Text;
+            list.Icon = item.Icon;
+
+            myContext.Update(item);
+            await myContext.SaveChangesAsync();
+
+            return Json(new
+            {
+                status = 200
+            });
+        }
     }
 }
