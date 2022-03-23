@@ -92,7 +92,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button id="btnCreate" type="button" class="btn btn-primary">SaveChanges</button>
+                <button id="btnCreate" type="button" class="btn btn-primary">Save Changes</button>
             </div>
         </div>
     </div>
@@ -108,22 +108,23 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form method="post" id="editCounterForm">
+                <form id="editCounterForm" method="post">
+                    
+                    <input type="hidden" id="editId" />
+                  
                     <div class="mb-3">
-
-                        <input type="hidden" id="editId" />
 
                         <label class="form-label">odometer</label>
                         <input type="text" class="form-control" id="odometerEdit">
 
-                        <label class="form-label">title</label>
+                        @*<label class="form-label">title</label>
                         <input type="text" class="form-control" id="titleEdit">
 
                         <label class="form-label">text</label>
                         <input type="text" class="form-control" id="textEdit">
 
                         <label class="form-label">icon</label>
-                        <input type="text" class="form-control" id="iconEdit">
+                        <input type="text" class="form-control" id="iconEdit">*@
 
                     </div>
                 </form>
@@ -178,9 +179,9 @@
                         } else {
                             console.log(response);
                             $('#odometerEdit').val(response.odometer);
-                            $('#titleEdit').val(response.odometer);
-                            $('#textEdit').val(response.odometer);
-                            $('#iconEdit').val(response.odometer);
+                            //$('#titleEdit').val(response.odometer);
+                            //$('#textEdit').val(response.odometer);
+                            //$('#iconEdit').val(response.odometer);
                             $('#editId').val(response.id);
                         }
                     }
