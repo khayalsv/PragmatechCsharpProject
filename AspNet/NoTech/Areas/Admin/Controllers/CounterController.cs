@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 namespace NoTech.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Admin")]
 
     public class CounterController : Controller
     {
@@ -35,8 +34,7 @@ namespace NoTech.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            var item = new Counter();
-            return View(item);
+            return View();
         }
 
 
@@ -105,9 +103,9 @@ namespace NoTech.Areas.Admin.Controllers
 
         //AJAX
         [HttpPost]
-        public async Task<JsonResult> CreateAjax(Counter item)
+        public async Task<JsonResult> CreateAjax(string odometer,string icon,string text,string title)
         {
-            if (item==null)
+            if (odometer == null || icon == null || text == null || title==null)
             {
                 return Json(new
                 {
@@ -115,6 +113,14 @@ namespace NoTech.Areas.Admin.Controllers
                 });
             }
 
+            var item = new Counter
+            {
+                Odometer = odometer,
+                Text = text,
+                Title = title,
+                Icon = icon
+            };
+            
             await myContext.Counters.AddAsync(item);
             await myContext.SaveChangesAsync();
 
@@ -170,6 +176,31 @@ namespace NoTech.Areas.Admin.Controllers
             myContext.Update(item);
             await myContext.SaveChangesAsync();
 
+            return Json(new
+            {
+                status = 200
+            });
+        }
+
+
+        [ValidateAntiForgeryToken]
+        public async Task<JsonResult> DeleteAjax(int? id)
+        {
+            if (id == null) return Json(new
+            {
+                status = 404
+            });
+            var item = await myContext.Counters.FindAsync(id);
+            if (item == null)
+            {
+                return Json(new
+                {
+                    status = 404
+                });
+            }
+
+            myContext.Counters.Remove(item);
+            await myContext.SaveChangesAsync();
             return Json(new
             {
                 status = 200
