@@ -122,14 +122,14 @@
                         <label class="form-label">odometer</label>
                         <input type="text" class="form-control" id="odometerEdit">
 
-                        @*<label class="form-label">title</label>
+                        <label class="form-label">title</label>
                         <input type="text" class="form-control" id="titleEdit">
 
                         <label class="form-label">text</label>
                         <input type="text" class="form-control" id="textEdit">
 
                         <label class="form-label">icon</label>
-                        <input type="text" class="form-control" id="iconEdit">*@
+                        <input type="text" class="form-control" id="iconEdit">
 
                     </div>
                 </form>
@@ -153,8 +153,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        $(document).ready(() =>
-        {
+        $(document).ready(() => {
             $(document).on('click', '#btnCreate', (e) => {
                 console.log('sdasdasd');
                 $.ajax({
@@ -171,18 +170,17 @@
                             location.href = '/Admin/Counter/List';
                         }
                         else if (Response.status === 400) {
-                            alert("Not Fount")
+                            alert("Not Found")
                         }
                     }
-                })
+                });
             });
 
 
-        
-            $(document).on('click', '.btnEdit', (e) => {
-                console.log('sdsadasd');
-                const id = $(e.currentTarget).data('ID');
-              
+
+            $(document).on('click', '.btnEdit', (e) => {             
+                const id = $(e.currentTarget).data('id');
+                console.log(id);
                 $.ajax({
                     url: `/Admin/Counter/EditAjax/${id}`,
                     type: 'GET',
@@ -192,9 +190,9 @@
                         } else {
                             console.log(response);
                             $('#odometerEdit').val(response.odometer);
-                            //$('#titleEdit').val(response.odometer);
-                            //$('#textEdit').val(response.odometer);
-                            //$('#iconEdit').val(response.odometer);
+                            $('#titleEdit').val(response.title);
+                            $('#textEdit').val(response.text);
+                            $('#iconEdit').val(response.icon);
                             $('#editId').val(response.id);
                         }
                     }
@@ -207,14 +205,19 @@
 
             $('#editCounterForm').submit((e) => {
                 e.preventDefault();
-                console.log("DRGDFrgvd");
                 $.ajax({
                     url: `/Admin/Counter/EditAjax`,
                     headers: {
                         'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
                     },
                     type: 'POST',
-                    data: { Id: $('#editId').val(), odometer: $('#odometerEdit').val()},
+                    data: {
+                        id: $('#editId').val(),
+                        Odometer: $('#odometerEdit').val(),
+                        Title: $('#titleEdit').val(),
+                        Text: $('#textEdit').val(),
+                        Icon: $('#iconEdit').val(),
+                    },
                     success: (response) => {
                         if (response.hasOwnProperty('status')) {
                             if (response.status == 200) {
@@ -225,8 +228,11 @@
                         }
                     }
 
-                })
+                });
             });
+
+
+
 
 
 
@@ -269,6 +275,6 @@
                     }
                 })
             });
-        }
+        });
     </script>
  }
