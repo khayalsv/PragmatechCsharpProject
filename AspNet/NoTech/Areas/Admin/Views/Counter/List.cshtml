@@ -20,9 +20,9 @@
 
 
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
+@*<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
     Create (Ajax)
-</button>
+</button>*@
 
 
 <div class="table-responsive scrollbar">
@@ -53,13 +53,13 @@
                             <a href="/Admin/Counter/Edit/@item.ID"><i class="fas fa-edit"></i></a>
                             <a href="/Admin/Counter/Delete/@item.ID" onclick="return confirm('Are you delete?')"><i class="fas fa-trash-alt"></i></a>
 
-                            <button type="button" class="btn btn-primary btnEdit" data-id="@item.ID" data-bs-toggle="modal" data-bs-target="#editModal">
+                            @*<button type="button" class="btn btn-primary btnEdit" data-id="@item.ID" data-bs-toggle="modal" data-bs-target="#editModal">
                                 Edit (Ajax)
                             </button>
 
                             <a href="/Admin/Counter/DeleteAjax/@item.ID" class="delete-btn">
                                 Delete (Ajax)
-                            </a>
+                            </a>*@
                         </div>
                     </td>
                 </tr>
@@ -212,11 +212,11 @@
                     },
                     type: 'POST',
                     data: {
-                        id: $('#editId').val(),
-                        Odometer: $('#odometerEdit').val(),
-                        Title: $('#titleEdit').val(),
-                        Text: $('#textEdit').val(),
-                        Icon: $('#iconEdit').val(),
+                        ID: $('#editId').val(),
+                        odometer: $('#odometerEdit').val(),
+                        title: $('#titleEdit').val(),
+                        text: $('#textEdit').val(),
+                        icon: $('#iconEdit').val(),
                     },
                     success: (response) => {
                         if (response.hasOwnProperty('status')) {
@@ -228,13 +228,8 @@
                         }
                     }
 
-                });
+                })
             });
-
-
-
-
-
 
             $(document).on('click', '.delete-btn', function (e) {
                 e.preventDefault();
