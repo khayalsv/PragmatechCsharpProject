@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="colorbody">
+
+    <button id="colorbody">Click button</button>
+    <script>
+        document.getElementById('colorbody').addEventListener('click', myFunc);
+
+        function myFunc() {
+            var bgcolor = new Array("#029FD4", "#D43702", "#1EFF00", "#EAEAFF", "#FFEA00", "#AB5252", "#FFFFFF", "#DE28D8")
+            document.body.style.background = bgcolor[Math.floor(Math.random() * bgcolor.length)];
+        }
+    </script>
+
+
+
+    <button onclick="getElementById('demo').innerHTML=Date()">Time</button>
+    <p id="demo"></p>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <script>
+        var fruits = ["Apple", "Banana", "Mango", "Ananas", "Peach"];
+
+        fruits.pop(); //end of the element delete
+        fruits.shift(); //first of the element delete
+        fruits.push("Orange"); //end element added
+        fruits.unshift("Grape"); //first element added
+
+        fruits[0] = "Kivi" //element changed
+        delete fruits[2]; //element deleted
+        fruits.splice(0, 1, "Lemon", "Pear") //element changed
+
+        fruits.sort(); //alphabet
+        fruits.reverse(); //opposite alphabet
+
+        document.getElementById("demo1").innerHTML = fruits[1];
+        document.getElementById("demo2").innerHTML = fruits.join(" | ");
+
+
+        //Concat
+        var Boys = ["Bob", "Joe", "Sam"];
+        var Girls = ["Samantha", "Julie", "Jill"];
+        var combined = Boys.concat(Girls);
+        document.getElementById("demo3").innerHTML = combined;
+    </script>
+</body>
+
+</html>

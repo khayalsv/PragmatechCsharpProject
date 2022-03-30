@@ -103,9 +103,9 @@ namespace NoTech.Areas.Admin.Controllers
 
         //AJAX
         [HttpPost]
-        public async Task<JsonResult> CreateAjax(string odometer,string icon,string text,string title)
+        public async Task<JsonResult> CreateAjax(Counter item)
         {
-            if (odometer == null || icon == null || text == null || title==null)
+            if (item == null)
             {
                 return Json(new
                 {
@@ -113,14 +113,7 @@ namespace NoTech.Areas.Admin.Controllers
                 });
             }
 
-            var item = new Counter
-            {
-                Odometer = odometer,
-                Text = text,
-                Title = title,
-                Icon = icon
-            };
-            
+
             await myContext.Counters.AddAsync(item);
             await myContext.SaveChangesAsync();
 
@@ -130,7 +123,8 @@ namespace NoTech.Areas.Admin.Controllers
             });
         }
 
-        
+
+        [HttpGet]
         public async Task<JsonResult> EditAjax(int? id)
         {
             if (id == null)
