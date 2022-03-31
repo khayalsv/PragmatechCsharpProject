@@ -1,4 +1,4 @@
-﻿@model IList<Counter>
+﻿@model NoTech.Extension.PaginatedList<Counter>
 
 @if (TempData["Success"] != null)
 {
@@ -20,9 +20,9 @@
 
 
 
-@*<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
     Create (Ajax)
-</button>*@
+</button>
 
 
 <div class="table-responsive scrollbar">
@@ -39,34 +39,29 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.ID</td>
-                    <td>@item.Odometer</td>
-                    <td>@item.Title</td>
-                    <td>@item.Text</td>
-                    <td>@item.Icon</td>
 
-                    <td class="text-end">
-                        <div>
-                            <a href="/Admin/Counter/Edit/@item.ID"><i class="fas fa-edit"></i></a>
-                            <a href="/Admin/Counter/Delete/@item.ID" onclick="return confirm('Are you delete?')"><i class="fas fa-trash-alt"></i></a>
 
-                            @*<button type="button" class="btn btn-primary btnEdit" data-id="@item.ID" data-bs-toggle="modal" data-bs-target="#editModal">
-                                Edit (Ajax)
-                            </button>
+            <partial name="_CounterPartial" model="Model" />
 
-                            <a href="/Admin/Counter/DeleteAjax/@item.ID" class="delete-btn">
-                                Delete (Ajax)
-                            </a>*@
-                        </div>
-                    </td>
-                </tr>
-            }
+
         </tbody>
     </table>
 </div>
+
+@{
+    var prev = !Model.HasPreviousPage ? "disabled" : "";
+    var next = !Model.HasNextPage ? "disabled" : "";
+}
+
+
+<a href="/Admin/Counter/List/@(Model.PageIndex-1)" class="btn btn-primary @prev">
+    Evvel
+</a>
+<a href="/Admin/Counter/List/@(Model.PageIndex+1)" class="btn btn-primary @next">
+    Sonra
+</a>
+
+
 
 <!-- Create Modal -->
 <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
@@ -114,9 +109,9 @@
             </div>
             <div class="modal-body">
                 <form id="editCounterForm" method="post">
-                    
+
                     <input type="hidden" id="editId" />
-                  
+
                     <div class="mb-3">
 
                         <label class="form-label">odometer</label>
@@ -178,7 +173,7 @@
 
 
 
-            $(document).on('click', '.btnEdit', (e) => {             
+            $(document).on('click', '.btnEdit', (e) => {
                 const id = $(e.currentTarget).data('id');
                 console.log(id);
                 $.ajax({
@@ -272,4 +267,4 @@
             });
         });
     </script>
- }
+}

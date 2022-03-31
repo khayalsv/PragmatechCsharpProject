@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NoTech.Extension;
 using NoTech.Models;
 using System;
 using System.Collections.Generic;
@@ -16,19 +17,18 @@ namespace NoTech.Areas.Admin.Controllers
     public class CounterController : Controller
     {
         private readonly MyContext myContext;
-        private readonly IWebHostEnvironment env; //image
 
-        public CounterController(MyContext myContext, IWebHostEnvironment env)
+        public CounterController(MyContext myContext)
         {
             this.myContext = myContext;
-            this.env = env;
         }
 
         [HttpGet]
-        public IActionResult List()
+        public async Task<IActionResult> List(int? id)
         {
-            var item = myContext.Counters.ToList();
-            return View(item);
+            int pagesize = 3;
+            var item = myContext.Counters.OrderBy(x=>x.ID).AsQueryable();
+            return View(await PaginatedList<Counter>.CreateAsync(item.AsNoTracking(), id ??1,pagesize));
         }
 
         [HttpGet]
