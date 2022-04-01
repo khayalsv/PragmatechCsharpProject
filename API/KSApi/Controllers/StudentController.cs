@@ -43,8 +43,5 @@ namespace KSApi.Controllers
 
             return student;
         }
-
-
-       
     }
 }

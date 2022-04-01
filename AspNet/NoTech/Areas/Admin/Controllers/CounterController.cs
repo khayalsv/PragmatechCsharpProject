@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NoTech.Extension;
 using NoTech.Models;
+using NoTech.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,11 +25,15 @@ namespace NoTech.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> List(int? id)
+        public async Task<IActionResult> List(int page=1)
         {
-            int pagesize = 3;
-            var item = myContext.Counters.OrderBy(x=>x.ID).AsQueryable();
-            return View(await PaginatedList<Counter>.CreateAsync(item.AsNoTracking(), id ??1,pagesize));
+            int take = 3;
+            PaginationVM model = new PaginationVM
+            {
+                counters = await myContext.Counters.Skip(take * (page - 1)).Take(take).ToListAsync(),
+                Pagination = new PaginationModel(await myContext.Counters.CountAsync(), take, page)
+            };
+            return View(model);
         }
 
         [HttpGet]

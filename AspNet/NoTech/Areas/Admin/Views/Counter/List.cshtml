@@ -1,4 +1,5 @@
-﻿@model NoTech.Extension.PaginatedList<Counter>
+﻿
+@model NoTech.ViewModels.PaginationVM;
 
 @if (TempData["Success"] != null)
 {
@@ -41,25 +42,18 @@
         <tbody>
 
 
-            <partial name="_CounterPartial" model="Model" />
+            <partial name="_CounterPartial" model="Model.counters" />
 
 
         </tbody>
     </table>
 </div>
 
-@{
-    var prev = !Model.HasPreviousPage ? "disabled" : "";
-    var next = !Model.HasNextPage ? "disabled" : "";
-}
 
 
-<a href="/Admin/Counter/List/@(Model.PageIndex-1)" class="btn btn-primary @prev">
-    Evvel
-</a>
-<a href="/Admin/Counter/List/@(Model.PageIndex+1)" class="btn btn-primary @next">
-    Sonra
-</a>
+<div id="pagination">
+    <partial name="_PaginationPartial" model="Model.Pagination" />
+</div>
 
 
 

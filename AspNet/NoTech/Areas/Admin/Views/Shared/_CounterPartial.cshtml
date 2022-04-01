@@ -1,27 +1,19 @@
-﻿@model NoTech.Extension.PaginatedList<Counter>
+﻿@model List<Counter>
 
 @foreach (var item in Model)
 {
-    <tr>
-        <td>@item.ID</td>
-        <td>@item.Odometer</td>
-        <td>@item.Title</td>
-        <td>@item.Text</td>
-        <td>@item.Icon</td>
+<tr>
+    <td>@item.ID</td>
+    <td>@item.Odometer</td>
+    <td>@item.Title</td>
+    <td>@item.Text</td>
+    <td>@item.Icon</td>
 
-        <td class="text-end">
-            <div>
-                <a href="/Admin/Counter/Edit/@item.ID"><i class="fas fa-edit"></i></a>
-                <a href="/Admin/Counter/Delete/@item.ID" onclick="return confirm('Are you delete?')"><i class="fas fa-trash-alt"></i></a>
+    <td class="text-end">
+        <div>
+            <a href="/Admin/Counter/Edit/@item.ID"><i class="fas fa-edit"></i></a>
+            <a href="/Admin/Counter/Delete/@item.ID" onclick="return confirm('Are you delete?')"><i class="fas fa-trash-alt"></i></a>
+        </div>
+    </td>
+</tr>}
 
-                @*<button type="button" class="btn btn-primary btnEdit" data-id="@item.ID" data-bs-toggle="modal" data-bs-target="#editModal">
-                        Edit (Ajax)
-                    </button>
-
-                    <a href="/Admin/Counter/DeleteAjax/@item.ID" class="delete-btn">
-                        Delete (Ajax)
-                    </a>*@
-            </div>
-        </td>
-    </tr>
-}
