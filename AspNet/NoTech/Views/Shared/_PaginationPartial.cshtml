@@ -1,0 +1,35 @@
+﻿@model NoTech.Extension.PaginationModel
+
+@if (Model == null) { return; }
+
+@{
+    int pageCount = Model.PageCount;
+
+    string url(int page = 1)
+    {
+        string pageOnUrl = page > 1 ? $"?page={page}" : "";
+        return $"{Context.Request.Path}{pageOnUrl}";
+
+    }
+
+    string pointer_events(int page)
+    {
+        return Model.Page == page ? "style=pointer-events:none;" : "";
+    }
+}
+
+@if (pageCount > 0)
+{
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item"><a href="@url(Model.Prev)" data-page="@Model.Prev" class="page-link" @pointer_events(1)>Əvvəl</a></li>
+            @for (int i = Model.StartIndex; i <= Model.EndIndex; i++)
+            {
+                <li class="page-item@(i == Model.Page ? " active" : "")">
+                    <a href="@url(i)" data-page="@i" class="page-link">@i</a>
+                </li>
+            }
+            <li class="page-item"><a href="@url(Model.Next)" data-page="@Model.Next" class="page-link" @pointer_events(1)>Sonra</a></li>
+        </ul>
+    </nav>
+}

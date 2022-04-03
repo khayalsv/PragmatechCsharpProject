@@ -1,0 +1,14 @@
+﻿@*@model List<Counter>
+
+
+@foreach (var item in Model)
+{
+    <li class="counter-one__single wow fadeInUp" data-wow-delay="100ms">
+        <div class="counter-one__icon">
+            <span>@Html.Raw(item.Icon)</span>
+        </div>
+        <h3>@item.Odometer</h3>
+        <p class="counter-one__title">@item.Title</p>
+        <p class="counter-one__text">@item.Text</p>
+    </li>
+}*@

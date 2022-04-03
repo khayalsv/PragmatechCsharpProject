@@ -36,7 +36,11 @@ namespace NoTech.Controllers
                 helpings=await myContext.Helpings.ToListAsync(),
                 blogs=await myContext.Blogs.ToListAsync(),
                 layouts=await myContext.Layouts.ToListAsync(),
-                contacts = await myContext.Contacts.ToListAsync()
+                contacts = await myContext.Contacts.ToListAsync(),
+
+
+                //counters = await myContext.Counters.Skip(take * (page - 1)).Take(take).ToListAsync(),
+                //Pagination = new PaginationModel(await myContext.Counters.CountAsync(), take, page)
             };
 
             return View(vM);

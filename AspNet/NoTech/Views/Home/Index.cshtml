@@ -432,8 +432,10 @@
     <!-- /.counter-one__bg -->
     <div class="container">
         <div class="row">
+         
             <div class="col-xl-12">
                 <ul class="list-unstyled counter-one__list">
+
                     @foreach (var item in Model.counters)
                     {
                         <li class="counter-one__single wow fadeInUp" data-wow-delay="100ms">
@@ -445,8 +447,14 @@
                             <p class="counter-one__text">@item.Text</p>
                         </li>
                     }
+
                 </ul>
             </div>
+
+            @*<div id="pagination">
+                <partial name="_PaginationPartial" model="Model.Pagination" />
+            </div>*@
+
         </div>
     </div>
 </section>

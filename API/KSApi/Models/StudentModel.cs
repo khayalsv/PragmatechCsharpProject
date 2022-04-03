@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace KSApi.Models
 {
-    public class Student
+    public class StudentModel
     {
         public int ID { get; set; }
         public string Name  { get; set; }

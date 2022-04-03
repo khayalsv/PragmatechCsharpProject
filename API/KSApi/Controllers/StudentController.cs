@@ -1,5 +1,10 @@
-﻿using KSApi.Models;
+﻿using KSApi.Data;
+using KSApi.Data.Entities;
+using KSApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,37 +16,115 @@ namespace KSApi.Controllers
     [Route("api/[controller]")]
     public class StudentController : Controller
     {
-        private static List<Student> _students = new List<Student>();
-        [HttpGet("all")]
-        public List<Student> GetAll()
+
+        private readonly ISingletonOperation singletonOperation;
+        private readonly IServiceProvider serviceProvider;
+        private readonly IConfiguration configuration;
+        private readonly MyContext mycontext;
+        private readonly PositionOptions positionOptions;
+
+        public StudentController(ISingletonOperation singletonOperation,
+            IServiceProvider serviceProvider,
+            IConfiguration configuration,
+            IOptions<PositionOptions> positionOptions,
+            MyContext mycontext)
         {
-            return _students;
+            this.singletonOperation = singletonOperation;
+            this.serviceProvider = serviceProvider;
+            this.configuration = configuration;
+            this.mycontext = mycontext;
+            this.positionOptions = positionOptions.Value; //instance
+        }
+
+        [HttpGet("Guid")]
+        public object GetGuid()
+        {
+            var scopedOperation1 = (IScopedOperation)serviceProvider.GetService(typeof(IScopedOperation));
+            var transientOperation1 = (ITransientOperation)serviceProvider.GetService(typeof(ITransientOperation));
+
+            var scopedOperation2 = (IScopedOperation)serviceProvider.GetService(typeof(IScopedOperation));
+            var transientOperation2 = (ITransientOperation)serviceProvider.GetService(typeof(ITransientOperation));
+
+
+            var data = new
+            {
+                Singleton = singletonOperation.ID,
+                Scoped1 = scopedOperation1.ID,
+                Scoped2 = scopedOperation2.ID,
+                Transient1 = transientOperation1.ID,
+                Transient2 = transientOperation2.ID
+
+            };
+
+            return data;
+        }
+
+
+        [HttpGet("all")]
+        public async Task<List<Student>> GetAll()
+        {
+            var list= await mycontext.Students.ToListAsync();
+            return list;
+        }
+
+
+        [HttpGet("student/{id}")]
+        public async Task<IActionResult> GetStudent(int id)
+        {
+            var request = Request;
+            var context = HttpContext;
+            var user = User;
+
+            var student = await mycontext.Students.FirstOrDefaultAsync(x => x.ID == id);
+            if (student==null)
+            {
+                return NotFound();
+            }
+            return Ok(student);
         }
 
         [HttpPost("create")]
-        public Student CreateStudent(Student student)
+        public async Task<IActionResult> CreateStudent([FromBody] Student student)
         {
-            _students.Add(student);
+            await mycontext.Students.AddAsync(student);
+            await mycontext.SaveChangesAsync();
 
-            return student;
+            return Created($"/api/student/student/{student.ID}",student);
         }
 
         [HttpPut("update")]
-        public Student UpdateStudent(int id,Student newStudent)
+        public async Task<Student> UpdateStudent(int id,Student newStudent)
         {
-            var student = _students.FirstOrDefault(x => x.ID == id);
+            var student =await mycontext.Students.FirstOrDefaultAsync(x => x.ID == id);
             student.Name = newStudent.Name;
+            student.Surname = newStudent.Surname;
+            await mycontext.SaveChangesAsync();
 
             return newStudent;
         }
    
         [HttpDelete("delete")]
-        public Student DeleteStudent(int id)
+        public async Task<Student> DeleteStudent(int id)
         {
-            var student = _students.FirstOrDefault(x => x.ID == id);
-            _students.Remove(student);
+            var student = await mycontext.Students.FirstOrDefaultAsync(x => x.ID == id);
+            mycontext.Remove(student);
+            await mycontext.SaveChangesAsync();
 
             return student;
+        }
+
+        [HttpGet("configs")]
+        public object GetConfigurations()
+        {
+            var configurations = new
+            {
+                GeneralApiKey = configuration["ApiKey"],
+                SmsApiKey=configuration["SmsApi:ApiKey"],
+                FromNumber=configuration["SmsApi:FromNumber"],
+                PositionOptions= positionOptions
+            };
+
+            return configurations;
         }
     }
 }

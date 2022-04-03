@@ -1,4 +1,5 @@
-﻿using NoTech.Models;
+﻿using NoTech.Extension;
+using NoTech.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,12 +17,13 @@ namespace NoTech.ViewModels
         public List<Testimonials> testimonials { get; set; }
         public List<ProjectBox> projectBoxes { get; set; }
         public List<ProjectAbout> projectAbouts { get; set; }
-        public List<Counter> counters { get; set; }
         public List<Helping> helpings { get; set; }
         public List<Blog> blogs { get; set; }
         public List<Layout> layouts { get; set; }
         public List<Contact> contacts { get; set; }
         public Contact contact { get; set; }
+        public List<Counter> counters { get; set; }
+        public PaginationModel Pagination { get; set; }
 
     }
 }
