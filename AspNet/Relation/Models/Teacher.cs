@@ -9,9 +9,8 @@ namespace Relation.Models
     public class Teacher
     {
         public int ID { get; set; }
-        public string TeacherName { get; set; }
-        [NotMapped]
-        public List<int> HobbyID { get; set; }
-        public IList<TeacherToHobby> TeacherToHobbies { get; set; }
+        public string Name { get; set; }
+      
+        public ICollection<TeacherToHobby> TeacherToHobbies { get; set; }
     }
 }

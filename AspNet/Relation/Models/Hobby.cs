@@ -8,9 +8,9 @@ namespace Relation.Models
     public class Hobby
     {
         public int ID { get; set; }
-        public string HobbyName { get; set; }
+        public string Name { get; set; }
 
-        public IList<TeacherToHobby> TeacherToHobbies { get; set; }
+        public ICollection<TeacherToHobby> TeacherToHobbies { get; set; }
 
     }
 }

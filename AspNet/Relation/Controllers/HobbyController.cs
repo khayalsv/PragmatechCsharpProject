@@ -19,9 +19,15 @@ namespace Relation.Controllers
         }
         public IActionResult List()
         {
-            ViewBag.LISTBAG = dbContext.TEACHERTOHOBBY.Include(x=>x.TeacherTable).Include(y=>y.HobbyTable).ToList();
-            var teacherlist = dbContext.TEACHER.Include(x => x.TeacherToHobbies).ToList();
+            var teacherlist = dbContext.TEACHER.Include(x => x.TeacherToHobbies).ThenInclude(y => y.Hobby).ToList();
 
+            //var teacherlist = dbContext.TEACHER.Select(x => new
+            //{
+            //    HobbyName = x.TeacherToHobbies.Select(th => new
+            //    {
+            //        th.Hobby.Name
+            //    })
+            //}).ToList();
             return View(teacherlist);
         }
 
@@ -45,38 +51,38 @@ namespace Relation.Controllers
             return Redirect("/Hobby/List");   
         }
 
-        [HttpGet]
-        public IActionResult Edit(int? id)
-        {
-            if (id == null)
-                return NotFound();
+        //[HttpGet]
+        //public IActionResult Edit(int? id)
+        //{
+        //    if (id == null)
+        //        return NotFound();
 
-            var teacherList = dbContext.TEACHERTOHOBBY.Include(x => x.TeacherTable).Include(x=>x.HobbyTable).First(x => x.TeacherID==id);
+        //    var teacherList = dbContext.TEACHERTOHOBBY.Include(x => x.TeacherTable).Include(x=>x.HobbyTable).First(x => x.TeacherID==id);
 
            
 
-            return View(teacherList);
-        }
+        //    return View(teacherList);
+        //}
 
-        [HttpPost]
-        public IActionResult Edit(TeacherToHobby teacherToHobby)
-        {
-            if (!ModelState.IsValid)
-                return NotFound();
+        //[HttpPost]
+        //public IActionResult Edit(TeacherToHobby teacherToHobby)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return NotFound();
 
-            var teacherList = dbContext.TEACHERTOHOBBY.First(x => x.TeacherID == teacherToHobby.TeacherID);
+        //    var teacherList = dbContext.TEACHERTOHOBBY.First(x => x.TeacherID == teacherToHobby.TeacherID);
 
-            if (teacherList == null)
-                return View(teacherToHobby);
+        //    if (teacherList == null)
+        //        return View(teacherToHobby);
 
-            teacherList.HobbyTable.HobbyName = teacherToHobby.HobbyTable.HobbyName;
-            teacherList.TeacherTable.TeacherName = teacherToHobby.TeacherTable.TeacherName;
+        //    teacherList.HobbyTable.HobbyName = teacherToHobby.HobbyTable.HobbyName;
+        //    teacherList.TeacherTable.TeacherName = teacherToHobby.TeacherTable.TeacherName;
 
 
 
-            dbContext.SaveChanges();
-            return Redirect("/Hobby/List");
-        }
+        //    dbContext.SaveChanges();
+        //    return Redirect("/Hobby/List");
+        //}
 
         public IActionResult Delete(int? id)
         {

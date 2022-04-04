@@ -1,5 +1,5 @@
 ﻿@model IList<Teacher>
-@{ List<TeacherToHobby> teacherToHobbies = ViewBag.LISTBAG; }
+
 <div>
     <a href="/Admin/Hobby/HobbyCreate" style="width:100%" class="btn btn-success">Add Components</a>
 </div>
@@ -14,22 +14,25 @@
     <tbody>
         @foreach (var item in Model)
         {
-<tr>
-    <th scope="row">@item.TeacherName</th>
+        <tr>
+            <th scope="row">@item.Name</th>
 
-    <th scope="row">
-        @foreach (var item2 in teacherToHobbies)
-        {
-            if (item.ID == item2.TeacherID)
-            {
-                @(item2.HobbyTable.HobbyName+ ",")
-            }
-        }
-</th>
-<td>
-    <a href="/Admin/Packet/Edit/@item.ID" style="color:green"><i class="fas fa-edit"></i></a>
-    <a href="/Admin/Packet/Delete/@item.ID" onclick="return confirm('Are you delete?')" style="color:red"><i class="fas fa-trash-alt"></i></a>
-</td>
-</tr>}
+            <th scope="row">
+                @foreach (var item2 in item.TeacherToHobbies)
+                {
+
+                    if (item.ID == item2.TeacherID)
+                    {
+                        @(item2.Hobby.Name + ",")                   
+                    }
+                        
+                }
+            </th>
+            <td>
+                <a href="/Admin/Packet/Edit/@item.ID" style="color:green"><i class="fas fa-edit"></i></a>
+                <a href="/Admin/Packet/Delete/@item.ID" onclick="return confirm('Are you delete?')" style="color:red"><i class="fas fa-trash-alt"></i></a>
+            </td>
+        </tr>
+}
     </tbody>
 </table>
