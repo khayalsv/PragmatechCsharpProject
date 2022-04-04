@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KSApi.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20220403171021_aded")]
-    partial class aded
+    [Migration("20220404171241_addded")]
+    partial class addded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,7 +36,7 @@ namespace KSApi.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("tblCourse");
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("KSApi.Data.Entities.Gender", b =>
@@ -51,7 +51,7 @@ namespace KSApi.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("tblGender");
+                    b.ToTable("Genders");
                 });
 
             modelBuilder.Entity("KSApi.Data.Entities.Student", b =>
@@ -64,8 +64,11 @@ namespace KSApi.Migrations
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("Gender")
+                    b.Property<int?>("GenderID")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -78,7 +81,9 @@ namespace KSApi.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("tblStudent");
+                    b.HasIndex("GenderID");
+
+                    b.ToTable("Students");
                 });
 
             modelBuilder.Entity("KSApi.Data.Entities.StudentCourse", b =>
@@ -97,7 +102,52 @@ namespace KSApi.Migrations
 
                     b.HasKey("StudentID", "CourseID");
 
-                    b.ToTable("tblStudentCourse");
+                    b.HasIndex("CourseID");
+
+                    b.ToTable("StudentCourses");
+                });
+
+            modelBuilder.Entity("KSApi.Data.Entities.Student", b =>
+                {
+                    b.HasOne("KSApi.Data.Entities.Gender", "Gender")
+                        .WithMany("Students")
+                        .HasForeignKey("GenderID");
+
+                    b.Navigation("Gender");
+                });
+
+            modelBuilder.Entity("KSApi.Data.Entities.StudentCourse", b =>
+                {
+                    b.HasOne("KSApi.Data.Entities.Course", "Course")
+                        .WithMany("StudentCourses")
+                        .HasForeignKey("CourseID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("KSApi.Data.Entities.Student", "Student")
+                        .WithMany("StudentCourses")
+                        .HasForeignKey("StudentID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("KSApi.Data.Entities.Course", b =>
+                {
+                    b.Navigation("StudentCourses");
+                });
+
+            modelBuilder.Entity("KSApi.Data.Entities.Gender", b =>
+                {
+                    b.Navigation("Students");
+                });
+
+            modelBuilder.Entity("KSApi.Data.Entities.Student", b =>
+                {
+                    b.Navigation("StudentCourses");
                 });
 #pragma warning restore 612, 618
         }

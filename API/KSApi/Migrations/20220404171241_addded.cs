@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace KSApi.Migrations
 {
-    public partial class aded : Migration
+    public partial class addded : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "tblCourse",
+                name: "Courses",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
@@ -18,11 +18,11 @@ namespace KSApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tblCourse", x => x.ID);
+                    table.PrimaryKey("PK_Courses", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
-                name: "tblGender",
+                name: "Genders",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
@@ -31,11 +31,11 @@ namespace KSApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tblGender", x => x.ID);
+                    table.PrimaryKey("PK_Genders", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
-                name: "tblStudent",
+                name: "Students",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
@@ -44,15 +44,22 @@ namespace KSApi.Migrations
                     Surname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Salary = table.Column<double>(type: "float", nullable: true),
-                    Gender = table.Column<int>(type: "int", nullable: true)
+                    GenderID = table.Column<int>(type: "int", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tblStudent", x => x.ID);
+                    table.PrimaryKey("PK_Students", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Students_Genders_GenderID",
+                        column: x => x.GenderID,
+                        principalTable: "Genders",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "tblStudentCourse",
+                name: "StudentCourses",
                 columns: table => new
                 {
                     StudentID = table.Column<int>(type: "int", nullable: false),
@@ -62,23 +69,45 @@ namespace KSApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tblStudentCourse", x => new { x.StudentID, x.CourseID });
+                    table.PrimaryKey("PK_StudentCourses", x => new { x.StudentID, x.CourseID });
+                    table.ForeignKey(
+                        name: "FK_StudentCourses_Courses_CourseID",
+                        column: x => x.CourseID,
+                        principalTable: "Courses",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_StudentCourses_Students_StudentID",
+                        column: x => x.StudentID,
+                        principalTable: "Students",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StudentCourses_CourseID",
+                table: "StudentCourses",
+                column: "CourseID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Students_GenderID",
+                table: "Students",
+                column: "GenderID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "tblCourse");
+                name: "StudentCourses");
 
             migrationBuilder.DropTable(
-                name: "tblGender");
+                name: "Courses");
 
             migrationBuilder.DropTable(
-                name: "tblStudent");
+                name: "Students");
 
             migrationBuilder.DropTable(
-                name: "tblStudentCourse");
+                name: "Genders");
         }
     }
 }

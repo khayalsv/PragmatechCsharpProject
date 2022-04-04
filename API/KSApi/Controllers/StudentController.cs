@@ -61,12 +61,60 @@ namespace KSApi.Controllers
 
 
         [HttpGet("all")]
-        public async Task<List<Student>> GetAll()
+        public async Task<object> GetAll()
         {
-            var list= await mycontext.Students.ToListAsync();
+            var list = await mycontext.Students.Include(x => x.Gender)
+                 .Select(y => new
+                 {
+                     y.Name,
+                     y.Surname,
+                     y.Salary,
+                     y.DateOfBirth,
+                     GenderName = y.Gender.Name,
+                     Courses = y.StudentCourses.Select(sc => new
+                     {
+                         sc.Course.Name,
+                         sc.StartDate,
+                         sc.EndDate
+                     })
+                 }).ToListAsync();
             return list;
         }
 
+        [HttpGet("studentCourseReport")]
+        public async Task<object> GetReport()  //sql code
+        {
+            var query = from sc in mycontext.StudentCourses
+                        join s in mycontext.Students on sc.StudentID equals s.ID
+                        join c in mycontext.Courses on sc.CourseID equals c.ID
+                        join g in mycontext.Genders on s.GenderID equals g.ID
+                        select new
+                        {
+                            s.Name,
+                            s.Surname,
+                            s.DateOfBirth,
+                            GenderName=g.Name,
+                            CourseName=c.Name,
+                            sc.StartDate,
+                            sc.EndDate
+                        };
+            return await query.ToListAsync();
+        }
+
+        [HttpGet("genders")]             
+        public async Task<object> GetGender()
+        {
+            var list = await mycontext.Students.Include(x => x.Gender)
+                .Select(y => new
+                {
+                    y.Name,
+                    y.Surname,
+                    y.Salary,
+                    y.DateOfBirth,
+                    GenderName=y.Gender.Name
+                }).ToListAsync();
+            return list;
+        }
 
         [HttpGet("student/{id}")]
         public async Task<IActionResult> GetStudent(int id)
