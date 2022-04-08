@@ -80,3 +80,4 @@ C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Custo
 C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Hobby\List.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Student\Edit.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Hobby\Edit.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\Relation\obj\Debug\net5.0\Razor\Views\Hobby\Create.cshtml.g.cs

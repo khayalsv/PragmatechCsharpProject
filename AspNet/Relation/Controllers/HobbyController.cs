@@ -40,12 +40,13 @@ namespace Relation.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(TeacherToHobby teacherToHobby)
+        public  async Task<IActionResult> Create(Teacher item)
         {
+
             if (!ModelState.IsValid)
                 return NotFound();
 
-            dbContext.TEACHERTOHOBBY.Add(teacherToHobby);
+           await dbContext.TEACHER.AddAsync(item);
             dbContext.SaveChanges();
 
             return Redirect("/Hobby/List");   

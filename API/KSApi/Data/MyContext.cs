@@ -29,7 +29,7 @@ namespace KSApi.Data
 
             modelBuilder.Entity<StudentCourse>().HasKey(x => new {x.StudentID, x.CourseID});
 
-            modelBuilder.Entity<Student>().HasQueryFilter(x => !x.IsDeleted);
+            //modelBuilder.Entity<Student>().HasQueryFilter(x => !x.IsDeleted);
 
         }
     }

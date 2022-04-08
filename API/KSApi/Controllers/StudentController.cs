@@ -4,7 +4,9 @@ using KSApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,18 +24,21 @@ namespace KSApi.Controllers
         private readonly IConfiguration configuration;
         private readonly MyContext mycontext;
         private readonly PositionOptions positionOptions;
+        private readonly ILogger<StudentController> logger;
 
         public StudentController(ISingletonOperation singletonOperation,
             IServiceProvider serviceProvider,
             IConfiguration configuration,
             IOptions<PositionOptions> positionOptions,
-            MyContext mycontext)
+            MyContext mycontext,
+            ILogger<StudentController> logger)
         {
             this.singletonOperation = singletonOperation;
             this.serviceProvider = serviceProvider;
             this.configuration = configuration;
             this.mycontext = mycontext;
             this.positionOptions = positionOptions.Value; //instance
+            this.logger = logger;
         }
 
         [HttpGet("Guid")]
@@ -63,9 +68,13 @@ namespace KSApi.Controllers
         [HttpGet("all")]
         public async Task<object> GetAll()
         {
+            logger.LogInformation("Request accepted at {date}", DateTime.Now);
+
+
             var list = await mycontext.Students.Include(x => x.Gender)
                  .Select(y => new
                  {
+                     y.ID,
                      y.Name,
                      y.Surname,
                      y.Salary,
@@ -78,6 +87,9 @@ namespace KSApi.Controllers
                          sc.EndDate
                      })
                  }).ToListAsync();
+
+            logger.LogWarning("Request successfully completed at {date}, list: {list}", DateTime.Now, JsonConvert.SerializeObject(list));
+
             return list;
         }
 
@@ -154,11 +166,32 @@ namespace KSApi.Controllers
         [HttpDelete("delete")]
         public async Task<Student> DeleteStudent(int id)
         {
-            var student = await mycontext.Students.FirstOrDefaultAsync(x => x.ID == id);
-            mycontext.Remove(student);
-            await mycontext.SaveChangesAsync();
+            try
+            {
+                logger.LogDebug("Request accepted to delete the student with id: {id}", id);
 
-            return student;
+                var student = await mycontext.Students.FirstOrDefaultAsync(x => x.ID == id);
+
+                logger.LogDebug("Student is fetched from database successfully", id);
+
+
+                mycontext.Remove(student);
+                await mycontext.SaveChangesAsync();
+
+
+                logger.LogDebug("Student is deleted from db and transaction committed {id}", id);
+
+                logger.LogInformation("Request is successfully completed to delete the student {id}", id);
+
+                return student;
+
+            }
+            catch (Exception exc)
+            {
+                logger.LogError(exc,"Error occurred when deleting the student wirh id: {id}", id);
+                throw;
+            }
+           
         }
 
         [HttpGet("configs")]

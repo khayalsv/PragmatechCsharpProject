@@ -1,0 +1,61 @@
+﻿
+@model Teacher
+@{ ViewData["Title"] = "Create"; }
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+<div class="intro-y flex items-center mt-8">
+    <h2 class="text-lg font-medium mr-auto">
+        Create Teacher
+    </h2>
+</div>
+<div class="grid grid-cols-12 gap-6 mt-5">
+    <div class="intro-y col-span-12 lg:col-span-6">
+        <!-- BEGIN: Form Layout -->
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All" style="color:red; margin-bottom:30px;"></div>
+            <div class="intro-y box p-5">
+                <div>
+                    <label asp-for="Name">Teacher</label>
+                    <input asp-for="Name" class="input w-full border mt-2" placeholder="Input text">
+                </div>
+
+                <div class="mt-3 " id="skill" style=" border: 1px solid #cfcfcf !important;   padding: 20px 40px 20px 20px; border:5px; position:relative;">
+                    <span id="addSkill" style="cursor:pointer; position:absolute; right:40px; top:0px; font-size:25px; font-weight:700; color:#1c3faa">+</span>
+                    <div class="skill-item" style="position:relative;">
+                        <label asp-for="TeacherToHobbies[0].Hobby.Name">Name</label>
+                        <div class="mt-2">
+                            <select asp-for="TeacherToHobbies[0].Hobby.Name" asp-items="@(new SelectList(ViewBag.Hobby, "ID", "Name"))" data-placeholder="Select your favorite actors" class="select2 w-full">
+                                <option selected="" disabled>Select Skill</option>
+                            </select>
+                        </div>
+                        <span class="deleteSkill" style="cursor:pointer; position:absolute; right:-20px; bottom:4px;font-size: 25px; font-weight: 700;color: red;">x</span>
+
+                    </div>
+                    <hr style="margin:10px 0px" />
+                </div>
+
+                <select class="form-select" multiple aria-label="multiple select example">
+                    <option selected>Open this select menu</option>
+                    <option value=""></option>
+                </select>
+
+                <select asp-for="TeacherToHobbies[0]." class="form-control">
+                    @foreach (var item in ViewBag.AUTHORBAG)
+                    {
+            <option value="@item.ID">@item.AuthorName</option>            }
+                </select>
+
+                <div class="text-right mt-5">
+                    <a asp-area="admin" asp-controller="teacher" asp-action="index" class="button w-24 border text-gray-700 mr-1">Cancel</a>
+                    <button type="submit" class="button w-24 bg-theme-1 text-white">Create</button>
+                </div>
+            </div>
+        </form>
+        <!-- END: Form Layout -->
+    </div>
+</div>
