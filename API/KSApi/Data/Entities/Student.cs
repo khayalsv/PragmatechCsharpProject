@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentValidation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,5 +22,8 @@ namespace KSApi.Data.Entities
         //Many To Many
         public ICollection<StudentCourse> StudentCourses { get; set; }
         public bool IsDeleted { get; set; }
+
     }
+
+ 
 }

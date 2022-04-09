@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "FzI7RzVZE4xl80QMqReqFfUFpvtsXxRrc3v3LXTvw1lLh2Nt/z6aUfZjHqHWzXYFNuBGBE6Oj2rG8yM4LP4P9Q==",
+  "dgSpecHash": "v3Vok9dx50+mlzY0Im1yn4xXLpldcjAd5PPl21WmqyW9Kop8+UyaXUyyupseJYvYPa82CGONxsgdkk3fg8/HRw==",
   "success": true,
   "projectFilePath": "C:\\Users\\selim\\Desktop\\Csharp\\API\\KSApi\\KSApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\selim\\.nuget\\packages\\fluentvalidation\\10.4.0\\fluentvalidation.10.4.0.nupkg.sha512",
+    "C:\\Users\\selim\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.4.0\\fluentvalidation.aspnetcore.10.4.0.nupkg.sha512",
+    "C:\\Users\\selim\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.4.0\\fluentvalidation.dependencyinjectionextensions.10.4.0.nupkg.sha512",
     "C:\\Users\\selim\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\selim\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\selim\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
