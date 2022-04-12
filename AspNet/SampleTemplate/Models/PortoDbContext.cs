@@ -13,6 +13,8 @@ namespace SampleTemplate.Models
 
         public DbSet<Slider> Sliders { get; set; }
 
+        public DbSet<ProductView> ProductViews { get; set; }
+
         public DbSet<Student> Students { get; set; }
         public DbSet<StudentAddress> StudentAddress { get; set; }
 

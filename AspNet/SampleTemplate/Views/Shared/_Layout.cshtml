@@ -135,19 +135,8 @@
                                     <a href="demo3-product.html">Products</a>
                                     <div class="megamenu megamenu-fixed-width megamenu-3cols">
                                         <div class="row">
-                                            <div class="col-lg-4">
-                                                <a href="#" class="nolink">PRODUCT PAGES</a>
-                                                <ul class="submenu">
-                                                    <li><a href="product.html">SIMPLE PRODUCT</a></li>
-                                                    <li><a href="product-variable.html">VARIABLE PRODUCT</a></li>
-                                                    <li><a href="product.html">SALE PRODUCT</a></li>
-                                                    <li><a href="product.html">FEATURED & ON SALE</a></li>
-                                                    <li><a href="product-custom-tab.html">WITH CUSTOM TAB</a></li>
-                                                    <li><a href="product-sidebar-left.html">WITH LEFT SIDEBAR</a></li>
-                                                    <li><a href="product-sidebar-right.html">WITH RIGHT SIDEBAR</a></li>
-                                                    <li><a href="product-addcart-sticky.html">ADD CART STICKY</a></li>
-                                                </ul>
-                                            </div><!-- End .col-lg-4 -->
+                                  
+                                            @await Component.InvokeAsync("VcProduct")
 
                                             <div class="col-lg-4">
                                                 <a href="#" class="nolink">PRODUCT LAYOUTS</a>
@@ -210,6 +199,8 @@
                                 </li>
                             </ul>
                         </nav>
+
+
                     </div><!-- End .header-left -->
 
                     <div class="header-right">
@@ -484,8 +475,6 @@
         </div>
     </footer>
 
-    </div><!-- End .page-wrapper -->
-
     <div class="loading-overlay">
         <div class="bounce-loader">
             <div class="bounce1"></div>
@@ -675,8 +664,7 @@
         </div>
     </div>
 
-    <div class="newsletter-popup mfp-hide bg-img" id="newsletter-popup-form"
-         style="background: #f1f1f1 no-repeat center/cover url(~/images/newsletter_popup_bg.jpg)">
+    <div class="newsletter-popup mfp-hide bg-img" id="newsletter-popup-form">
         <div class="newsletter-popup-content">
             <img src="~/images/logo-black.png" alt="Logo" class="logo-newsletter" width="111" height="44">
             <h2>Subscribe to newsletter</h2>

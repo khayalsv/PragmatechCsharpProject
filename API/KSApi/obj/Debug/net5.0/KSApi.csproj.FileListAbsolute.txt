@@ -62,3 +62,4 @@ C:\Users\selim\Desktop\Csharp\API\KSApi\bin\Debug\net5.0\Microsoft.EntityFramewo
 C:\Users\selim\Desktop\Csharp\API\KSApi\bin\Debug\net5.0\FluentValidation.dll
 C:\Users\selim\Desktop\Csharp\API\KSApi\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
 C:\Users\selim\Desktop\Csharp\API\KSApi\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\selim\Desktop\Csharp\API\KSApi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

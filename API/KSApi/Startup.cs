@@ -1,5 +1,6 @@
 using FluentValidation.AspNetCore;
 using KSApi.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -9,10 +10,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace KSApi
@@ -34,6 +37,22 @@ namespace KSApi
             {
                 options.RegisterValidatorsFromAssemblyContaining<Startup>();
             });
+
+
+            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            //  .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+            //  {
+            //      options.TokenValidationParameters = new TokenValidationParameters
+            //      {
+            //          ValidateIssuer = true,
+            //          ValidateAudience = true,
+            //          ValidateLifetime = true,
+            //          ValidateIssuerSigningKey = true,
+            //          ValidIssuer = "example.com",
+            //          ValidAudience = "example.com",
+            //          IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:SigningKey"]))
+            //      };
+            //  });
 
 
             services.AddSwaggerGen(c =>

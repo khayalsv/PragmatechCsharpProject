@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ProductView>
+
+<div class="col-lg-4">
+    <a href="#" class="nolink">PRODUCT PAGES</a>
+    <ul class="submenu">
+        @foreach (var item in Model)
+        {
+          <li><a href="#">@item.Name</a></li>
+        }
+    </ul>
+</div>
