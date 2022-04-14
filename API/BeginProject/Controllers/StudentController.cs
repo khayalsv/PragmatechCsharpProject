@@ -21,17 +21,14 @@ namespace BeginProject.Controllers
 
 
 
-        [HttpGet("{id}/{take}")]
-        public async Task<IActionResult> Get(int id, int take)
+        [HttpGet("{id}")]
+        public async Task<object> GetByID(int id)
         {
-            var item = await myContext.Groups.Include(x=>x.Students).FirstOrDefaultAsync(g => g.ID == id);
+            var item = await myContext.Students.FirstOrDefaultAsync(x => x.ID == id);
 
-            if (item == null)
-            {
-                return NotFound();
-            }
+            if (item == null) return NotFound();
 
-            return Ok(item.Students.Take(take));
+            return item;
 
         }
 
@@ -43,6 +40,7 @@ namespace BeginProject.Controllers
             {
                 x.ID,
                 x.Fullname,
+                x.Email,
                 x.Group.Name,
                 Teachers = x.StudentTeachers.Select(st => new
                 {
@@ -91,7 +89,7 @@ namespace BeginProject.Controllers
 
 
 
-        [HttpPut]
+        [HttpPut("edit")]
         public async Task<IActionResult> Edit([FromBody] Student newstudent)
         {
             var item = await myContext.Students.FirstOrDefaultAsync(x => x.ID == newstudent.ID);

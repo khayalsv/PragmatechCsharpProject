@@ -1,0 +1,48 @@
+﻿@model Student
+@{ Layout = "_Layout"; ViewBag.Title = "Update a Student";}
+
+<h2>Update a Student <a asp-action="Index" class="btn btn-sm btn-secondary">Back</a></h2>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="ID"></label>
+        <input class="form-control" asp-for="ID" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="GroupID"></label>
+        <input class="form-control" asp-for="GroupID" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="Fullname"></label>
+        <input class="form-control" asp-for="Fullname" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input class="form-control" asp-for="Email" />
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Update</button>
+    </div>
+</form>
+
+@if (ViewBag.Result == "Success")
+{
+    <h2>Student</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>GroupID</th>
+                <th>Fullname</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.ID</td>
+                <td>@Model.GroupID</td>
+                <td>@Model.Fullname</td>
+                <td>@Model.Email</td>
+            </tr>
+        </tbody>
+    </table>
+}

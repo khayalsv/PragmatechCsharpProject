@@ -1,0 +1,45 @@
+﻿@model Student
+@{ Layout = "_Layout"; ViewBag.Title = "Add a Student";}
+
+<h2>Add a Student <a asp-action="Index" class="btn btn-sm btn-secondary">Back</a></h2>
+<form asp-action="AddStudent" method="post">
+    <div class="form-group">
+        <label for="Fullname">Fullname:</label>
+        <input class="form-control" name="Fullname" />
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input class="form-control" name="Email" />
+    </div>
+    <div class="form-group">
+        <label for="GroupID">GroupID</label>
+        <input class="form-control" name="GroupID" />
+    </div>
+
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Add</button>
+    </div>
+</form>
+
+@if (Model != null)
+{
+    <h2>Student</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fullname</th>
+                <th>Email</th>
+                <th>GroupID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.ID</td>
+                <td>@Model.Fullname</td>
+                <td>@Model.Email</td>
+                <td>@Model.GroupID</td>
+            </tr>
+        </tbody>
+    </table>
+}

@@ -43,3 +43,6 @@ C:\Users\selim\Desktop\Csharp\AspNet\CallingApi\obj\Debug\net5.0\CallingApi.dll
 C:\Users\selim\Desktop\Csharp\AspNet\CallingApi\obj\Debug\net5.0\ref\CallingApi.dll
 C:\Users\selim\Desktop\Csharp\AspNet\CallingApi\obj\Debug\net5.0\CallingApi.pdb
 C:\Users\selim\Desktop\Csharp\AspNet\CallingApi\obj\Debug\net5.0\CallingApi.genruntimeconfig.cache
+C:\Users\selim\Desktop\Csharp\AspNet\CallingApi\obj\Debug\net5.0\Razor\Views\Student\GetStudent.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CallingApi\obj\Debug\net5.0\Razor\Views\Student\AddStudent.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CallingApi\obj\Debug\net5.0\Razor\Views\Student\UpdateStudent.cshtml.g.cs
