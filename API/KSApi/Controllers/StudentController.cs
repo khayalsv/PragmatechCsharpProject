@@ -18,31 +18,15 @@ namespace KSApi.Controllers
     [Route("api/[controller]")]
     public class StudentController : Controller
     {
-        private readonly ISingletonOperation singletonOperation;
-        private readonly IServiceProvider serviceProvider;
-        private readonly IConfiguration configuration;
-        private readonly PositionOptions positionOptions;
-        private readonly ILogger<StudentController> logger;
         private readonly IStudentRepository studentRepository;
 
-        public StudentController(ISingletonOperation singletonOperation,
-            IServiceProvider serviceProvider,
-            IConfiguration configuration,
-            IOptions<PositionOptions> positionOptions,
-            MyContext mycontext,
-            ILogger<StudentController> logger,
-            IStudentRepository studentRepository)
+        public StudentController(IStudentRepository studentRepository)
         {
-            this.singletonOperation = singletonOperation;
-            this.serviceProvider = serviceProvider;
-            this.configuration = configuration;
-            this.positionOptions = positionOptions.Value; //instance
-            this.logger = logger;
             this.studentRepository = studentRepository;
         }
 
-      
-
+     
+        //GetAll
         [HttpGet("all")]
         public async Task<object> GetAll()
         {
@@ -52,6 +36,7 @@ namespace KSApi.Controllers
         }
 
      
+        //Get
         [HttpGet("student/{id}")]
         public async Task<IActionResult> GetStudent(int id)
         {
@@ -64,6 +49,8 @@ namespace KSApi.Controllers
             return Ok(student);
         }
 
+       
+        //Create
         [HttpPost("create")]
         public async Task<IActionResult> CreateStudent([FromBody] Student student)
         {
@@ -72,6 +59,8 @@ namespace KSApi.Controllers
             return Created($"/api/student/student/{student.ID}", student);
         }
 
+
+        //Update
         [HttpPut("update")]
         public async Task<Student> UpdateStudent(int id, Student newStudent)
         {
@@ -85,6 +74,8 @@ namespace KSApi.Controllers
             return newStudent;
         }
 
+
+        //Delete
         [HttpDelete("delete")]
         public async Task<Student> DeleteStudent(int id)
         {
