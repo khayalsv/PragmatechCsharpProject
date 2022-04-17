@@ -1,5 +1,6 @@
 using FluentValidation.AspNetCore;
 using KSApi.Data;
+using KSApi.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -71,6 +72,8 @@ namespace KSApi
 
             services.AddDbContext<MyContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddTransient<IStudentRepository, StudentRepository>();   
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

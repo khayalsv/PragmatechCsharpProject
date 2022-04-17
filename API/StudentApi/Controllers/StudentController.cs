@@ -90,7 +90,7 @@ namespace BeginProject.Controllers
 
 
         [HttpPut("edit")]
-        public async Task<IActionResult> Edit([FromBody] Student newstudent)
+        public async Task<object> Edit([FromBody] Student newstudent)
         {
             var item = await myContext.Students.FirstOrDefaultAsync(x => x.ID == newstudent.ID);
 
@@ -103,11 +103,11 @@ namespace BeginProject.Controllers
             myContext.Update(item);
             
             await myContext.SaveChangesAsync();
-            return Ok($"Edit item {item.Fullname}");
+            return item;
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<object> Delete(int id)
         {
             var item = await myContext.Students.FirstOrDefaultAsync(x => x.ID==id);
 
@@ -115,7 +115,9 @@ namespace BeginProject.Controllers
           
             myContext.Students.Remove(item);
             await myContext.SaveChangesAsync();
-            return Ok($"Delete item {item.Fullname}");
+
+            return item;
+
         }
     }
 }

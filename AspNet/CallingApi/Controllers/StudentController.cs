@@ -95,20 +95,15 @@ namespace CallingApi.Controllers
             Student receivedStudent = new Student();
             using (var httpClient = new HttpClient())
             {
-                var content = new MultipartFormDataContent();
-                content.Add(new StringContent(student.ID.ToString()), "ID");
-                content.Add(new StringContent(student.Fullname), "Fullname");
-                content.Add(new StringContent(student.Email), "Email");
-                content.Add(new StringContent(student.GroupID.ToString()), "GroupID");
+                StringContent content = new StringContent(JsonConvert.SerializeObject(student), Encoding.UTF8, "application/json");
 
                 using (var response = await httpClient.PutAsync("https://localhost:44351/api/Student/edit", content))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
-                    ViewBag.Result = "Success";
                     receivedStudent = JsonConvert.DeserializeObject<Student>(apiResponse);
                 }
             }
-            return View(receivedStudent);
+            return Redirect("/student/index");
         }
 
 
