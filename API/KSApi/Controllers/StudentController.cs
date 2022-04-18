@@ -1,14 +1,7 @@
-﻿using KSApi.Data;
-using KSApi.Data.Entities;
-using KSApi.Models;
+﻿using KSApi.Data.Entities;
 using KSApi.Repository;
+using KSApi.UnitOfWork;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,30 +11,31 @@ namespace KSApi.Controllers
     [Route("api/[controller]")]
     public class StudentController : Controller
     {
-        private readonly IStudentRepository studentRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public StudentController(IStudentRepository studentRepository)
+        public StudentController(IUnitOfWork unitOfWork)
         {
-            this.studentRepository = studentRepository;
+            _unitOfWork = unitOfWork;
         }
 
-     
+
         //GetAll
         [HttpGet("all")]
         public async Task<object> GetAll()
         {
-            var list = await studentRepository.GetAll();
+            var list = await _unitOfWork.StudentRepository.GetAllList();
+            //var list = await _unitOfWork.CourseRepository.FindByName(); //Course elave metod
 
             return list.ToList(); ;
         }
 
-     
+
         //Get
         [HttpGet("student/{id}")]
         public async Task<IActionResult> GetStudent(int id)
         {
 
-            var student = await studentRepository.Get(id);
+            var student = await _unitOfWork.StudentRepository.Find(id);
             if (student == null)
             {
                 return NotFound();
@@ -49,14 +43,15 @@ namespace KSApi.Controllers
             return Ok(student);
         }
 
-       
+
         //Create
         [HttpPost("create")]
         public async Task<IActionResult> CreateStudent([FromBody] Student student)
         {
-            await studentRepository.Add(student);
+            await _unitOfWork.StudentRepository.Add(student);
+            await _unitOfWork.Commit();
 
-            return Created($"/api/student/student/{student.ID}", student);
+            return Created($"/api/student/student/{student.Id}", student);
         }
 
 
@@ -64,14 +59,15 @@ namespace KSApi.Controllers
         [HttpPut("update")]
         public async Task<Student> UpdateStudent(int id, Student newStudent)
         {
-            var student = await studentRepository.Get(id);
+            var student = await _unitOfWork.StudentRepository.Find(id);
 
             student.Name = newStudent.Name;
             student.Surname = newStudent.Surname;
 
-            await studentRepository.Update(student);
+            await _unitOfWork.StudentRepository.Update(student);
+            await _unitOfWork.Commit();
 
-            return newStudent;
+            return student;
         }
 
 
@@ -79,7 +75,10 @@ namespace KSApi.Controllers
         [HttpDelete("delete")]
         public async Task<Student> DeleteStudent(int id)
         {
-           var student=  await studentRepository.Delete(id);
+            var student = await _unitOfWork.StudentRepository.Find(id);
+
+            await _unitOfWork.StudentRepository.Delete(student);
+            await _unitOfWork.Commit();
 
             return student;
         }

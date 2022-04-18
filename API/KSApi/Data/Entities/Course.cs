@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace KSApi.Data.Entities
 {
-    public class Course
+    public class Course :BaseEntity<int>
     {
-        public int ID { get; set; }
+        public override int Id { get; set; }
         public string Name { get; set; }
         public DateTime? CreationTime { get; set; }
 
