@@ -1,5 +1,6 @@
 using FluentValidation.AspNetCore;
 using KSApi.Data;
+using KSApi.Middlewares;
 using KSApi.Repository;
 using KSApi.UnitOfWork;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -40,23 +41,6 @@ namespace KSApi
                 options.RegisterValidatorsFromAssemblyContaining<Startup>();
             });
 
-
-            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            //  .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
-            //  {
-            //      options.TokenValidationParameters = new TokenValidationParameters
-            //      {
-            //          ValidateIssuer = true,
-            //          ValidateAudience = true,
-            //          ValidateLifetime = true,
-            //          ValidateIssuerSigningKey = true,
-            //          ValidIssuer = "example.com",
-            //          ValidAudience = "example.com",
-            //          IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:SigningKey"]))
-            //      };
-            //  });
-
-
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "KSApi", Version = "v1" });
@@ -81,6 +65,21 @@ namespace KSApi
 
             services.AddTransient<IUnitOfWork, UnitOfWork.UnitOfWork>();
 
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = "example.com",
+                        ValidAudience = "example.com",
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:SigningKey"]))
+                    };
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -96,6 +95,11 @@ namespace KSApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            //app.UseMiddleware<JwtMiddleware>();
+
+            app.UseAuthentication();
+         
 
             app.UseAuthorization();
 

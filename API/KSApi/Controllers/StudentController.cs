@@ -1,6 +1,8 @@
 ﻿using KSApi.Data.Entities;
+using KSApi.Helpers;
 using KSApi.Repository;
 using KSApi.UnitOfWork;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,10 +23,10 @@ namespace KSApi.Controllers
 
         //GetAll
         [HttpGet("all")]
+        [Authorize]
         public async Task<object> GetAll()
         {
             var list = await _unitOfWork.StudentRepository.GetAllList();
-            //var list = await _unitOfWork.CourseRepository.FindByName(); //Course elave metod
 
             return list.ToList(); ;
         }

@@ -1,4 +1,5 @@
-﻿using KSApi.Models;
+﻿using KSApi.Helpers;
+using KSApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -60,7 +61,8 @@ namespace KSApi.Controllers
         {
             // generate token that is valid for 7 days
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(configuration["Jwt:SigningKey"]);
+            var key = Encoding.ASCII.GetBytes(configuration["Jwt:SigningKey"]); //appsettings.json-daki jwt keyi
+
 
             var claims = new List<Claim>
             {
@@ -69,7 +71,7 @@ namespace KSApi.Controllers
             };
 
 
-            var tokenDescriptor = new SecurityTokenDescriptor
+            var tokenDescriptor = new SecurityTokenDescriptor      //claimlari yaziriq
             {
                 Subject = new ClaimsIdentity(claims),
                 Issuer = "example.com",
