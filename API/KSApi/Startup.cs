@@ -18,6 +18,7 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -80,6 +81,24 @@ namespace KSApi
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:SigningKey"]))
                     };
                 });
+
+
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminOnly", policy => policy.RequireClaim(ClaimTypes.Role, "Admin"));
+
+                options.AddPolicy("SuperUser",
+                    policy => policy.RequireClaim(ClaimTypes.Role, "Admin")
+                                    .RequireClaim(ClaimTypes.Role, "User"));
+
+                options.AddPolicy(
+                    "OneOfTheRoles",
+                    policy => policy.RequireAssertion(
+                        context => context.User.HasClaim(claim => claim.Type == ClaimTypes.Role &&
+                                                                  claim.Value is "Admin" or "User"))
+                );
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

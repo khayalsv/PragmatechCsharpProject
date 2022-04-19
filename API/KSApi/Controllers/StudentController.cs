@@ -11,6 +11,7 @@ namespace KSApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    //[Authorize(Roles = "Admin")] admin olanlar prosesler apara bilir
     public class StudentController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -23,9 +24,13 @@ namespace KSApi.Controllers
 
         //GetAll
         [HttpGet("all")]
-        [Authorize]
+        [Authorize("AdminOnly")]
         public async Task<object> GetAll()
         {
+            var user = HttpContext.User;
+
+            var isInAdminRole = user.IsInRole("Admin");
+
             var list = await _unitOfWork.StudentRepository.GetAllList();
 
             return list.ToList(); ;
@@ -33,6 +38,7 @@ namespace KSApi.Controllers
 
 
         //Get
+        //[AllowAnonymous] guest userlere icaze verir (authorize olunmur)
         [HttpGet("student/{id}")]
         public async Task<IActionResult> GetStudent(int id)
         {

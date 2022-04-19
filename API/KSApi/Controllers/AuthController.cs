@@ -28,11 +28,32 @@ namespace KSApi.Controllers
         {
             new User
             {
-                Id = 1, FirstName = "Test", LastName = "User", Username = "test", Password = "test",
+                Id = 1, FirstName = "Test1", LastName = "User1", Username = "test1", Password = "test1",
+                Roles=new List<string>
+                {
+                    "Admin"
+                }
             },
             new User
             {
                 Id = 2, FirstName = "Test2", LastName = "User2", Username = "test2", Password = "test2",
+                Roles=new List<string>
+                {
+                    "User"
+                }
+            },
+             new User
+            {
+                Id = 3, FirstName = "Test3", LastName = "User3", Username = "test3", Password = "test3",
+                Roles=new List<string>
+                {
+                    "User",
+                    "Admin"
+                }
+            },    
+            new User
+            {
+                Id = 4, FirstName = "Test4", LastName = "User4", Username = "test4", Password = "test4",
             }
         };
 
@@ -44,7 +65,7 @@ namespace KSApi.Controllers
             {
                 return NotFound(new
                 {
-                    message="Username or password is not correct"
+                    message = "Username or password is not correct"
                 });
             }
 
@@ -57,7 +78,7 @@ namespace KSApi.Controllers
 
         }
 
-         private string GenerateJwtToken(User user)
+        private string GenerateJwtToken(User user)
         {
             // generate token that is valid for 7 days
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -70,6 +91,10 @@ namespace KSApi.Controllers
                 new Claim(ClaimTypes.Name, user.FirstName),
             };
 
+            if (user.Roles.Count > 0)
+            {
+                claims.AddRange(user.Roles.Select(role => new Claim(ClaimTypes.Role, role)));
+            }
 
             var tokenDescriptor = new SecurityTokenDescriptor      //claimlari yaziriq
             {
@@ -83,7 +108,6 @@ namespace KSApi.Controllers
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }
-
 
 
     }
