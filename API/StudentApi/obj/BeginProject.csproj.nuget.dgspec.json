@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\selim\\Desktop\\Csharp\\API\\BeginProject\\BeginProject.csproj": {}
+    "C:\\Users\\selim\\Desktop\\Csharp\\API\\StudentApi\\BeginProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\selim\\Desktop\\Csharp\\API\\BeginProject\\BeginProject.csproj": {
+    "C:\\Users\\selim\\Desktop\\Csharp\\API\\StudentApi\\BeginProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\selim\\Desktop\\Csharp\\API\\BeginProject\\BeginProject.csproj",
+        "projectUniqueName": "C:\\Users\\selim\\Desktop\\Csharp\\API\\StudentApi\\BeginProject.csproj",
         "projectName": "BeginProject",
-        "projectPath": "C:\\Users\\selim\\Desktop\\Csharp\\API\\BeginProject\\BeginProject.csproj",
+        "projectPath": "C:\\Users\\selim\\Desktop\\Csharp\\API\\StudentApi\\BeginProject.csproj",
         "packagesPath": "C:\\Users\\selim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\selim\\Desktop\\Csharp\\API\\BeginProject\\obj\\",
+        "outputPath": "C:\\Users\\selim\\Desktop\\Csharp\\API\\StudentApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\selim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.16, )"
+            },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
               "version": "[5.0.4, )"
