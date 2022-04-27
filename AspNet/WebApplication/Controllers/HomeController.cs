@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication.Models;
+using WebApplication.ViewModels;
 
 namespace WebApplication.Controllers
 {
@@ -21,26 +22,26 @@ namespace WebApplication.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.SelectCountryId = -1;
-            ViewBag.SelectCityId = -1;
 
-            ViewBag.CitiesData = new SelectList(City.GetFakeCities(), "Id", "Name");
-            ViewBag.CountryData = new SelectList(Country.GetFakeContries(), "Id", "Name");
+            var indexViewModel = new IndexViewModel()
+            {
+                CitiesData = new SelectList(City.GetFakeCities(), "Id", "Name"),
+                CountryData = new SelectList(Country.GetFakeContries(), "Id", "Name"),
+                SelectCityId = -1,
+                SelectCountryId = -1
+            };
 
-            return View();
+            return View(indexViewModel);
         }
 
 
         [HttpPost]
-        public IActionResult Index(int SelectCityId, int SelectCountryId)
+        public IActionResult Index(IndexViewModel indexViewModel)
         {
-            ViewBag.SelectCountryId = SelectCountryId;
-            ViewBag.SelectCityId = SelectCityId;
+            indexViewModel.CitiesData = new SelectList(City.GetFakeCities(), "Id", "Name");
+            indexViewModel.CountryData = new SelectList(Country.GetFakeContries(), "Id", "Name");
 
-            ViewBag.CitiesData = new SelectList(City.GetFakeCities(), "Id", "Name");
-            ViewBag.CountryData = new SelectList(Country.GetFakeContries(), "Id", "Name");
-
-            return View();
+            return View(indexViewModel);
         }
 
         public IActionResult Privacy()
