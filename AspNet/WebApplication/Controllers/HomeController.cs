@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,25 @@ namespace WebApplication.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.SelectCountryId = -1;
+            ViewBag.SelectCityId = -1;
+
+            ViewBag.CitiesData = new SelectList(City.GetFakeCities(), "Id", "Name");
+            ViewBag.CountryData = new SelectList(Country.GetFakeContries(), "Id", "Name");
+
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult Index(int SelectCityId, int SelectCountryId)
+        {
+            ViewBag.SelectCountryId = SelectCountryId;
+            ViewBag.SelectCityId = SelectCityId;
+
+            ViewBag.CitiesData = new SelectList(City.GetFakeCities(), "Id", "Name");
+            ViewBag.CountryData = new SelectList(Country.GetFakeContries(), "Id", "Name");
+
             return View();
         }
 
