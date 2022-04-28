@@ -1,0 +1,181 @@
+﻿@using WebApplication.ViewModels
+
+@model IndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        @using (Html.BeginForm())
+        {
+            <div class="form-horizontal">
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Country :</label>
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(m => m.SelectedCountryId, Model.CountriesData, "Lütfen Seçiniz", new { @class = "form-control dropdown" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">City :</label>
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(m => m.SelectedCityId, Model.CitiesData, "Lütfen Seçiniz", new { @class = "form-control dropdown" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10 col-md-offset-2">
+                        <button class="btn btn-success" type="submit">Send</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10 col-md-offset-2">
+                        <div class="alert alert-info">
+                            <b>Selected Country ID :</b> @Model.SelectedCountryId<br />
+                            <b>Selected City ID :</b> @Model.SelectedCityId
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+        $("#SelectedCountryId").change(function () {
+
+            var ddlCountry = $(this);
+            var countryId = ddlCountry.val();
+
+            if (countryId != "" || countryId != "-1") {
+
+                $("#SelectedCityId option").not(":first").remove();
+
+                $.ajax({
+                    method: "POST",
+                    url: '@Url.Action("GetCitiesByCountry", "Home")' + '/' + countryId
+                }).done(function (result) {
+
+                    var ddlCity = $("#SelectedCityId");
+
+                    for (var i = 0; i < result.length; i++) {
+                        var cityName = result[i].CityName;
+                        var cityId = result[i].CityId;
+                        var opt = $("<option></option>");
+
+                        opt.text(cityName);
+                        opt.attr("value", cityId);
+                        //opt.val(cityId);
+
+                        ddlCity.append(opt);
+                    }
+
+                })
+
+            }
+            else {
+                //$("#SelectedCityId").empty();
+                $("#SelectedCityId option").not(":first").remove();
+            }
+
+        });
+
+
+</script>
+
+
+@*<script>
+        $("#SelectCountryId").change(function () {
+
+            var ddlCountry = $(this);
+            var countryId = ddlCountry.val(); //secilen deyeri oxuyur
+
+            if (countryId != "" || countryId != "-1") {
+
+                $("#SelectCityId option").not(":first").remove();
+
+                $.ajax({
+                method: "GET",
+                url: '@Url.Action("GetCitiesByCountry","Home")' + '/' + countryId
+                }).done(function (result) {
+
+                var ddlCity=$("#SelectCityId")
+
+                    for (var i = 0; i < resutl.length; i++)
+                    {
+                        var CityName = result[i].Name;
+                        var CityId = result[i].Id
+                        var opt = $("<option></option>");
+
+                        opt.text(CityName);
+                        opt.attr("value", CityId)
+
+                        ddlCity.append(opt);
+
+                    }
+                })
+
+            } else {
+                //$("#SelectCityId").empty();
+                $("#SelectCityId option").not(":first").remove();
+
+            }
+        })
+
+    </script>*@
+
+
+
+@*<div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            @using (Html.BeginForm()) {
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label>City</label>
+                    <div class="col-md-10">
+                        @Html.DropDownList("SelectCityId", (SelectList)ViewBag.CitiesData, "Secin", new { @class = "form-control dropdown" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Country</label>
+                    <div class="col-md-10">
+                        @Html.DropDownList("SelectCountryId", (SelectList)ViewBag.CountryData, "Secin", new { @class = "form-control dropdown" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                    <button class="btn btn-success" type="submit">Send</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10 col-md-offset-2">
+                             <div class="alert alert-info">
+                                 Selected Country ID: @ViewBag.SelectCountryId
+                                 Selected City ID: @ViewBag.SelectCityId
+                             </div>
+                    </div>
+                </div>
+            </div>
+
+
+            }
+
+        </div>
+    </div>*@
