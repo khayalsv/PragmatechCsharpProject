@@ -1,0 +1,31 @@
+﻿@using System.Web.Mvc.Ajax;
+@using System.Web.Mvc;
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div id="loading" style="display:none;">
+    Yükleniyor..
+</div>
+<div id="sonuc">
+
+</div>
+
+
+<div>
+    @AjaxExtensions.ActionLink(null, "Verileri Yükle", "GetData",
+    new AjaxOptions()
+        {
+            HttpMethod = "GET",
+        UpdateTargetId = "sonuc",
+        InsertionMode = InsertionMode.ReplaceWith,
+        LoadingElementDuration = 250,
+        LoadingElementId = "loading"
+        }
+    )
+</div>
+
+
