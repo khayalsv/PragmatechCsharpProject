@@ -1,0 +1,17 @@
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.BusinessLayer\bin\Debug\net5.0\MyEvernote.BusinessLayer.deps.json
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.BusinessLayer\bin\Debug\net5.0\MyEvernote.BusinessLayer.dll
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.BusinessLayer\bin\Debug\net5.0\ref\MyEvernote.BusinessLayer.dll
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.BusinessLayer\bin\Debug\net5.0\MyEvernote.BusinessLayer.pdb
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.BusinessLayer\bin\Debug\net5.0\MyEvernote.DataAccessLayer.dll
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.BusinessLayer\bin\Debug\net5.0\MyEvernote.Entities.dll
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.BusinessLayer\bin\Debug\net5.0\MyEvernote.DataAccessLayer.pdb
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.BusinessLayer\bin\Debug\net5.0\MyEvernote.Entities.pdb
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.BusinessLayer\obj\Debug\net5.0\MyEvernote.BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.BusinessLayer\obj\Debug\net5.0\MyEvernote.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.BusinessLayer\obj\Debug\net5.0\MyEvernote.BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.BusinessLayer\obj\Debug\net5.0\MyEvernote.BusinessLayer.AssemblyInfo.cs
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.BusinessLayer\obj\Debug\net5.0\MyEvernote.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.BusinessLayer\obj\Debug\net5.0\MyEvernote.BusinessLayer.csproj.CopyComplete
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.BusinessLayer\obj\Debug\net5.0\MyEvernote.BusinessLayer.dll
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.BusinessLayer\obj\Debug\net5.0\ref\MyEvernote.BusinessLayer.dll
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.BusinessLayer\obj\Debug\net5.0\MyEvernote.BusinessLayer.pdb

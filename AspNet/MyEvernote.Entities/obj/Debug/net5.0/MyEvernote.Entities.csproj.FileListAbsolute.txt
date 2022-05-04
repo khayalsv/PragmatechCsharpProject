@@ -1,0 +1,12 @@
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.Entities\bin\Debug\net5.0\MyEvernote.Entities.deps.json
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.Entities\bin\Debug\net5.0\MyEvernote.Entities.dll
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.Entities\bin\Debug\net5.0\ref\MyEvernote.Entities.dll
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.Entities\bin\Debug\net5.0\MyEvernote.Entities.pdb
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.Entities\obj\Debug\net5.0\MyEvernote.Entities.csproj.AssemblyReference.cache
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.Entities\obj\Debug\net5.0\MyEvernote.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.Entities\obj\Debug\net5.0\MyEvernote.Entities.AssemblyInfoInputs.cache
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.Entities\obj\Debug\net5.0\MyEvernote.Entities.AssemblyInfo.cs
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.Entities\obj\Debug\net5.0\MyEvernote.Entities.csproj.CoreCompileInputs.cache
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.Entities\obj\Debug\net5.0\MyEvernote.Entities.dll
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.Entities\obj\Debug\net5.0\ref\MyEvernote.Entities.dll
+C:\Users\selim\Desktop\Csharp\AspNet\MyEvernote.Entities\obj\Debug\net5.0\MyEvernote.Entities.pdb
