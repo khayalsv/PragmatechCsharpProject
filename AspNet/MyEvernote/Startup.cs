@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyEvernote.DataAccessLayer;
+using MyEvernote.DataAccessLayer.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,8 @@ namespace MyEvernote
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+           
+            services.AddTransient(typeof(IRepository<,>), typeof(EfRepository<,>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
