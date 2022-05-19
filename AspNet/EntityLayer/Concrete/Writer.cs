@@ -1,4 +1,6 @@
-﻿namespace EntityLayer.Concrete
+﻿using System.Collections.Generic;
+
+namespace EntityLayer.Concrete
 {
     public class Writer
     {
@@ -9,5 +11,6 @@
         public string Email { get; set; }
         public string Password { get; set; }
         public bool Status { get; set; }
+        public List<Blog> Blogs { get; set; }
     }
 }
