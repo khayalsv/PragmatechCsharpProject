@@ -184,3 +184,6 @@ C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Write
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Writer\WriterFooterPartial.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\WriterMessageNotification\Default.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\WriterNotification\Default.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Blog\BlogListByWriter.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Blog\BlogAdd.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Blog\EditBlog.cshtml.g.cs

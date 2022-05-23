@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class BlogManager : IBlogService
+    public class BlogManager : IGenericService<Blog>
     {
         IBlogDal _blogDal;
 
@@ -18,21 +18,32 @@ namespace BusinessLayer.Concrete
             _blogDal = blogDal;
         }
 
-        public void Add(Blog item)
+        public void TAdd(Blog t)
         {
-            _blogDal.Insert(item);
+            _blogDal.Insert(t);
         }
 
-        public void Delete(Blog item)
+        public void TDelete(Blog t)
         {
-            _blogDal.Delete(item);
+            _blogDal.Delete(t);
         }
 
-        public List<Blog> GetAllList()
+        public void TUpdate(Blog t)
+        {
+            _blogDal.Update(t);
+        }
+
+        public List<Blog> GetList()
         {
             return _blogDal.GetAllList();
         }
 
+        public Blog TGetById(int id)
+        {
+            return _blogDal.GetById(id);
+        }
+
+        ////////
         public List<Blog> GetBlogListWithCategory()
         {
             return _blogDal.GetListWithCategory();
@@ -43,44 +54,21 @@ namespace BusinessLayer.Concrete
             return _blogDal.GetAllList().Take(3).ToList();
         }
 
-        public Blog GetById(int id)
-        {
-            return _blogDal.GetById(id);
-        }
 
         public List<Blog> GetBlogById(int id)
         {
             return _blogDal.GetAllList(x => x.Id == id);
         }
 
-        public void Update(Blog item)
-        {
-            _blogDal.Update(item);
-        }
 
         public List<Blog> GetBlogListByWriter(int id)
         {
             return _blogDal.GetAllList(x => x.WriterId == id);
         }
 
-        public void TAdd(Blog t)
+        public List<Blog> GetListWithCategoryByWriterBm(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public void TDelete(Blog t)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void TUpdate(Blog t)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Blog> GetList()
-        {
-            throw new NotImplementedException();
+            return _blogDal.GetListWithCategoryByWriter(id);
         }
     }
 }
