@@ -29,7 +29,7 @@ namespace CoreDemo.Controllers
             {
                 p.Status = true;
                 p.About = "Yoxlama";
-                wm.Add(p);
+                wm.TAdd(p);
                 return RedirectToAction("Index", "Blog");
             }
             else

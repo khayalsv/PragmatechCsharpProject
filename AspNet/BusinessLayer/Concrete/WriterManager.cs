@@ -17,35 +17,35 @@ namespace BusinessLayer.Concrete
         {
             _writerDal = writerDal;
         }
-
-        public void Add(Writer item)
+        public void TAdd(Writer t)
         {
-            _writerDal.Insert(item);
+            _writerDal.Insert(t);
         }
 
-        public void Delete(Writer item)
+        public void TDelete(Writer t)
         {
             throw new NotImplementedException();
         }
 
-        public List<Writer> GetAllList()
+        public Writer TGetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Writer> GetBlogListWithCategory()
+        public void TUpdate(Writer t)
         {
             throw new NotImplementedException();
         }
 
-        public Writer GetById(int id)
+        public List<Writer> GetList()
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Writer item)
+        /////
+        public List<Writer> GetWriterById(int id)
         {
-            throw new NotImplementedException();
+            return _writerDal.GetAllList(x => x.Id == id);
         }
     }
 }
