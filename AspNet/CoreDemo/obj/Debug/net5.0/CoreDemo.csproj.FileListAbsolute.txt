@@ -59,7 +59,6 @@ C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\scopedcss\bundle\
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\CoreDemo.TagHelpers.input.cache
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\CoreDemo.TagHelpers.output.cache
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\CoreDemo.RazorCoreGenerate.cache
-C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
@@ -191,3 +190,15 @@ C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Dashb
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\BlogListDashboard\Default.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\CategoryListDashboard\Default.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\Components\WriterAboutOnDashboard\Default.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Writer\WriterEditProfile.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Writer\WriterAdd.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Notification\AllNotification.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Message\InBox.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Message\MessageDetails.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Shared\_AdminLayout.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Admin\AdminNavbarPartial.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\bin\Debug\net5.0\JetBrains.Annotations.dll
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\bin\Debug\net5.0\X.PagedList.dll
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\bin\Debug\net5.0\X.PagedList.Mvc.Core.dll
