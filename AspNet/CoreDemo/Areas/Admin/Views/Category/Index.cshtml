@@ -24,13 +24,17 @@
 <tr>
     <th>@item.Id</th>
     <td>@item.Name</td>
-    <td><a href="#" class="btn btn-info">Passif et</a></td>
-    <td><a href="#" class="btn btn-outline-warning">Aktif et</a></td>
+    <td><a href="/Admin/Category/DeleteCategory/@item.Id/" id="deleteBtn" onclick="return confirm('Silmek istiyirsinizmi?');" class="btn btn-info">Passif et</a></td>
+
+    <td><a href="#" class="btn btn-warning">Aktif et</a></td> 
     <td><a href="#" class="btn btn-success">Edit</a></td>
 </tr>
     }
 </table>
 
+<a href="/Admin/Category/AddCategory/" vlass="btn btn-primary">Yeni kateqoriya</a>
+
+<br />
 <br />
 
 @Html.PagedListPager((IPagedList)Model,page=>Url.Action("index",new { page }))
