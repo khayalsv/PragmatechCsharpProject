@@ -33,7 +33,11 @@ namespace CoreDemo
             services.AddControllersWithViews();
 
             services.AddDbContext<MyContext>();
-            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<MyContext>();
+            services.AddIdentity<AppUser, AppRole>(x =>
+            {
+                x.Password.RequireUppercase = false;
+                x.Password.RequireNonAlphanumeric = false;
+            }).AddEntityFrameworkStores<MyContext>();
 
             services.AddMvc(config =>
             {
@@ -86,7 +90,7 @@ namespace CoreDemo
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-                
+
             });
         }
     }

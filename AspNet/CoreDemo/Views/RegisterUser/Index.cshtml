@@ -28,30 +28,48 @@
             <div>
                 <div>
 
-                    <h1 class="logo-name">IN+</h1>
+                    <h1 class="logo-name">KS</h1>
 
                 </div>
-                <h3>Register to IN+</h3>
+                <h3>Register</h3>
                 <p>Create account to see it in action.</p>
-                <form class="m-t" role="form" action="login.html">
+                <form class="m-t" role="form" asp-action="Index">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Name" required="">
+                        <input type="text" class="form-control" asp-for="@Model.NameSurname" placeholder="Ad Soyad">
+                   <span asp-validation-for="@Model.NameSurname" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email" required="">
+                        <input type="email" class="form-control" asp-for="@Model.Mail" placeholder="Email" >
+                        <span asp-validation-for="@Model.Mail" class="text-danger"></span>
+
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password" required="">
+                        <input type="text" class="form-control" asp-for="@Model.Username" placeholder="Username" >
+                        <span asp-validation-for="@Model.Username" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" asp-for="@Model.Password" placeholder="Password" >
+                        <span asp-validation-for="@Model.Password" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" asp-for="@Model.ConfirmPassword" placeholder="Password Repeat" >
+                        <span asp-validation-for="@Model.ConfirmPassword" class="text-danger"></span>
+
                     </div>
                     <div class="form-group">
                         <div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Agree the terms and policy </label></div>
+
                     </div>
                     <button type="submit" class="btn btn-primary block full-width m-b">Register</button>
 
                     <p class="text-muted text-center"><small>Already have an account?</small></p>
-                    <a class="btn btn-sm btn-white btn-block" href="~/inspinia/login.html">Login</a>
+                    <a class="btn btn-sm btn-white btn-block" href="~/RegisterUser/Login/">Login</a>
+
+                    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
                 </form>
-                <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small> </p>
+                <p class="m-t"> <small>Asp.Net Core 5.0 &copy; @DateTime.Now.Year</small> </p>
             </div>
         </div>
 
