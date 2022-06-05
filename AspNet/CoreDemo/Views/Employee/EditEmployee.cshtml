@@ -1,0 +1,19 @@
+﻿@model CoreDemo.Controllers.Class1
+
+
+@{
+    ViewData["Title"] = "EditEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <label>ID</label>
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+    <br />
+
+    <label>Name</label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+
+    <button type="submit" class="btn btn-outline-success">Update</button>
+</form>

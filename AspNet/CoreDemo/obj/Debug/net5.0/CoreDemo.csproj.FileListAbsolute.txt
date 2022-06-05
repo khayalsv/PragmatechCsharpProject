@@ -215,3 +215,16 @@ C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\Components\Statistic4\Default.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Chart\Index.cshtml.g.cs
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Areas\Admin\Views\Writer\Index.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\bin\Debug\net5.0\BlogApiDemo.deps.json
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\bin\Debug\net5.0\BlogApiDemo.runtimeconfig.json
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\bin\Debug\net5.0\BlogApiDemo.runtimeconfig.dev.json
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\bin\Debug\net5.0\BlogApiDemo.exe
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\bin\Debug\net5.0\BlogApiDemo.dll
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\bin\Debug\net5.0\BlogApiDemo.pdb
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Employee\Index.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Employee\AddEmployee.cshtml.g.cs
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\Employee\EditEmployee.cshtml.g.cs
