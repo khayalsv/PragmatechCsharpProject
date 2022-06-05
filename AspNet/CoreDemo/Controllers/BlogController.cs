@@ -20,12 +20,14 @@ namespace CoreDemo.Controllers
         CategoryManager cm = new CategoryManager(new EfCategoryRepository());
         MyContext _myContext = new MyContext();
 
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var values = bm.GetBlogListWithCategory();
             return View(values);
         }
 
+        [AllowAnonymous]
         public IActionResult BlogReadAll(int id)
         {
             ViewBag.i = id;
@@ -41,7 +43,7 @@ namespace CoreDemo.Controllers
             var values = bm.GetListWithCategoryByWriterBm(writerId);
             return View(values);
         }
-
+         
         [HttpGet]
         public IActionResult BlogAdd()
         {
