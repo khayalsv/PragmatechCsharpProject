@@ -233,3 +233,4 @@ C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\bin\Debug\net5.0\Microsoft.AspNetC
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\selim\Desktop\Csharp\AspNet\CoreDemo\obj\Debug\net5.0\Razor\Views\RegisterUser\Index.cshtml.g.cs

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class MyContext : IdentityDbContext<AppUser>
+    public class MyContext : IdentityDbContext<AppUser,AppRole,int>
     {
         //public MyContext(DbContextOptions<MyContext> options) : base(options) { }
 

@@ -1,4 +1,5 @@
 using DataAccessLayer.Concrete;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -31,6 +32,8 @@ namespace CoreDemo
         {
             services.AddControllersWithViews();
 
+            services.AddDbContext<MyContext>();
+            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<MyContext>();
 
             services.AddMvc(config =>
             {
