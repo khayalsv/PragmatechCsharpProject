@@ -6,6 +6,7 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,15 @@ namespace CoreDemo.Controllers
     public class WriterController : Controller
     {
         WriterManager wm = new WriterManager(new EfWriterRepository());
-       
+        private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
+
+        public WriterController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+
+        }
         public IActionResult Index()
         {
             var usermail = User.Identity.Name;
@@ -52,35 +61,31 @@ namespace CoreDemo.Controllers
         }
 
         [HttpGet]
-        public IActionResult WriterEditProfile()
+        public async Task<IActionResult> WriterEditProfile()   //(hell olundu yenede baxilmalidi)   //oz alternatif versiyonuna baxilmalidi identityden melumat cekmek ucun  //129d
         {
-            MyContext _myContext = new MyContext();
-            var usermail = User.Identity.Name;
-            var writerId = _myContext.Writers.Where(x => x.Email == usermail).Select(y => y.Id).FirstOrDefault();
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
 
-            var writerValues = wm.TGetById(writerId);
-            return View(writerValues);
+            var model = new UserUpdateViewModel();
+
+            model.Email = values.Email;
+            model.NameSurname = values.NameSurname;
+            model.ImageUrl = values.ImageUrl;
+            model.Username = values.UserName;
+            return View(model);
         }
 
         [HttpPost]
-        public IActionResult WriterEditProfile(Writer p)
+        public async Task<IActionResult> WriterEditProfile(UserUpdateViewModel model)
         {
-            WriterValidator wl = new WriterValidator();
-            ValidationResult results = wl.Validate(p);
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            values.Email = model.Email;
+            values.NameSurname = model.NameSurname;
+            values.ImageUrl = model.ImageUrl;
+            values.UserName = model.Username;
+            values.PasswordHash = _userManager.PasswordHasher.HashPassword(values, model.Password);
+            var result = await _userManager.UpdateAsync(values);
+            return RedirectToAction("Index", "Dashboard");
 
-            if (results.IsValid)
-            {
-                wm.TUpdate(p);
-                return RedirectToAction("Index", "Dashboard");
-            }
-            else
-            {
-                foreach (var item in results.Errors)
-                {
-                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-                }
-            }
-            return View();
         }
 
 
@@ -111,12 +116,7 @@ namespace CoreDemo.Controllers
             wm.TAdd(w);
             return RedirectToAction("Index","Dashboard");
         }
+
     }
 
-    internal class Mycontext
-    {
-        public Mycontext()
-        {
-        }
-    }
 }

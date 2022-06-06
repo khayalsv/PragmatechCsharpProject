@@ -13,10 +13,14 @@ namespace CoreDemo.Controllers
     {
         public IActionResult Index()
         {
-            MyContext myContext = new MyContext();
-            ViewBag.v1 = myContext.Blogs.Count().ToString();
-            ViewBag.v2 = myContext.Blogs.Where(x => x.WriterId == 1).Count();
-            ViewBag.v3 = myContext.Categories.Count();
+            MyContext _myContext = new MyContext();
+            var username = User.Identity.Name; //identity ile sisteme authentication ile adin cekir
+            var usermail = _myContext.Users.Where(x => x.UserName == username).Select(y => y.Email).FirstOrDefault(); //usermaille deyerini cekir
+            var writerId = _myContext.Writers.Where(x => x.Email == usermail).Select(y => y.Id).FirstOrDefault();
+
+            ViewBag.v1 = _myContext.Blogs.Count().ToString();
+            ViewBag.v2 = _myContext.Blogs.Where(x => x.WriterId == writerId).Count();
+            ViewBag.v3 = _myContext.Categories.Count();
             return View();
         }
     }

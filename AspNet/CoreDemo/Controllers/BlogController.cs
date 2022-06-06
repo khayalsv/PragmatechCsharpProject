@@ -5,6 +5,7 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -14,11 +15,17 @@ using System.Threading.Tasks;
 
 namespace CoreDemo.Controllers
 {
-    public class BlogController : Controller
+    public class BlogController : Controller   //idendity user problemi 132d
     {
         BlogManager bm = new BlogManager(new EfBlogRepository());
         CategoryManager cm = new CategoryManager(new EfCategoryRepository());
         MyContext _myContext = new MyContext();
+        private readonly UserManager<AppUser> _userManager;
+
+        public BlogController(UserManager<AppUser> userManager)
+        {
+            _userManager = userManager;
+        }
 
         [AllowAnonymous]
         public IActionResult Index()
@@ -37,8 +44,10 @@ namespace CoreDemo.Controllers
 
         public IActionResult BlogListByWriter()
         {
-            var usermail = User.Identity.Name;
+            var username = User.Identity.Name;
+            var usermail = _myContext.Users.Where(x => x.UserName == username).Select(y => y.Email).FirstOrDefault();
             var writerId = _myContext.Writers.Where(x => x.Email == usermail).Select(y => y.Id).FirstOrDefault();
+
 
             var values = bm.GetListWithCategoryByWriterBm(writerId);
             return View(values);
@@ -61,7 +70,8 @@ namespace CoreDemo.Controllers
         public IActionResult BlogAdd(Blog p)
         {
 
-            var usermail = User.Identity.Name;
+            var username = User.Identity.Name;
+            var usermail = _myContext.Users.Where(x => x.UserName == username).Select(y => y.Email).FirstOrDefault();
             var writerId = _myContext.Writers.Where(x => x.Email == usermail).Select(y => y.Id).FirstOrDefault();
 
 
@@ -112,7 +122,8 @@ namespace CoreDemo.Controllers
         public IActionResult EditBlog(Blog p)
         {
 
-            var usermail = User.Identity.Name;
+            var username = User.Identity.Name;
+            var usermail = _myContext.Users.Where(x => x.UserName == username).Select(y => y.Email).FirstOrDefault();
             var writerId = _myContext.Writers.Where(x => x.Email == usermail).Select(y => y.Id).FirstOrDefault();
 
             p.WriterId = writerId;
