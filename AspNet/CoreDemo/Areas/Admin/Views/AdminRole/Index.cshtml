@@ -1,13 +1,11 @@
 ﻿@using EntityLayer.Concrete
-@model List<Comment>
-
+@model List<AppRole>
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<!DOCTYPE html>
 <html>
 <body>
     <div class="wrapper wrapper-content animated fadeInRight">
@@ -42,11 +40,9 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>User</th>
-                                    <th>Title</th>
-                                    <th>Blog</th>
-                                    <th>Puan</th>
-                                    <th>Date</th>
+                                    <th>Name</th>
+                                    <th>Delete</th>
+                                    <th>Edit</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -54,18 +50,15 @@
                                 {
                                     <tr>
                                         <td>@item.Id</td>
-                                        <td>@item.Username</td>
-                                        <td>@item.Title</td>
-                                        <td>@item.Blog.Title</td>
-                                        <td class="text-navy"> <i class="fa fa-level-up"></i>@item.Score</td>
-                                        <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
-                                        <td><a href="#" class="btn btn-outline-danger">Delete</a></td>
-                                        <td><a href="#" class="btn btn-outline-success">Update</a></td>
+                                        <td>@item.Name</td>
+                                        <td><a href="/Admin/AdminRole/DeleteRole/@item.Id" class="btn btn-outline-danger">Delete</a></td>
+                                        <td><a href="/Admin/AdminRole/UpdateRole/@item.Id" class="btn btn-outline-success">Update</a></td>
                                     </tr>
                                 }
                             </tbody>
                         </table>
-                        <a href="/Admin/AdminRole/AddRole/" class="btn btn-outline-primary">Add new role</a>
+                        <a href="/Admin/AdminRole/AddRole/" class="btn btn-outline-primary">Role Add</a>
+                        <a href="/Admin/AdminRole/UserRoleList/" class="btn btn-outline-info">User Role List</a>
                     </div>
                 </div>
             </div>

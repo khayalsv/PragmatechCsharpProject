@@ -1,0 +1,23 @@
+﻿@using CoreDemo.Models
+@model RoleUpdateVIewModel
+
+
+@{
+    ViewData["Title"] = "UpdateRole";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form method="post">
+    <div class="form-group">
+        <label>Role Id</label>
+        <input type="text" class="form-control" name="Id" value="@Model.Id" />
+    </div>
+    <div class="form-group">
+        <label>Role Name</label>
+        <input type="text" class="form-control" name="Name" value="@Model.Name" />
+
+        <button class="btn btn-success">Role Update</button>
+    </div>
+</form>
+
