@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 namespace CoreDemo.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles ="Admin")]
     public class AdminRoleController : Controller
     {
         private readonly RoleManager<AppRole> _roleManager;
